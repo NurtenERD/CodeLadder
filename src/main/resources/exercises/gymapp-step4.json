@@ -1,0 +1,278 @@
+{
+  "routeBlockTitle": "GymApp-hoofdroute",
+  "caseStudy": {
+    "title": "GymApp",
+    "description": "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
+  },
+  "exercises": [
+    {
+      "id": "gym-step4-class-name",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Wat heeft een kleine class nodig?",
+      "instruction": "Beschrijf in je eigen woorden wat een kleine class minimaal nodig heeft.",
+      "question": "Wat heeft een kleine class zoals `Gebruiker` volgens jou nodig?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "class",
+        "naam",
+        "attribuut",
+        "private",
+        "taak"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je denkt eerst aan de bouwstenen van een kleine class.",
+      "retryFeedback": "Kijk nog eens naar classnaam, attributen en een duidelijke taak.",
+      "finalFeedback": "Neem mee: een kleine class heeft een duidelijke naam, passende attributen en één heldere taak."
+    },
+    {
+      "id": "gym-step4-name-attribute",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welk attribuut past bij Gebruiker?",
+      "instruction": "Kies de regel die logisch als attribuut in `Gebruiker` past.",
+      "question": "Welke regel past het best in class `Gebruiker`?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "correct",
+          "label": "private String naam;"
+        },
+        {
+          "id": "method",
+          "label": "public void gebruiker() { }"
+        },
+        {
+          "id": "wrong-type",
+          "label": "class naam { }"
+        },
+        {
+          "id": "color",
+          "label": "private String blauw;"
+        }
+      ],
+      "correctOptionIds": ["correct"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit is een logisch attribuut voor Gebruiker.",
+      "retryFeedback": "Kijk nog eens welke regel echt informatie van de gebruiker bewaart.",
+      "finalFeedback": "Neem mee: een attribuut is vaak een private regel met informatie over het object."
+    },
+    {
+      "id": "gym-step4-level-attribute",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welk attribuut past bij trainingsniveau?",
+      "instruction": "Kies de regel die logisch een tweede attribuut van `Gebruiker` kan zijn.",
+      "question": "Welke regel past het best als tweede attribuut in `Gebruiker`?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "correct",
+          "label": "private String trainingsniveau;"
+        },
+        {
+          "id": "method",
+          "label": "public void trainingsniveau() { }"
+        },
+        {
+          "id": "class",
+          "label": "public class Trainingsniveau { }"
+        },
+        {
+          "id": "random",
+          "label": "private String buslijn;"
+        }
+      ],
+      "correctOptionIds": ["correct"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Trainingsniveau is hier informatie van de gebruiker.",
+      "retryFeedback": "Kijk nog eens naar het verschil tussen een attribuut, een methode en een losse class.",
+      "finalFeedback": "Neem mee: een attribuut bewaart informatie die echt bij dat object hoort."
+    },
+    {
+      "id": "gym-step4-write-user",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welk classfragment past het best?",
+      "instruction": "Kies het codefragment dat het best past bij een kleine class `Gebruiker`.",
+      "question": "Welk codefragment past het best bij een kleine class `Gebruiker`?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "correct",
+          "label": "public class Gebruiker { private String naam; private String trainingsniveau; }"
+        },
+        {
+          "id": "method-only",
+          "label": "public void gebruiker() { }"
+        },
+        {
+          "id": "variable-only",
+          "label": "String Gebruiker;"
+        },
+        {
+          "id": "wrong-place",
+          "label": "public class Naam { private Gebruiker gebruiker; }"
+        }
+      ],
+      "correctOptionIds": ["correct"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit fragment laat een kleine class met passende attributen zien.",
+      "retryFeedback": "Kijk nog eens of de classnaam en beide private attributen logisch bij Gebruiker horen.",
+      "finalFeedback": "Neem mee: een kleine class heeft een duidelijke naam en alleen passende private attributen."
+    },
+    {
+      "id": "gym-step4-write-exercise",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welke class past bij Oefening?",
+      "instruction": "Kies het codefragment dat het best past bij een kleine class `Oefening`.",
+      "question": "Welk codefragment past het best bij `Oefening`?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "correct",
+          "label": "public class Oefening { private String naam; private String spiergroep; }"
+        },
+        {
+          "id": "wrong-user",
+          "label": "public class Oefening { private String wachtwoord; private String email; }"
+        },
+        {
+          "id": "wrong-method",
+          "label": "public void oefening() { }"
+        },
+        {
+          "id": "wrong-class",
+          "label": "public class Spiergroep { private Oefening oefening; }"
+        }
+      ],
+      "correctOptionIds": ["correct"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze regels horen logisch bij één oefening.",
+      "retryFeedback": "Kijk nog eens welke gegevens echt bij een oefening horen.",
+      "finalFeedback": "Neem mee: een class bewaart alleen gegevens die inhoudelijk bij dat object passen."
+    },
+    {
+      "id": "gym-step4-write-schedule",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welke class past bij Weekschema?",
+      "instruction": "Kies het codefragment dat het best past bij een kleine class `Weekschema`.",
+      "question": "Welk codefragment past het best bij `Weekschema`?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "correct",
+          "label": "public class Weekschema { private String naam; private String niveau; }"
+        },
+        {
+          "id": "wrong",
+          "label": "public class Weekschema { private String busvertraging; }"
+        },
+        {
+          "id": "method",
+          "label": "public void weekschema() { }"
+        },
+        {
+          "id": "color",
+          "label": "public class Kleur { private String blauw; }"
+        }
+      ],
+      "correctOptionIds": ["correct"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit fragment geeft een kleine en duidelijke start voor Weekschema.",
+      "retryFeedback": "Kijk nog eens welke gegevens logisch bij een schema horen.",
+      "finalFeedback": "Neem mee: kies in een eerste versie liever een kleine, duidelijke basis."
+    },
+    {
+      "id": "gym-step4-add-method",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke regels horen bij Gebruiker?",
+      "instruction": "Kies de regels die logisch in een kleine class `Gebruiker` passen.",
+      "question": "Welke regels horen logisch in `Gebruiker`?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "class",
+          "label": "public class Gebruiker {"
+        },
+        {
+          "id": "name",
+          "label": "private String naam;"
+        },
+        {
+          "id": "level",
+          "label": "private String trainingsniveau;"
+        },
+        {
+          "id": "db",
+          "label": "private Database database;"
+        }
+      ],
+      "correctOptionIds": ["class", "name", "level"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit zijn regels die passen bij een kleine class Gebruiker.",
+      "retryFeedback": "Kijk nog eens welke regels echt horen bij de inhoud van Gebruiker.",
+      "finalFeedback": "Neem mee: hou een eerste class klein en zet alleen passende regels erin."
+    },
+    {
+      "id": "gym-step4-private-error",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "ERROR_ANALYSIS",
+      "title": "Wat mist of klopt minder goed?",
+      "instruction": "Kies de beste uitleg.",
+      "question": "Wat klopt hier minder goed?\n\npublic class Gebruiker {\n  public String naam;\n  public String trainingsniveau;\n}",
+      "focusText": "",
+      "options": [
+        {
+          "id": "best",
+          "label": "De attributen zijn beter private dan public."
+        },
+        {
+          "id": "wrong",
+          "label": "Een class mag geen attributen hebben."
+        },
+        {
+          "id": "none",
+          "label": "Hier klopt alles al perfect."
+        },
+        {
+          "id": "db",
+          "label": "Er had nog een database in gemoeten."
+        }
+      ],
+      "correctOptionIds": ["best"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Attributen zet je hier liever private.",
+      "retryFeedback": "Kijk nog eens welke zichtbaarheid beter past bij attributen.",
+      "finalFeedback": "Neem mee: begin liever met private attributen, zodat de class duidelijk en rustig blijft."
+    }
+  ]
+}

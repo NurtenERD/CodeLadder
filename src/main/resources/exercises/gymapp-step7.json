@@ -1,0 +1,260 @@
+{
+  "routeBlockTitle": "GymApp-hoofdroute",
+  "caseStudy": {
+    "title": "GymApp",
+    "description": "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
+  },
+  "exercises": [
+    {
+      "id": "gym-step7-name",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Wie doet wat in GymApp?",
+      "instruction": "Leg kort uit welke class volgens jou welke verantwoordelijkheid heeft.",
+      "question": "Welke class hoort welke verantwoordelijkheid te hebben in GymApp?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "gebruiker",
+        "oefening",
+        "weekschema",
+        "gegevens",
+        "methode"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je denkt hier al na over een logische verdeling van taken.",
+      "retryFeedback": "Kijk nog eens naar welke gegevens en acties logisch bij Gebruiker, Oefening en Weekschema horen.",
+      "finalFeedback": "Neem mee: verdeel gegevens en gedrag over classes die echt bij elkaar horen."
+    },
+    {
+      "id": "gym-step7-level",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Waar hoort trainingsniveau?",
+      "instruction": "Kies de class waar deze informatie logisch bij hoort.",
+      "question": "Waar hoort `trainingsniveau` het meest logisch?",
+      "focusText": "",
+      "options": [
+        { "id": "Gebruiker", "label": "Gebruiker" },
+        { "id": "Oefening", "label": "Oefening" },
+        { "id": "Weekschema", "label": "Weekschema" }
+      ],
+      "correctOptionIds": ["Gebruiker"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Trainingsniveau hoort bij de gebruiker.",
+      "retryFeedback": "Kijk nog eens bij wie dit gegeven echt hoort.",
+      "finalFeedback": "Neem mee: persoonlijke gegevens horen meestal bij de gebruiker."
+    },
+    {
+      "id": "gym-step7-muscle",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Waar hoort spiergroep?",
+      "instruction": "Kies de class waar deze informatie logisch bij hoort.",
+      "question": "Waar hoort `spiergroep` het meest logisch?",
+      "focusText": "",
+      "options": [
+        { "id": "Gebruiker", "label": "Gebruiker" },
+        { "id": "Oefening", "label": "Oefening" },
+        { "id": "Weekschema", "label": "Weekschema" }
+      ],
+      "correctOptionIds": ["Oefening"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Spiergroep hoort bij de oefening.",
+      "retryFeedback": "Kijk nog eens welk object echt iets met spiergroep te maken heeft.",
+      "finalFeedback": "Neem mee: gegevens horen bij de class waar ze inhoudelijk over gaan."
+    },
+    {
+      "id": "gym-step7-add-exercise",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Waar hoort voegOefeningToe()?",
+      "instruction": "Kies de class waar deze methode logisch bij hoort.",
+      "question": "Waar hoort `voegOefeningToe()` het meest logisch?",
+      "focusText": "",
+      "options": [
+        { "id": "Gebruiker", "label": "Gebruiker" },
+        { "id": "Oefening", "label": "Oefening" },
+        { "id": "Weekschema", "label": "Weekschema" }
+      ],
+      "correctOptionIds": ["Weekschema"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze methode past bij een schema dat oefeningen verzamelt.",
+      "retryFeedback": "Kijk nog eens welke class iets toevoegt aan een schema.",
+      "finalFeedback": "Neem mee: methodes horen bij de class die die taak echt uitvoert."
+    },
+    {
+      "id": "gym-step7-show-profile",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Waar hoort toonProfiel()?",
+      "instruction": "Kies de class waar deze methode logisch bij hoort.",
+      "question": "Waar hoort `toonProfiel()` het meest logisch?",
+      "focusText": "",
+      "options": [
+        { "id": "Gebruiker", "label": "Gebruiker" },
+        { "id": "Oefening", "label": "Oefening" },
+        { "id": "Weekschema", "label": "Weekschema" }
+      ],
+      "correctOptionIds": ["Gebruiker"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Het profiel tonen past bij Gebruiker.",
+      "retryFeedback": "Kijk nog eens welke class zijn eigen profiel kan tonen.",
+      "finalFeedback": "Neem mee: gedrag hoort bij de class waarvoor het inhoudelijk bedoeld is."
+    },
+    {
+      "id": "gym-step7-show-exercise",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Waar hoort toonOefening()?",
+      "instruction": "Kies de class waar deze methode logisch bij hoort.",
+      "question": "Waar hoort `toonOefening()` het meest logisch?",
+      "focusText": "",
+      "options": [
+        { "id": "Gebruiker", "label": "Gebruiker" },
+        { "id": "Oefening", "label": "Oefening" },
+        { "id": "Weekschema", "label": "Weekschema" }
+      ],
+      "correctOptionIds": ["Oefening"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze methode past bij de class Oefening.",
+      "retryFeedback": "Kijk nog eens welke class zijn eigen informatie logisch kan tonen.",
+      "finalFeedback": "Neem mee: methodes horen meestal bij het object waarover ze iets doen."
+    },
+    {
+      "id": "gym-step7-mixed-class",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "ERROR_ANALYSIS",
+      "title": "Wat is hier minder goed?",
+      "instruction": "Kies de beste uitleg.",
+      "question": "Class Gebruiker heeft:\n- naam\n- trainingsniveau\n- spiergroep\n- busvertraging\n- toonMedicatie()",
+      "focusText": "",
+      "options": [
+        {
+          "id": "best",
+          "label": "Deze class krijgt informatie en gedrag uit te veel verschillende domeinen."
+        },
+        {
+          "id": "wrong",
+          "label": "Dit is juist goed, want alles staat samen."
+        },
+        {
+          "id": "none",
+          "label": "Hier is niets mis mee."
+        },
+        {
+          "id": "tiny",
+          "label": "De class is juist te klein."
+        }
+      ],
+      "correctOptionIds": ["best"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze class wordt te breed en daardoor minder logisch.",
+      "retryFeedback": "Kijk nog eens welke gegevens en acties echt bij Gebruiker passen.",
+      "finalFeedback": "Neem mee: stop niet alles in één class."
+    },
+    {
+      "id": "gym-step7-exercise-data",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke data heeft Oefening nodig?",
+      "instruction": "Kies de gegevens die logisch bij `Oefening` horen.",
+      "question": "Welke data heeft `Oefening` nodig?",
+      "focusText": "",
+      "options": [
+        { "id": "name", "label": "naam" },
+        { "id": "muscle", "label": "spiergroep" },
+        { "id": "username", "label": "gebruikersnaam" },
+        { "id": "patient", "label": "patiëntnummer" },
+        { "id": "stop", "label": "halte" }
+      ],
+      "correctOptionIds": ["name", "muscle"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze gegevens horen logisch bij één oefening.",
+      "retryFeedback": "Kijk nog eens welke informatie echt iets zegt over een oefening.",
+      "finalFeedback": "Neem mee: zet alleen gegevens in een class die echt bij dat object horen."
+    },
+    {
+      "id": "gym-step7-schedule-methods",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke methodes passen bij Weekschema?",
+      "instruction": "Kies de methodes die logisch bij `Weekschema` passen.",
+      "question": "Welke methodes passen bij `Weekschema`?",
+      "focusText": "",
+      "options": [
+        { "id": "add", "label": "voegOefeningToe()" },
+        { "id": "show", "label": "toonSchema()" },
+        { "id": "bmi", "label": "berekenBMI()" },
+        { "id": "medication", "label": "toonMedicatie()" }
+      ],
+      "correctOptionIds": ["add", "show"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze methodes passen bij een schema dat oefeningen verzamelt en toont.",
+      "retryFeedback": "Kijk nog eens welke methodes echt iets doen met een schema.",
+      "finalFeedback": "Neem mee: methodes horen bij de taak van die class."
+    },
+    {
+      "id": "gym-step7-why-separate",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welke verdeling is het meest logisch?",
+      "instruction": "Kies de verdeling die het best past bij GymApp.",
+      "question": "Welke verdeling van classes en verantwoordelijkheden is het meest logisch?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "best",
+          "label": "Gebruiker bewaart profielgegevens, Oefening bewaart oefeninggegevens en Weekschema verzamelt oefeningen."
+        },
+        {
+          "id": "wrong",
+          "label": "Gebruiker bewaart alles van de app, inclusief oefeningen, schema en schermen."
+        },
+        {
+          "id": "random",
+          "label": "Weekschema bewaart alleen kleuren en geluiden."
+        },
+        {
+          "id": "none",
+          "label": "Het maakt niet uit hoe je deze taken verdeelt."
+        }
+      ],
+      "correctOptionIds": ["best"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze verdeling houdt classes overzichtelijk en logisch.",
+      "retryFeedback": "Kijk nog eens welke class welke data en methodes inhoudelijk hoort te hebben.",
+      "finalFeedback": "Neem mee: een goede verdeling geeft elke class één duidelijke taak."
+    }
+  ]
+}

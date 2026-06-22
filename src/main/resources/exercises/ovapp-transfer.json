@@ -1,0 +1,302 @@
+{
+  "routeBlockTitle": "OV-app-light-transfer",
+  "caseStudy": {
+    "title": "OV-app-light",
+    "description": "Bouw een lichte OV-app. Een reiziger kan haltes bekijken, een rit kiezen en zien of de bus vertraging heeft."
+  },
+  "exercises": [
+    {
+      "id": "ov-transfer-user",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Wie gebruikt OV-app-light?",
+      "instruction": "Pas dezelfde eerste denkstap nu toe op OV-app-light.",
+      "question": "Wie gebruikt deze app waarschijnlijk?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "reiziger",
+        "passagier",
+        "gebruiker",
+        "forens",
+        "student"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 1,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Ook hier begin je weer bij de gebruiker.",
+      "retryFeedback": "Denk aan de persoon die een rit kiest en vertraging wil zien.",
+      "finalFeedback": "Neem mee: ook in een nieuwe context begin je bij de gebruiker."
+    },
+    {
+      "id": "ov-transfer-objects",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Welke objecten, gegevens en acties herken je?",
+      "instruction": "Noem in je eigen woorden een object, een gegeven en een actie uit OV-app-light.",
+      "question": "Welke objecten, gegevens en acties herken je in OV-app-light?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "reiziger",
+        "halte",
+        "rit",
+        "vertraging",
+        "kiezen",
+        "tonen"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je past dezelfde manier van kijken toe in de OV-context.",
+      "retryFeedback": "Kijk nog eens naar een ding, een gegeven en een actie in deze app.",
+      "finalFeedback": "Neem mee: ook hier blijf je zoeken naar objecten, gegevens en acties."
+    },
+    {
+      "id": "ov-transfer-attributes",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke attributen horen bij Rit?",
+      "instruction": "Kies de gegevens die logisch bij `Rit` horen.",
+      "question": "Welke attributen horen bij `Rit`?",
+      "focusText": "",
+      "options": [
+        { "id": "from", "label": "vertrekhalte" },
+        { "id": "to", "label": "aankomsthalte" },
+        { "id": "delay", "label": "vertraging" },
+        { "id": "call", "label": "toonRit()" }
+      ],
+      "correctOptionIds": ["from", "to", "delay"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit zijn gegevens van een rit.",
+      "retryFeedback": "Kijk nog eens naar het verschil tussen gegevens en acties.",
+      "finalFeedback": "Neem mee: attributen beschrijven informatie van een object."
+    },
+    {
+      "id": "ov-transfer-methods",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke methodes herken je?",
+      "instruction": "Kies de regels die gedrag beschrijven.",
+      "question": "Welke methodes herken je?",
+      "focusText": "",
+      "options": [
+        { "id": "show", "label": "toonRit()" },
+        { "id": "delay", "label": "heeftVertraging()" },
+        { "id": "choose", "label": "kiesRit()" },
+        { "id": "from", "label": "vertrekhalte" }
+      ],
+      "correctOptionIds": ["show", "delay", "choose"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Woorden met haakjes beschrijven hier gedrag.",
+      "retryFeedback": "Let op: een methode is vaak een actie, zoals tonen, kiezen of controleren.",
+      "finalFeedback": "Neem mee: methodes beschrijven wat een object doet."
+    },
+    {
+      "id": "ov-transfer-classes",
+      "stepType": "CHOOSE_CLASSES",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Welke classes zou je kiezen?",
+      "instruction": "Noem kort welke classes logisch bij OV-app-light passen.",
+      "question": "Welke classes zou jij kiezen voor OV-app-light?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "reiziger",
+        "halte",
+        "rit"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je kiest weer woorden die inhoudelijk als class kunnen werken.",
+      "retryFeedback": "Kijk nog eens naar de zelfstandige onderdelen van de OV-context.",
+      "finalFeedback": "Neem mee: classes kies je op basis van inhoud en verantwoordelijkheid."
+    },
+    {
+      "id": "ov-transfer-delay-owner",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Welke class bewaart vertraging?",
+      "instruction": "Leg kort uit welke class vertraging logisch bewaart.",
+      "question": "Welke class bewaart `vertraging` het meest logisch, en waarom?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "rit",
+        "vertraging",
+        "class",
+        "gegevens"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je koppelt de informatie aan de class waar die over gaat.",
+      "retryFeedback": "Kijk nog eens welke class echt over de rit zelf gaat.",
+      "finalFeedback": "Neem mee: data hoort bij de class waar die inhoudelijk over gaat."
+    },
+    {
+      "id": "ov-transfer-class",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Wat heeft een kleine class Rit nodig?",
+      "instruction": "Beschrijf kort wat een kleine class `Rit` minimaal nodig heeft.",
+      "question": "Wat heeft een kleine class `Rit` volgens jou nodig?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "class",
+        "vertrekhalte",
+        "aankomsthalte",
+        "private",
+        "attribuut"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Ook hier begin je weer klein en duidelijk.",
+      "retryFeedback": "Kijk nog eens naar classnaam en passende private attributen.",
+      "finalFeedback": "Neem mee: een kleine class heeft een duidelijke naam en passende private attributen."
+    },
+    {
+      "id": "ov-transfer-private-attributes",
+      "stepType": "WRITE_SMALL_CLASSES",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke private attributen passen?",
+      "instruction": "Kies de private attributen die logisch bij `Rit` horen.",
+      "question": "Welke private attributen passen bij `Rit`?",
+      "focusText": "",
+      "options": [
+        { "id": "from", "label": "private String vertrekhalte;" },
+        { "id": "to", "label": "private String aankomsthalte;" },
+        { "id": "delay", "label": "private int vertraging;" },
+        { "id": "styling", "label": "private String styling;" }
+      ],
+      "correctOptionIds": ["from", "to", "delay"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze attributen horen bij een rit.",
+      "retryFeedback": "Kijk nog eens welke regels echte ritinformatie beschrijven.",
+      "finalFeedback": "Neem mee: private attributen horen bij de inhoud van de class."
+    },
+    {
+      "id": "ov-transfer-constructor",
+      "stepType": "CONSTRUCTORS",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Waarom heeft Rit een constructor nodig?",
+      "instruction": "Leg kort uit waarom een constructor hier nuttig is.",
+      "question": "Waarom is een constructor handig voor class `Rit`?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "constructor",
+        "beginwaarden",
+        "vertrekhalte",
+        "aankomsthalte",
+        "vertraging"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je legt uit dat een rit-object meteen goede beginwaarden nodig heeft.",
+      "retryFeedback": "Kijk nog eens welke gegevens een nieuwe rit meteen nodig heeft.",
+      "finalFeedback": "Neem mee: een constructor vult de eerste waarden van een nieuw object."
+    },
+    {
+      "id": "ov-transfer-object",
+      "stepType": "CREATE_AND_CALL_OBJECTS",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Wat gebeurt er als je een rit-object maakt?",
+      "instruction": "Beschrijf kort wat er gebeurt als je een object van `Rit` maakt.",
+      "question": "Wat gebeurt er als je een object van `Rit` maakt?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "object",
+        "new",
+        "constructor",
+        "rit",
+        "waarden"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je beschrijft dat een concrete rit met waarden wordt gemaakt.",
+      "retryFeedback": "Kijk nog eens naar `new`, het object en de waarden die meekomen.",
+      "finalFeedback": "Neem mee: met `new` maak je een concreet object van een class."
+    },
+    {
+      "id": "ov-transfer-call",
+      "stepType": "CREATE_AND_CALL_OBJECTS",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welke regel roept een methode aan?",
+      "instruction": "Kies de regel die gedrag aanroept op `rit`.",
+      "question": "Welke regel roept een methode aan op `rit`?",
+      "focusText": "",
+      "options": [
+        { "id": "correct", "label": "rit.toonRit();" },
+        { "id": "object", "label": "Rit rit = new Rit(\"Amersfoort\", \"Utrecht\", 5);" },
+        { "id": "field", "label": "private int vertraging;" },
+        { "id": "class", "label": "public class Rit { }" }
+      ],
+      "correctOptionIds": ["correct"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Met puntnotatie roep je gedrag aan op een object.",
+      "retryFeedback": "Kijk nog eens welke regel een objectnaam, punt en methode-naam gebruikt.",
+      "finalFeedback": "Neem mee: `object.methode()` roept gedrag aan."
+    },
+    {
+      "id": "ov-transfer-too-much",
+      "stepType": "CLASS_RESPONSIBILITIES",
+      "exerciseType": "ERROR_ANALYSIS",
+      "title": "Wat is hier minder goed?",
+      "instruction": "Kies de beste uitleg.",
+      "question": "Class Reiziger bewaart halte, rit, vertraging, database, schermen en styling tegelijk.",
+      "focusText": "",
+      "options": [
+        {
+          "id": "best",
+          "label": "Deze class krijgt te veel verschillende verantwoordelijkheden tegelijk."
+        },
+        {
+          "id": "wrong",
+          "label": "Dit is juist goed, want alles staat samen."
+        },
+        {
+          "id": "none",
+          "label": "Hier is niets mis mee."
+        },
+        {
+          "id": "tiny",
+          "label": "De class is te klein."
+        }
+      ],
+      "correctOptionIds": ["best"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze class wordt te breed en daardoor minder logisch.",
+      "retryFeedback": "Kijk nog eens hoeveel verschillende taken en soorten data hier in één class zitten.",
+      "finalFeedback": "Neem mee: hou een class bij één duidelijk onderwerp en één duidelijke taak."
+    }
+  ]
+}

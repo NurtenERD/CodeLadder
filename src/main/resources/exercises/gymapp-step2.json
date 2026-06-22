@@ -1,0 +1,208 @@
+{
+  "routeBlockTitle": "GymApp-hoofdroute",
+  "caseStudy": {
+    "title": "GymApp",
+    "description": "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
+  },
+  "exercises": [
+    {
+      "id": "gym-step2-user",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Object, gegeven en actie herkennen",
+      "instruction": "Noem in je eigen woorden één object, één gegeven en één actie uit GymApp.",
+      "question": "Welke objecten, gegevens en acties herken je al in GymApp?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "gebruiker",
+        "oefening",
+        "weekschema",
+        "naam",
+        "trainingsniveau",
+        "bekijken",
+        "maken"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je benoemt hier al verschil tussen dingen, gegevens en acties.",
+      "retryFeedback": "Kijk nog eens naar een ding in de app, informatie van dat ding en iets wat gedaan wordt.",
+      "finalFeedback": "Neem mee: objecten zijn dingen, attributen zijn gegevens en methodes zijn acties."
+    },
+    {
+      "id": "gym-step2-name",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "CATEGORY_CHOICE",
+      "title": "Woord sorteren",
+      "instruction": "Kies de categorie die het best past.",
+      "question": "Welke categorie past het best bij dit woord?",
+      "focusText": "naam",
+      "options": [
+        { "id": "CLASS", "label": "Object / class-kandidaat" },
+        { "id": "ATTRIBUTE", "label": "Attribuut" },
+        { "id": "METHOD", "label": "Methode" },
+        { "id": "NOT_RELEVANT", "label": "Niet belangrijk" }
+      ],
+      "correctOptionIds": ["ATTRIBUTE"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Naam is informatie die een object heeft.",
+      "retryFeedback": "Kijk nog eens naar het verschil tussen gegevens en acties.",
+      "finalFeedback": "Neem mee: naam is meestal een attribuut van een object."
+    },
+    {
+      "id": "gym-step2-level",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "CATEGORY_CHOICE",
+      "title": "Woord sorteren",
+      "instruction": "Kies de categorie die het best past.",
+      "question": "Welke categorie past het best bij dit woord?",
+      "focusText": "trainingsniveau",
+      "options": [
+        { "id": "CLASS", "label": "Object / class-kandidaat" },
+        { "id": "ATTRIBUTE", "label": "Attribuut" },
+        { "id": "METHOD", "label": "Methode" },
+        { "id": "NOT_RELEVANT", "label": "Niet belangrijk" }
+      ],
+      "correctOptionIds": ["ATTRIBUTE"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Trainingsniveau is informatie over een gebruiker.",
+      "retryFeedback": "Kijk nog eens of dit iets is, iets doet of iets over een object vertelt.",
+      "finalFeedback": "Neem mee: niveau is een gegeven en dus een attribuut."
+    },
+    {
+      "id": "gym-step2-exercise",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "CATEGORY_CHOICE",
+      "title": "Woord sorteren",
+      "instruction": "Kies de categorie die het best past.",
+      "question": "Welke categorie past het best bij dit woord?",
+      "focusText": "Oefening",
+      "options": [
+        { "id": "CLASS", "label": "Object / class-kandidaat" },
+        { "id": "ATTRIBUTE", "label": "Attribuut" },
+        { "id": "METHOD", "label": "Methode" },
+        { "id": "NOT_RELEVANT", "label": "Niet belangrijk" }
+      ],
+      "correctOptionIds": ["CLASS"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Oefening is een zelfstandig ding in de app.",
+      "retryFeedback": "Let op: een class is vaak een zelfstandig naamwoord, zoals Gebruiker of Oefening.",
+      "finalFeedback": "Neem mee: een object of class-kandidaat is vaak een duidelijk ding met eigen gegevens."
+    },
+    {
+      "id": "gym-step2-muscle",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "CATEGORY_CHOICE",
+      "title": "Woord sorteren",
+      "instruction": "Kies de categorie die het best past.",
+      "question": "Welke categorie past het best bij dit woord?",
+      "focusText": "spiergroep",
+      "options": [
+        { "id": "CLASS", "label": "Object / class-kandidaat" },
+        { "id": "ATTRIBUTE", "label": "Attribuut" },
+        { "id": "METHOD", "label": "Methode" },
+        { "id": "NOT_RELEVANT", "label": "Niet belangrijk" }
+      ],
+      "correctOptionIds": ["ATTRIBUTE"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Spiergroep is informatie van een oefening.",
+      "retryFeedback": "Kijk nog eens of dit een ding is of informatie van iets anders.",
+      "finalFeedback": "Neem mee: spiergroep hoort als gegeven bij een oefening."
+    },
+    {
+      "id": "gym-step2-show-exercises",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "CATEGORY_CHOICE",
+      "title": "Woord sorteren",
+      "instruction": "Kies de categorie die het best past.",
+      "question": "Welke categorie past het best bij dit woord?",
+      "focusText": "toonOefeningen()",
+      "options": [
+        { "id": "CLASS", "label": "Object / class-kandidaat" },
+        { "id": "ATTRIBUTE", "label": "Attribuut" },
+        { "id": "METHOD", "label": "Methode" },
+        { "id": "NOT_RELEVANT", "label": "Niet belangrijk" }
+      ],
+      "correctOptionIds": ["METHOD"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit is een actie en dus een methode.",
+      "retryFeedback": "Let op: een methode is vaak een actie, zoals toonSchema() of kiesNiveau().",
+      "finalFeedback": "Neem mee: woorden met haakjes beschrijven vaak gedrag."
+    },
+    {
+      "id": "gym-step2-make-schedule",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "CATEGORY_CHOICE",
+      "title": "Woord sorteren",
+      "instruction": "Kies de categorie die het best past.",
+      "question": "Welke categorie past het best bij dit woord?",
+      "focusText": "maakWeekschema()",
+      "options": [
+        { "id": "CLASS", "label": "Object / class-kandidaat" },
+        { "id": "ATTRIBUTE", "label": "Attribuut" },
+        { "id": "METHOD", "label": "Methode" },
+        { "id": "NOT_RELEVANT", "label": "Niet belangrijk" }
+      ],
+      "correctOptionIds": ["METHOD"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Hier wordt iets gedaan en dat past bij een methode.",
+      "retryFeedback": "Kijk nog eens naar het verschil tussen gegevens en acties.",
+      "finalFeedback": "Neem mee: werkwoorden met haakjes wijzen vaak op een methode."
+    },
+    {
+      "id": "gym-step2-error",
+      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Wat is het verschil?",
+      "instruction": "Kies de uitleg die het best past.",
+      "question": "Wat is het belangrijkste verschil tussen een attribuut en een methode?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "best",
+          "label": "Een attribuut is informatie, een methode is gedrag."
+        },
+        {
+          "id": "wrong-class",
+          "label": "Een attribuut is altijd een class en een methode niet."
+        },
+        {
+          "id": "wrong-color",
+          "label": "Een attribuut is een kleur en een methode een scherm."
+        },
+        {
+          "id": "wrong-same",
+          "label": "Er is geen verschil tussen attribuut en methode."
+        }
+      ],
+      "correctOptionIds": ["best"],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Een attribuut bewaart informatie en een methode beschrijft gedrag.",
+      "retryFeedback": "Kijk nog eens naar het verschil tussen gegevens en acties.",
+      "finalFeedback": "Neem mee: attributen onthouden informatie en methodes voeren iets uit."
+    }
+  ]
+}

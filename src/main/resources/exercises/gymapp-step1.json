@@ -1,0 +1,196 @@
+{
+  "routeBlockTitle": "GymApp-hoofdroute",
+  "caseStudy": {
+    "title": "GymApp",
+    "description": "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
+  },
+  "exercises": [
+    {
+      "id": "gym-step1-what",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "exerciseType": "OPEN_QUESTION",
+      "title": "Wat moet GymApp doen?",
+      "instruction": "Leg de opdracht eerst uit in gewone taal.",
+      "question": "Wat moet de GymApp volgens jou doen?",
+      "focusText": "",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "gebruiker",
+        "oefening",
+        "bekijken",
+        "trainingsniveau",
+        "kiezen",
+        "weekschema",
+        "maken"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 2,
+      "codeExercise": false,
+      "successFeedback": "Goed gezien. Je beschrijft eerst wat de gebruiker wil doen voordat je aan code denkt.",
+      "retryFeedback": "Kijk nog eens naar de gebruiker, de acties en de informatie die de app moet bewaren.",
+      "finalFeedback": "Neem mee: bij een opdracht zoek je eerst naar gebruiker, acties en belangrijke informatie."
+    },
+    {
+      "id": "gym-step1-user",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Wie gebruikt GymApp?",
+      "instruction": "Kies de gebruiker die het best bij deze opdracht past.",
+      "question": "Wie gebruikt GymApp waarschijnlijk?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "sporter",
+          "label": "Een sporter of sportschoollid"
+        },
+        {
+          "id": "dokter",
+          "label": "Een arts die dossiers beheert"
+        },
+        {
+          "id": "chauffeur",
+          "label": "Een buschauffeur die ritten plant"
+        },
+        {
+          "id": "docent",
+          "label": "Een docent die cijfers invoert"
+        }
+      ],
+      "correctOptionIds": [
+        "sporter"
+      ],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit is de gebruiker van de app.",
+      "retryFeedback": "Kijk nog eens naar wie oefeningen bekijkt en een schema maakt.",
+      "finalFeedback": "Neem mee: begin bij de persoon die echt iets met de app wil doen."
+    },
+    {
+      "id": "gym-step1-best-sentence",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "exerciseType": "MULTIPLE_CHOICE",
+      "title": "Welke zin past het best?",
+      "instruction": "Kies de zin die de opdracht het best samenvat.",
+      "question": "Welke zin beschrijft GymApp het best?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "best",
+          "label": "Een sporter wil oefeningen bekijken, een niveau kiezen en een weekschema maken."
+        },
+        {
+          "id": "technical",
+          "label": "De app moet meteen een database, API en alle schermen bouwen."
+        },
+        {
+          "id": "wrong",
+          "label": "Een docent wil cijfers invoeren voor studenten."
+        },
+        {
+          "id": "small",
+          "label": "De app moet alleen één knop tonen."
+        }
+      ],
+      "correctOptionIds": [
+        "best"
+      ],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Deze zin blijft dicht bij wat de gebruiker wil doen.",
+      "retryFeedback": "Kijk nog eens welke zin gaat over gebruiker, acties en inhoud.",
+      "finalFeedback": "Neem mee: beschrijf de opdracht eerst in gewone taal en nog niet in techniek."
+    },
+    {
+      "id": "gym-step1-blank-schema",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke acties horen bij GymApp?",
+      "instruction": "Kies de acties die de gebruiker echt met GymApp moet kunnen doen.",
+      "question": "Welke acties horen bij de opdracht?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "view",
+          "label": "Oefeningen bekijken"
+        },
+        {
+          "id": "choose",
+          "label": "Een trainingsniveau kiezen"
+        },
+        {
+          "id": "plan",
+          "label": "Een weekschema maken"
+        },
+        {
+          "id": "paint",
+          "label": "De muren van de sportschool schilderen"
+        }
+      ],
+      "correctOptionIds": [
+        "view",
+        "choose",
+        "plan"
+      ],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit zijn acties die de gebruiker echt uitvoert.",
+      "retryFeedback": "Kijk nog eens welke acties direct uit de opdracht komen.",
+      "finalFeedback": "Neem mee: acties in de opdracht beschrijven wat de gebruiker met de app wil doen."
+    },
+    {
+      "id": "gym-step1-keywords",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "exerciseType": "MULTI_SELECT",
+      "title": "Welke informatie is belangrijk?",
+      "instruction": "Kies de woorden die echt iets zeggen over de inhoud van de app.",
+      "question": "Welke woorden zijn belangrijk voor het ontwerp?",
+      "focusText": "",
+      "options": [
+        {
+          "id": "user",
+          "label": "gebruiker"
+        },
+        {
+          "id": "exercise",
+          "label": "oefening"
+        },
+        {
+          "id": "level",
+          "label": "trainingsniveau"
+        },
+        {
+          "id": "schedule",
+          "label": "weekschema"
+        },
+        {
+          "id": "pretty",
+          "label": "mooi"
+        },
+        {
+          "id": "fast",
+          "label": "snel"
+        }
+      ],
+      "correctOptionIds": [
+        "user",
+        "exercise",
+        "level",
+        "schedule"
+      ],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "codeExercise": false,
+      "successFeedback": "Goed gekozen. Dit zijn woorden die echt iets zeggen over de inhoud van de app.",
+      "retryFeedback": "Kijk nog eens naar het verschil tussen inhoud en bijzaak.",
+      "finalFeedback": "Neem mee: ontwerpwoorden gaan vaak over gebruikers, dingen en informatie in de app."
+    }
+  ]
+}
