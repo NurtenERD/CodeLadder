@@ -38,6 +38,7 @@ public class ExerciseScreenController {
             int totalExercises,
             StudentAnswer studentAnswer,
             Consumer<ExerciseResponse> onSubmit,
+            Runnable onPrevious,
             Runnable onNext
     ) {
         Label progressLabel = new Label("Oefening " + currentNumber + " van " + totalExercises);
@@ -114,6 +115,10 @@ public class ExerciseScreenController {
         inputSection.setDisabled(readyForNext);
         int attemptCount = studentAnswer == null ? 0 : studentAnswer.getAttemptCount();
 
+        Button previousButton = new Button("Terug");
+        previousButton.setOnAction(event -> onPrevious.run());
+        previousButton.setDisable(currentNumber <= 1);
+
         Button submitButton = new Button(attemptCount == 0 ? "Controleer" : "Controleer opnieuw");
         submitButton.setOnAction(event -> onSubmit.accept(inputSection.readResponse()));
         submitButton.setDisable(readyForNext);
@@ -128,7 +133,7 @@ public class ExerciseScreenController {
         nextButton.setVisible(readyForNext);
         nextButton.setManaged(readyForNext);
 
-        HBox buttonBar = new HBox(10, submitButton, spacer, nextButton);
+        HBox buttonBar = new HBox(10, previousButton, submitButton, spacer, nextButton);
         contentBox.getChildren().add(buttonBar);
 
         ScrollPane scrollPane = new ScrollPane(contentBox);

@@ -32,6 +32,25 @@ class LearningRouteServiceTest {
     }
 
     @Test
+    void moveToPreviousExerciseGoesBackOneExercise() {
+        LearningRouteService routeService = createRouteService();
+
+        assertTrue(routeService.moveToNextExercise());
+        assertEquals(2, routeService.getCurrentExerciseNumber());
+
+        assertTrue(routeService.moveToPreviousExercise());
+        assertEquals(1, routeService.getCurrentExerciseNumber());
+    }
+
+    @Test
+    void moveToPreviousExerciseAtFirstExerciseReturnsFalse() {
+        LearningRouteService routeService = createRouteService();
+
+        assertFalse(routeService.moveToPreviousExercise());
+        assertEquals(1, routeService.getCurrentExerciseNumber());
+    }
+
+    @Test
     void routeCanReachTheEndAndThenReturnsNullCurrentExercise() {
         LearningRouteService routeService = createRouteService();
 

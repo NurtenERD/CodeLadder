@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open CodeLadder Domain Layer in draw.io</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: #f8fafc;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      line-height: 1.5;
+      margin: 0 0 16px;
+    }
+
+    button,
+    a.button {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+      background: #1e293b;
+      color: #f8fafc;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      background: rgba(30, 41, 59, 0.9);
+      font-size: 14px;
+    }
+
+    #fallback {
+      display: none;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>CodeLadder Domain Layer</h1>
+    <p>Deze launcher opent draw.io in een nieuw tabblad en laadt daarna automatisch het bewerkbare domeinlaag-diagram.</p>
+    <button id="openBtn" type="button">Open draw.io</button>
+    <a class="button" href="codeladder-domain-layer.drawio">Open lokaal .drawio-bestand</a>
+    <div id="status">Launcher wordt gestart...</div>
+    <div id="fallback">
+      <p>Als je browser het nieuwe tabblad blokkeert, klik dan op <strong>Open draw.io</strong>.</p>
+    </div>
+  </main>
+  <script>
+    const drawioUrl = "https://app.diagrams.net/?embed=1&proto=json&spin=1&splash=0&ui=atlas";
+    const diagramXml = `<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Codex" version="26.1.0">
+  <diagram id="codeladder-domain-layer" name="Domain Layer">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="CodeLadder Domain Layer" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="12" width="280" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="exercise" value="&lt;b&gt;Exercise&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/font&gt;| - id: String&#xa;- title: String&#xa;- stepType: StepType&#xa;- exerciseType: ExerciseType&#xa;- caseStudy: CaseStudy&#xa;- options: List&lt;AnswerOption&gt;&#xa;- requiredFragments: Set&lt;String&gt;&#xa;- codeExercise: boolean| + getId(): String&#xa;+ getStepType(): StepType&#xa;+ getExerciseType(): ExerciseType&#xa;+ getCaseStudy(): CaseStudy&#xa;+ getOptions(): List&lt;AnswerOption&gt;" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="330" y="60" width="300" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="caseStudy" value="&lt;b&gt;CaseStudy&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;value object&amp;gt;&amp;gt;&lt;/font&gt;| - routeBlockTitle: String&#xa;- title: String&#xa;- description: String| + getRouteBlockTitle(): String&#xa;+ getTitle(): String&#xa;+ getDescription(): String" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#FDFCF8;strokeColor=#64748B;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="answerOption" value="&lt;b&gt;AnswerOption&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;value object&amp;gt;&amp;gt;&lt;/font&gt;| - id: String&#xa;- label: String| + getId(): String&#xa;+ getLabel(): String" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#FDFCF8;strokeColor=#64748B;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="700" y="90" width="220" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="learningStep" value="&lt;b&gt;LearningStep&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;value object&amp;gt;&amp;gt;&lt;/font&gt;| - stepType: StepType| + getStepType(): StepType&#xa;+ getOrderNumber(): int&#xa;+ getTitle(): String&#xa;+ getDescription(): String" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#FDFCF8;strokeColor=#64748B;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="220" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="stepType" value="&lt;b&gt;StepType&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;/font&gt;| UNDERSTAND_ASSIGNMENT&#xa;OBJECTS_ATTRIBUTES_METHODS&#xa;CHOOSE_CLASSES&#xa;WRITE_SMALL_CLASSES&#xa;CONSTRUCTORS&#xa;CREATE_AND_CALL_OBJECTS&#xa;CLASS_RESPONSIBILITIES" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#EEF2FF;strokeColor=#6366F1;fontColor=#1E1B4B;" vertex="1" parent="1">
+          <mxGeometry x="700" y="260" width="220" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="exerciseType" value="&lt;b&gt;ExerciseType&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;/font&gt;| OPEN_QUESTION&#xa;MULTIPLE_CHOICE&#xa;MULTI_SELECT&#xa;CATEGORY_CHOICE&#xa;ERROR_ANALYSIS&#xa;FILL_IN_THE_BLANK&#xa;CODE_WRITING&#xa;REFLECTION" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#EEF2FF;strokeColor=#6366F1;fontColor=#1E1B4B;" vertex="1" parent="1">
+          <mxGeometry x="700" y="490" width="220" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="studentAnswer" value="&lt;b&gt;StudentAnswer&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;&lt;/font&gt;| - exerciseId: String&#xa;- exerciseTitle: String&#xa;- stepType: StepType&#xa;- attempts: List&lt;AttemptResult&gt;| + addAttempt(result): void&#xa;+ getLatestAttempt(): AttemptResult&#xa;+ getLatestResponse(): ExerciseResponse&#xa;+ getAttemptCount(): int&#xa;+ isReadyForNext(): boolean" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="330" y="340" width="300" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="attemptResult" value="&lt;b&gt;AttemptResult&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;value object&amp;gt;&amp;gt;&lt;/font&gt;| - attemptNumber: int&#xa;- response: ExerciseResponse&#xa;- feedback: Feedback&#xa;- correct: boolean| + getResponse(): ExerciseResponse&#xa;+ getFeedback(): Feedback&#xa;+ isCorrect(): boolean" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#FDFCF8;strokeColor=#64748B;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="330" y="590" width="300" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="exerciseResponse" value="&lt;b&gt;ExerciseResponse&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;value object&amp;gt;&amp;gt;&lt;/font&gt;| - textAnswer: String&#xa;- selectedOptionIds: Set&lt;String&gt;| + empty(): ExerciseResponse&#xa;+ forText(text): ExerciseResponse&#xa;+ forSelections(ids): ExerciseResponse&#xa;+ toDisplayText(exercise): String" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#FDFCF8;strokeColor=#64748B;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="50" y="620" width="240" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="feedback" value="&lt;b&gt;Feedback&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;value object&amp;gt;&amp;gt;&lt;/font&gt;| - message: String&#xa;- type: FeedbackType| + getMessage(): String&#xa;+ getType(): FeedbackType" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#FFF7ED;strokeColor=#F59E0B;fontColor=#7C2D12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="730" width="220" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="validationResult" value="&lt;b&gt;ValidationResult&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;result&amp;gt;&amp;gt;&lt;/font&gt;| - correct: boolean&#xa;- allowRetry: boolean&#xa;- feedback: Feedback| + isCorrect(): boolean&#xa;+ isAllowRetry(): boolean&#xa;+ getFeedback(): Feedback" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#ECFDF5;strokeColor=#10B981;fontColor=#064E3B;" vertex="1" parent="1">
+          <mxGeometry x="330" y="820" width="300" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="feedbackType" value="&lt;b&gt;FeedbackType&lt;/b&gt;&#xa;&lt;font color='#64748B'&gt;&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;/font&gt;| SUCCESS&#xa;GUIDANCE&#xa;FINAL_HINT" style="shape=umlClass;whiteSpace=wrap;html=1;spacing=6;fontSize=12;fillColor=#EEF2FF;strokeColor=#6366F1;fontColor=#1E1B4B;" vertex="1" parent="1">
+          <mxGeometry x="700" y="900" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&#xa;&lt;font color='#475569'&gt;&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;, &amp;lt;&amp;lt;entity&amp;gt;&amp;gt;, &amp;lt;&amp;lt;aggregate&amp;gt;&amp;gt;, &amp;lt;&amp;lt;value object&amp;gt;&amp;gt;, &amp;lt;&amp;lt;result&amp;gt;&amp;gt;&lt;/font&gt;&#xa;Multiplicities are shown only on core associations and compositions." style="shape=note;whiteSpace=wrap;html=1;fontSize=12;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;" vertex="1" parent="1">
+          <mxGeometry x="50" y="880" width="240" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-exercise-case" value="caseStudy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=none;fontColor=#334155;" edge="1" source="exercise" target="caseStudy" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-exercise-case-a" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="280" y="124" width="34" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-exercise-case-b" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="278" y="160" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-exercise-options" value="options" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;startArrow=diamondThin;startFill=1;endArrow=none;fontColor=#334155;" edge="1" source="exercise" target="answerOption" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-exercise-options-a" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="640" y="124" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-exercise-options-b" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="656" y="160" width="34" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-exercise-step" value="typed by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;dashed=1;endArrow=open;endFill=0;fontColor=#334155;" edge="1" source="exercise" target="stepType" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-exercise-type" value="typed by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;dashed=1;endArrow=open;endFill=0;fontColor=#334155;" edge="1" source="exercise" target="exerciseType" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-learning-step" value="wraps" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;dashed=1;endArrow=open;endFill=0;fontColor=#334155;" edge="1" source="learningStep" target="stepType" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-student-attempt" value="attempts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;startArrow=diamondThin;startFill=1;endArrow=none;fontColor=#334155;" edge="1" source="studentAnswer" target="attemptResult" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-student-attempt-a" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="474" y="538" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-student-attempt-b" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="492" y="570" width="34" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-student-exercise" value="exerciseId" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;dashed=1;endArrow=open;endFill=0;fontColor=#334155;" edge="1" source="studentAnswer" target="exercise" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-student-step" value="current step" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;dashed=1;endArrow=open;endFill=0;fontColor=#334155;" edge="1" source="studentAnswer" target="stepType" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-attempt-response" value="response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;startArrow=diamondThin;startFill=1;endArrow=none;fontColor=#334155;" edge="1" source="attemptResult" target="exerciseResponse" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-attempt-response-a" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="320" y="660" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-attempt-response-b" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="300" y="710" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-attempt-feedback" value="feedback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=none;fontColor=#334155;" edge="1" source="attemptResult" target="feedback" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-attempt-feedback-a" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="640" y="686" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-attempt-feedback-b" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="680" y="750" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-validation-feedback" value="feedback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;endArrow=none;fontColor=#334155;" edge="1" source="validationResult" target="feedback" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-validation-feedback-a" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="640" y="840" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-validation-feedback-b" value="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="680" y="838" width="16" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-feedback-type" value="typed by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;dashed=1;endArrow=open;endFill=0;fontColor=#334155;" edge="1" source="feedback" target="feedbackType" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-response-exercise" value="display labels" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;dashed=1;endArrow=open;endFill=0;fontColor=#334155;" edge="1" source="exerciseResponse" target="exercise" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>`;
+
+    const status = document.getElementById("status");
+    const fallback = document.getElementById("fallback");
+    const openBtn = document.getElementById("openBtn");
+    let editorWindow = null;
+    let loaded = false;
+
+    function setStatus(message) {
+      status.textContent = message;
+    }
+
+    function openEditor() {
+      if (editorWindow && !editorWindow.closed) {
+        editorWindow.focus();
+        return;
+      }
+
+      editorWindow = window.open(drawioUrl, "_blank");
+
+      if (!editorWindow) {
+        fallback.style.display = "block";
+        setStatus("Browser blokkeerde het openen van draw.io. Gebruik de knop om het handmatig te openen.");
+        return;
+      }
+
+      fallback.style.display = "none";
+      setStatus("draw.io is geopend. Wachten op editor...");
+    }
+
+    function sendLoad() {
+      if (loaded || !editorWindow || editorWindow.closed) {
+        return;
+      }
+
+      editorWindow.postMessage(JSON.stringify({
+        action: "load",
+        autosave: 0,
+        modified: "unsavedChanges",
+        xml: diagramXml
+      }), "*");
+
+      loaded = true;
+      setStatus("draw.io geladen met het bewerkbare domeinlaag-diagram.");
+    }
+
+    window.addEventListener("message", (event) => {
+      let data = event.data;
+
+      if (typeof data === "string") {
+        try {
+          data = JSON.parse(data);
+        } catch (error) {
+          if (data === "ready") {
+            sendLoad();
+          }
+          return;
+        }
+      }
+
+      if (data && (data.event === "init" || data.event === "ready")) {
+        sendLoad();
+      }
+    });
+
+    openBtn.addEventListener("click", openEditor);
+    openEditor();
+  </script>
+</body>
+</html>

@@ -72,6 +72,7 @@ public class AppController {
                 learningRouteService.getTotalExercises(),
                 studentAnswer,
                 this::handleExerciseSubmission,
+                this::moveToPreviousExercise,
                 this::moveToNextExercise
         );
         mainDashboardController.showExerciseContent(
@@ -95,6 +96,11 @@ public class AppController {
         showCurrentExercise();
     }
 
+    private void moveToPreviousExercise() {
+        if (learningRouteService.moveToPreviousExercise()) {
+            showCurrentExercise();
+        }
+    }
     private void moveToNextExercise() {
         if (learningRouteService.moveToNextExercise()) {
             showCurrentExercise();

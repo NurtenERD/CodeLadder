@@ -56,4 +56,17 @@ public class LearningRouteService {
         currentExerciseIndex++;
         return currentExerciseIndex < exercises.size();
     }
+
+    public boolean moveToPreviousExercise() {
+        if (!canMoveToPreviousExercise()) {
+            return false;
+        }
+
+        currentExerciseIndex--;
+        return true;
+    }
+
+    public boolean canMoveToPreviousExercise() {
+        return currentExerciseIndex > 0;
+    }
 }
