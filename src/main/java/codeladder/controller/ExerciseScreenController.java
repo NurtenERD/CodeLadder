@@ -98,6 +98,15 @@ public class ExerciseScreenController {
         InputSection inputSection = buildInputSection(exercise, initialResponse);
         contentBox.getChildren().add(inputSection.node());
 
+        Label hintLabel = new Label();
+        hintLabel.setWrapText(true);
+        hintLabel.setMaxWidth(Double.MAX_VALUE);
+        hintLabel.setStyle("-fx-padding: 10; -fx-border-color: lightgray; -fx-background-color: #f7f7f7;");
+        hintLabel.setVisible(false);
+        hintLabel.setManaged(false);
+
+        contentBox.getChildren().add(hintLabel);
+
         if (studentAnswer != null) {
             AttemptResult latestAttempt = studentAnswer.getLatestAttempt();
             Label feedbackTitle = new Label("Feedback");
@@ -125,6 +134,21 @@ public class ExerciseScreenController {
         submitButton.setVisible(!readyForNext);
         submitButton.setManaged(!readyForNext);
 
+        Button hintButton = new Button("Hint");
+        boolean showHintButton = shouldShowHintButton(exercise) && !readyForNext;
+
+        hintButton.setVisible(showHintButton);
+        hintButton.setManaged(showHintButton);
+
+        hintButton.setOnAction(event -> {
+            hintLabel.setText(buildHintText(exercise));
+            hintLabel.setVisible(true);
+            hintLabel.setManaged(true);
+        });
+
+
+
+
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
@@ -133,7 +157,7 @@ public class ExerciseScreenController {
         nextButton.setVisible(readyForNext);
         nextButton.setManaged(readyForNext);
 
-        HBox buttonBar = new HBox(10, previousButton, submitButton, spacer, nextButton);
+        HBox buttonBar = new HBox(10, previousButton, submitButton, hintButton, spacer, nextButton);
         contentBox.getChildren().add(buttonBar);
 
         ScrollPane scrollPane = new ScrollPane(contentBox);
@@ -266,6 +290,33 @@ public class ExerciseScreenController {
                 },
                 disabled -> flowPane.setDisable(disabled)
         );
+    }
+
+    private boolean shouldShowHintButton(Exercise exercise) {
+        return exercise.getExerciseType() != ExerciseType.OPEN_QUESTION
+                && exercise.getExerciseType() != ExerciseType.REFLECTION;
+    }
+
+    private String buildHintText(Exercise exercise) {
+        return switch (exercise.getExerciseType()) {
+            case MULTIPLE_CHOICE ->
+                    "Lees de vraag nog eens rustig. Kijk welk antwoord het beste past bij de code of opdracht.";
+
+            case MULTI_SELECT, ERROR_ANALYSIS ->
+                    "Let op: er kunnen meerdere signalen in de vraag zitten. Zoek eerst wat duidelijk klopt of juist fout gaat.";
+
+            case CATEGORY_CHOICE ->
+                    "Kijk naar de rol van het woord. Is het een class, attribuut, methode, object of verantwoordelijkheid?";
+
+            case FILL_IN_THE_BLANK ->
+                    "Lees de zin vóór en na de lege plek. Vaak staat daar al welke term logisch past.";
+
+            case CODE_WRITING ->
+                    "Begin klein. Schrijf eerst de classnaam of methodekop. Daarna pas de rest.";
+
+            default ->
+                    "Lees de opdracht opnieuw en zoek eerst de belangrijkste woorden.";
+        };
     }
 
     private record InputSection(
