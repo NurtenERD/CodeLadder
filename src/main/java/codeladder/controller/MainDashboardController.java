@@ -6,9 +6,11 @@ import codeladder.model.StudentAnswer;
 import codeladder.model.StepType;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TitledPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -21,7 +23,9 @@ import java.util.function.Consumer;
 
 public class MainDashboardController {
     private final List<LearningStep> steps;
+    private final List<Exercise> exercises;
     private final Consumer<StepType> onDeveloperStartAtStep;
+    private final Consumer<String> onDeveloperStartAtExercise;
 
     private BorderPane root;
     private VBox stepListBox;
@@ -33,9 +37,16 @@ public class MainDashboardController {
     private Label attemptValueLabel;
     private Label feedbackValueLabel;
 
-    public MainDashboardController(List<LearningStep> steps, Consumer<StepType> onDeveloperStartAtStep) {
+    public MainDashboardController(
+            List<LearningStep> steps,
+            List<Exercise> exercises,
+            Consumer<StepType> onDeveloperStartAtStep,
+            Consumer<String> onDeveloperStartAtExercise
+    ) {
         this.steps = steps;
+        this.exercises = exercises;
         this.onDeveloperStartAtStep = onDeveloperStartAtStep;
+        this.onDeveloperStartAtExercise = onDeveloperStartAtExercise;
     }
 
     public Parent createView() {
@@ -155,21 +166,54 @@ public class MainDashboardController {
         Label developerTitle = new Label("Developer testmodus");
         developerTitle.setStyle("-fx-font-weight: bold;");
 
-        Label developerText = new Label("Snel naar een trede om te testen.");
+        Label developerText = new Label("Snel naar een trede of onderwerp om te testen.");
         developerText.setWrapText(true);
 
-        VBox buttonBox = new VBox(6);
+        Accordion stepAccordion = new Accordion();
 
         for (StepType stepType : StepType.values()) {
-            Button stepButton = new Button("Test Trede " + stepType.getOrderNumber());
-            stepButton.setMaxWidth(Double.MAX_VALUE);
-            stepButton.setOnAction(event -> onDeveloperStartAtStep.accept(stepType));
-            buttonBox.getChildren().add(stepButton);
+            stepAccordion.getPanes().add(createDeveloperStepPane(stepType));
         }
 
-        VBox developerBox = new VBox(8, developerTitle, developerText, buttonBox);
+        VBox developerBox = new VBox(8, developerTitle, developerText, stepAccordion);
         developerBox.setPadding(new Insets(12, 0, 0, 0));
         return developerBox;
+    }
+
+    private TitledPane createDeveloperStepPane(StepType stepType) {
+        VBox contentBox = new VBox(6);
+
+        Button startStepButton = new Button("Start Trede " + stepType.getOrderNumber());
+        startStepButton.setMaxWidth(Double.MAX_VALUE);
+        startStepButton.setOnAction(event -> onDeveloperStartAtStep.accept(stepType));
+        contentBox.getChildren().add(startStepButton);
+
+        for (Exercise exercise : exercises) {
+            if (exercise.getStepType() != stepType) {
+                continue;
+            }
+
+            Button exerciseButton = new Button(buildDeveloperExerciseText(exercise));
+            exerciseButton.setMaxWidth(Double.MAX_VALUE);
+            exerciseButton.setWrapText(true);
+            exerciseButton.setOnAction(event -> onDeveloperStartAtExercise.accept(exercise.getId()));
+            contentBox.getChildren().add(exerciseButton);
+        }
+
+        TitledPane titledPane = new TitledPane(
+                "Trede " + stepType.getOrderNumber() + " - " + stepType.getDisplayName(),
+                contentBox
+        );
+        titledPane.setExpanded(false);
+        return titledPane;
+    }
+
+    private String buildDeveloperExerciseText(Exercise exercise) {
+        String caseStudyTitle = exercise.getCaseStudy().getTitle();
+        if (caseStudyTitle == null || caseStudyTitle.isBlank()) {
+            return exercise.getTitle();
+        }
+        return caseStudyTitle + " - " + exercise.getTitle();
     }
 
     private Parent createCenterPane() {

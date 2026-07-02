@@ -43,7 +43,9 @@ public class AppController {
         this.summaryService = new SummaryService();
         this.mainDashboardController = new MainDashboardController(
                 learningRouteService.getLearningSteps(),
-                this::startAtStep
+                learningRouteService.getExercises(),
+                this::startAtStep,
+                this::startAtExercise
         );
         this.startScreenController = new StartScreenController();
         this.exerciseScreenController = new ExerciseScreenController();
@@ -69,6 +71,18 @@ public class AppController {
         progressService.reset();
 
         boolean found = learningRouteService.jumpToFirstExerciseOfStep(stepType);
+        if (!found) {
+            showAboutDialog();
+            return;
+        }
+
+        showCurrentExercise();
+    }
+
+    private void startAtExercise(String exerciseId) {
+        progressService.reset();
+
+        boolean found = learningRouteService.jumpToExercise(exerciseId);
         if (!found) {
             showAboutDialog();
             return;

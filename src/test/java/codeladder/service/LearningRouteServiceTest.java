@@ -105,6 +105,31 @@ class LearningRouteServiceTest {
         }
     }
 
+    @Test
+    void developerCanJumpToSpecificExerciseById() {
+        LearningRouteService routeService = createRouteService();
+        String exerciseId = routeService.getExercises().get(0).getId();
+
+        assertTrue(routeService.moveToNextExercise());
+        assertTrue(routeService.jumpToExercise(exerciseId));
+        assertNotNull(routeService.getCurrentExercise());
+        assertEquals(exerciseId, routeService.getCurrentExercise().getId());
+    }
+
+    @Test
+    void jumpToExerciseReturnsFalseForUnknownId() {
+        LearningRouteService routeService = createRouteService();
+
+        assertFalse(routeService.jumpToExercise("onbekende-oefening"));
+    }
+
+    @Test
+    void jumpToExerciseReturnsFalseForNullId() {
+        LearningRouteService routeService = createRouteService();
+
+        assertFalse(routeService.jumpToExercise(null));
+    }
+
     private LearningRouteService createRouteService() {
         FeedbackService feedbackService = new FeedbackService();
         AnswerValidationService validationService = new AnswerValidationService(feedbackService);

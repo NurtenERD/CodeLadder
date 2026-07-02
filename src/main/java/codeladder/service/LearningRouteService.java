@@ -60,6 +60,20 @@ public class LearningRouteService {
         return false;
     }
 
+    public boolean jumpToExercise(String exerciseId) {
+        if (exerciseId == null || exerciseId.isBlank()) {
+            return false;
+        }
+        for (int index = 0; index < exercises.size(); index++) {
+            if (exerciseId.equals(exercises.get(index).getId())) {
+                currentExerciseIndex = index;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public ValidationResult validateCurrentExercise(ExerciseResponse response, int attemptNumber) {
         return answerValidationService.validate(getCurrentExercise(), response, attemptNumber);
     }
