@@ -1,10 +1,8 @@
 package codeladder.service;
 
 import codeladder.data.ExerciseDataProvider;
-import codeladder.model.Exercise;
-import codeladder.model.ExerciseResponse;
-import codeladder.model.LearningStep;
-import codeladder.model.ValidationResult;
+import codeladder.model.*;
+import codeladder.model.StepType;
 
 import java.util.List;
 
@@ -46,6 +44,20 @@ public class LearningRouteService {
 
     public void restart() {
         currentExerciseIndex = 0;
+    }
+
+    public boolean jumpToFirstExerciseOfStep(StepType stepType) {
+        if (stepType == null) {
+            return false;
+        }
+        for (int index = 0; index < exercises.size(); index++) {
+            if (exercises.get(index).getStepType() == stepType) {
+                currentExerciseIndex = index;
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public ValidationResult validateCurrentExercise(ExerciseResponse response, int attemptNumber) {

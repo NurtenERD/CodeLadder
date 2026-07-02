@@ -85,6 +85,26 @@ class LearningRouteServiceTest {
         assertTrue(validationResult.isAllowRetry());
     }
 
+    @Test
+    void developerCanJumpToFirstExerciseOfStepThree() {
+        LearningRouteService routeService = createRouteService();
+
+        assertTrue(routeService.jumpToFirstExerciseOfStep(StepType.CHOOSE_CLASSES));
+        assertNotNull(routeService.getCurrentExercise());
+        assertEquals(StepType.CHOOSE_CLASSES, routeService.getCurrentExercise().getStepType());
+    }
+
+    @Test
+    void developerCanJumpToEveryLearningStep() {
+        LearningRouteService routeService = createRouteService();
+
+        for (StepType stepType : StepType.values()) {
+            assertTrue(routeService.jumpToFirstExerciseOfStep(stepType));
+            assertNotNull(routeService.getCurrentExercise());
+            assertEquals(stepType, routeService.getCurrentExercise().getStepType());
+        }
+    }
+
     private LearningRouteService createRouteService() {
         FeedbackService feedbackService = new FeedbackService();
         AnswerValidationService validationService = new AnswerValidationService(feedbackService);
