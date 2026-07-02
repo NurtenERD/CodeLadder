@@ -6,6 +6,7 @@ import codeladder.model.ExerciseResponse;
 import codeladder.model.StudentAnswer;
 import codeladder.model.SummaryItem;
 import codeladder.model.ValidationResult;
+import codeladder.model.StepType;
 import codeladder.service.AnswerValidationService;
 import codeladder.service.FeedbackService;
 import codeladder.service.LearningRouteService;
@@ -40,7 +41,10 @@ public class AppController {
         this.learningRouteService = new LearningRouteService(dataProvider, validationService);
         this.progressService = new ProgressService();
         this.summaryService = new SummaryService();
-        this.mainDashboardController = new MainDashboardController(learningRouteService.getLearningSteps());
+        this.mainDashboardController = new MainDashboardController(
+                learningRouteService.getLearningSteps(),
+                this::startAtStep
+        );
         this.startScreenController = new StartScreenController();
         this.exerciseScreenController = new ExerciseScreenController();
         this.summaryScreenController = new SummaryScreenController();
@@ -48,13 +52,28 @@ public class AppController {
 
     public void showStartScreen() {
         ensureScene();
-        Parent content = startScreenController.createView(this::startLearningRoute, this::showAboutDialog);
+        Parent content = startScreenController.createView(
+                this::startLearningRoute,
+                this::showAboutDialog
+        );
         mainDashboardController.showIntroContent(content, learningRouteService.getTotalExercises());
     }
 
     private void startLearningRoute() {
         learningRouteService.restart();
         progressService.reset();
+        showCurrentExercise();
+    }
+
+    private void startAtStep(StepType stepType) {
+        progressService.reset();
+
+        boolean found = learningRouteService.jumpToFirstExerciseOfStep(stepType);
+        if (!found) {
+            showAboutDialog();
+            return;
+        }
+
         showCurrentExercise();
     }
 

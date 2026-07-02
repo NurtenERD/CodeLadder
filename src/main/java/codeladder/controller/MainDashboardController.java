@@ -6,6 +6,7 @@ import codeladder.model.StudentAnswer;
 import codeladder.model.StepType;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
@@ -16,9 +17,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class MainDashboardController {
     private final List<LearningStep> steps;
+    private final Consumer<StepType> onDeveloperStartAtStep;
 
     private BorderPane root;
     private VBox stepListBox;
@@ -30,8 +33,9 @@ public class MainDashboardController {
     private Label attemptValueLabel;
     private Label feedbackValueLabel;
 
-    public MainDashboardController(List<LearningStep> steps) {
+    public MainDashboardController(List<LearningStep> steps, Consumer<StepType> onDeveloperStartAtStep) {
         this.steps = steps;
+        this.onDeveloperStartAtStep = onDeveloperStartAtStep;
     }
 
     public Parent createView() {
@@ -134,7 +138,8 @@ public class MainDashboardController {
                 routeBlockLabel,
                 routeBlockValueLabel,
                 routeGuidanceLabel,
-                stepListBox
+                stepListBox,
+                createDeveloperStepSelection()
         );
         sidebarContent.setPadding(new Insets(18));
 
@@ -144,6 +149,27 @@ public class MainDashboardController {
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setStyle("-fx-background-color: transparent;");
         return scrollPane;
+    }
+
+    private Parent createDeveloperStepSelection() {
+        Label developerTitle = new Label("Developer testmodus");
+        developerTitle.setStyle("-fx-font-weight: bold;");
+
+        Label developerText = new Label("Snel naar een trede om te testen.");
+        developerText.setWrapText(true);
+
+        VBox buttonBox = new VBox(6);
+
+        for (StepType stepType : StepType.values()) {
+            Button stepButton = new Button("Test Trede " + stepType.getOrderNumber());
+            stepButton.setMaxWidth(Double.MAX_VALUE);
+            stepButton.setOnAction(event -> onDeveloperStartAtStep.accept(stepType));
+            buttonBox.getChildren().add(stepButton);
+        }
+
+        VBox developerBox = new VBox(8, developerTitle, developerText, buttonBox);
+        developerBox.setPadding(new Insets(12, 0, 0, 0));
+        return developerBox;
     }
 
     private Parent createCenterPane() {
