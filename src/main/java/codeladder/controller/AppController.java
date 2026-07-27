@@ -18,10 +18,13 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.util.List;
+import java.util.Objects;
 
 public class AppController {
-    private static final double SCENE_WIDTH = 920;
-    private static final double SCENE_HEIGHT = 720;
+    private static final double SCENE_WIDTH = 1180;
+    private static final double SCENE_HEIGHT = 760;
+    private static final double MIN_STAGE_WIDTH = 980;
+    private static final double MIN_STAGE_HEIGHT = 680;
 
     private final Stage stage;
     private final LearningRouteService learningRouteService;
@@ -173,8 +176,22 @@ public class AppController {
         }
 
         Parent root = mainDashboardController.createView();
+        if (!root.getStyleClass().contains("app-root")) {
+            root.getStyleClass().add("app-root");
+        }
+
         scene = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
+        String stylesheet = Objects.requireNonNull(
+                getClass().getResource("/css/codeladder.css"),
+                "Stylesheet '/css/codeladder.css' not found"
+        ).toExternalForm();
+        if (!scene.getStylesheets().contains(stylesheet)) {
+            scene.getStylesheets().add(stylesheet);
+        }
+
         stage.setTitle("CodeLadder");
+        stage.setMinWidth(MIN_STAGE_WIDTH);
+        stage.setMinHeight(MIN_STAGE_HEIGHT);
         stage.setScene(scene);
         stage.show();
     }
