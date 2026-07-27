@@ -201,7 +201,7 @@ public class MainDashboardController {
         }
 
         TitledPane titledPane = new TitledPane(
-                "Trede " + stepType.getOrderNumber() + " - " + stepType.getDisplayName(),
+                stepType.getDisplayName(),
                 contentBox
         );
         titledPane.setExpanded(false);
