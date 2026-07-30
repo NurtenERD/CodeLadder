@@ -22,16 +22,20 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class MainDashboardController {
+    private static final double SIDEBAR_WIDTH = 300;
+
     private final List<LearningStep> steps;
     private final List<Exercise> exercises;
     private final Consumer<StepType> onDeveloperStartAtStep;
     private final Consumer<String> onDeveloperStartAtExercise;
 
     private BorderPane root;
+    private ScrollPane sidebarScrollPane;
     private VBox stepListBox;
     private StackPane centerPane;
     private Label routeBlockValueLabel;
     private Label routeGuidanceLabel;
+    private Label routeBlockStatusValueLabel;
     private Label currentStepValueLabel;
     private Label progressValueLabel;
     private Label attemptValueLabel;
@@ -52,6 +56,9 @@ public class MainDashboardController {
     public Parent createView() {
         if (root == null) {
             root = createRootLayout();
+        }
+        if (sidebarScrollPane != null) {
+            sidebarScrollPane.setVvalue(0.0);
         }
         return root;
     }
@@ -105,6 +112,7 @@ public class MainDashboardController {
 
     private BorderPane createRootLayout() {
         BorderPane layout = new BorderPane();
+        layout.getStyleClass().add("dashboard-shell");
         layout.setTop(createHeader());
         layout.setLeft(createSidebar());
         layout.setCenter(createCenterPane());
@@ -114,77 +122,111 @@ public class MainDashboardController {
 
     private Parent createHeader() {
         Label titleLabel = new Label("CodeLadder");
-        titleLabel.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
+        titleLabel.getStyleClass().add("app-title");
 
         Label subtitleLabel = new Label("Stap voor stap leren denken, ontwerpen en coderen.");
         subtitleLabel.setWrapText(true);
+        subtitleLabel.getStyleClass().add("app-subtitle");
 
         VBox headerBox = new VBox(4, titleLabel, subtitleLabel);
         headerBox.setPadding(new Insets(18, 20, 14, 20));
+        headerBox.getStyleClass().add("top-bar");
         return headerBox;
     }
 
     private Parent createSidebar() {
         Label sidebarTitle = new Label("Leerroute");
-        sidebarTitle.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        sidebarTitle.getStyleClass().add("sidebar-title");
 
         Label sidebarIntro = new Label("De treden blijven zichtbaar terwijl je de route doorloopt.");
-        sidebarIntro.setWrapText(true);
+        configureSidebarLabel(sidebarIntro);
+        sidebarIntro.getStyleClass().add("sidebar-subtitle");
 
         Label routeBlockLabel = new Label("Huidig routeblok");
-        routeBlockLabel.setStyle("-fx-font-weight: bold;");
+        configureSidebarLabel(routeBlockLabel);
+        routeBlockLabel.getStyleClass().add("route-block-title");
 
         routeBlockValueLabel = new Label("Nog niet gestart");
-        routeBlockValueLabel.setWrapText(true);
+        configureSidebarLabel(routeBlockValueLabel);
+        routeBlockValueLabel.getStyleClass().add("route-block-value");
+
+        VBox routeBlockBox = new VBox(routeBlockLabel, routeBlockValueLabel);
+        routeBlockBox.setFillWidth(true);
+        routeBlockBox.setMinWidth(0);
+        routeBlockBox.setMaxWidth(Double.MAX_VALUE);
+        routeBlockBox.getStyleClass().add("route-block-card");
 
         routeGuidanceLabel = new Label("Je werkt eerst door de GymApp-hoofdroute en past daarna dezelfde stappen toe in transferblokken.");
-        routeGuidanceLabel.setWrapText(true);
+        configureSidebarLabel(routeGuidanceLabel);
+        routeGuidanceLabel.getStyleClass().add("sidebar-subtitle");
 
-        stepListBox = new VBox(8);
+        stepListBox = new VBox();
+        stepListBox.setFillWidth(true);
+        stepListBox.setMinWidth(0);
+        stepListBox.setMaxWidth(Double.MAX_VALUE);
+        stepListBox.getStyleClass().add("step-list");
 
         VBox sidebarContent = new VBox(
                 12,
                 sidebarTitle,
                 sidebarIntro,
-                routeBlockLabel,
-                routeBlockValueLabel,
+                routeBlockBox,
                 routeGuidanceLabel,
                 stepListBox,
                 createDeveloperStepSelection()
         );
+        sidebarContent.setFillWidth(true);
+        sidebarContent.setMinWidth(0);
+        sidebarContent.setMaxWidth(Double.MAX_VALUE);
         sidebarContent.setPadding(new Insets(18));
 
-        ScrollPane scrollPane = new ScrollPane(sidebarContent);
-        scrollPane.setFitToWidth(true);
-        scrollPane.setPrefWidth(280);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.setStyle("-fx-background-color: transparent;");
-        return scrollPane;
+        sidebarScrollPane = new ScrollPane(sidebarContent);
+        sidebarScrollPane.setFitToWidth(true);
+        sidebarScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        sidebarScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        sidebarScrollPane.setPannable(false);
+        sidebarScrollPane.setMinWidth(SIDEBAR_WIDTH);
+        sidebarScrollPane.setPrefWidth(SIDEBAR_WIDTH);
+        sidebarScrollPane.setMaxWidth(SIDEBAR_WIDTH);
+        sidebarScrollPane.setVvalue(0.0);
+        sidebarScrollPane.getStyleClass().add("sidebar");
+        return sidebarScrollPane;
     }
 
     private Parent createDeveloperStepSelection() {
         Label developerTitle = new Label("Developer testmodus");
-        developerTitle.setStyle("-fx-font-weight: bold;");
+        developerTitle.getStyleClass().add("route-block-title");
 
         Label developerText = new Label("Snel naar een trede of onderwerp om te testen.");
-        developerText.setWrapText(true);
+        configureSidebarLabel(developerText);
+        developerText.getStyleClass().add("sidebar-subtitle");
 
         Accordion stepAccordion = new Accordion();
+        stepAccordion.setMinWidth(0);
+        stepAccordion.setMaxWidth(Double.MAX_VALUE);
 
         for (StepType stepType : StepType.values()) {
             stepAccordion.getPanes().add(createDeveloperStepPane(stepType));
         }
 
         VBox developerBox = new VBox(8, developerTitle, developerText, stepAccordion);
+        developerBox.setFillWidth(true);
+        developerBox.setMinWidth(0);
+        developerBox.setMaxWidth(Double.MAX_VALUE);
         developerBox.setPadding(new Insets(12, 0, 0, 0));
         return developerBox;
     }
 
     private TitledPane createDeveloperStepPane(StepType stepType) {
         VBox contentBox = new VBox(6);
+        contentBox.setFillWidth(true);
+        contentBox.setMinWidth(0);
+        contentBox.setMaxWidth(Double.MAX_VALUE);
 
         Button startStepButton = new Button("Start Trede " + stepType.getOrderNumber());
+        startStepButton.setMinWidth(0);
         startStepButton.setMaxWidth(Double.MAX_VALUE);
+        startStepButton.setWrapText(true);
         startStepButton.setOnAction(event -> onDeveloperStartAtStep.accept(stepType));
         contentBox.getChildren().add(startStepButton);
 
@@ -194,6 +236,7 @@ public class MainDashboardController {
             }
 
             Button exerciseButton = new Button(buildDeveloperExerciseText(exercise));
+            exerciseButton.setMinWidth(0);
             exerciseButton.setMaxWidth(Double.MAX_VALUE);
             exerciseButton.setWrapText(true);
             exerciseButton.setOnAction(event -> onDeveloperStartAtExercise.accept(exercise.getId()));
@@ -205,6 +248,8 @@ public class MainDashboardController {
                 contentBox
         );
         titledPane.setExpanded(false);
+        titledPane.setMinWidth(0);
+        titledPane.setMaxWidth(Double.MAX_VALUE);
         return titledPane;
     }
 
@@ -218,46 +263,86 @@ public class MainDashboardController {
 
     private Parent createCenterPane() {
         centerPane = new StackPane();
+        centerPane.setMinWidth(0);
         centerPane.setPadding(new Insets(0, 20, 0, 0));
+        centerPane.getStyleClass().add("content-area");
         return centerPane;
     }
 
     private Parent createStatusBar() {
+        Label routeBlockStatusLabel = new Label("Routeblok:");
+        routeBlockStatusLabel.getStyleClass().add("status-caption");
+        routeBlockStatusValueLabel = new Label("Nog niet gestart");
+        routeBlockStatusValueLabel.setWrapText(true);
+        routeBlockStatusValueLabel.setMinWidth(0);
+        routeBlockStatusValueLabel.setMaxWidth(Double.MAX_VALUE);
+        routeBlockStatusValueLabel.getStyleClass().add("status-value");
+        VBox routeBlockSection = new VBox(routeBlockStatusLabel, routeBlockStatusValueLabel);
+        routeBlockSection.setMinWidth(0);
+        routeBlockSection.setMaxWidth(Double.MAX_VALUE);
+        routeBlockSection.getStyleClass().add("status-section");
+        HBox.setHgrow(routeBlockSection, Priority.ALWAYS);
+
         Label currentStepLabel = new Label("Huidige trede:");
-        currentStepLabel.setStyle("-fx-font-weight: bold;");
+        currentStepLabel.getStyleClass().add("status-caption");
         currentStepValueLabel = new Label("Nog niet gestart");
+        currentStepValueLabel.setWrapText(true);
+        currentStepValueLabel.setMinWidth(0);
+        currentStepValueLabel.setMaxWidth(Double.MAX_VALUE);
+        currentStepValueLabel.getStyleClass().add("status-value");
+        VBox currentStepSection = new VBox(currentStepLabel, currentStepValueLabel);
+        currentStepSection.setMinWidth(0);
+        currentStepSection.setMaxWidth(Double.MAX_VALUE);
+        currentStepSection.getStyleClass().add("status-section");
+        HBox.setHgrow(currentStepSection, Priority.ALWAYS);
 
         Label progressLabel = new Label("Voortgang:");
-        progressLabel.setStyle("-fx-font-weight: bold;");
+        progressLabel.getStyleClass().add("status-caption");
         progressValueLabel = new Label("0 van 0");
+        progressValueLabel.getStyleClass().add("status-value");
+        VBox progressSection = new VBox(progressLabel, progressValueLabel);
+        progressSection.getStyleClass().add("status-section");
 
         Label attemptLabel = new Label("Poging:");
-        attemptLabel.setStyle("-fx-font-weight: bold;");
+        attemptLabel.getStyleClass().add("status-caption");
         attemptValueLabel = new Label("Nog geen poging");
+        attemptValueLabel.setWrapText(true);
+        attemptValueLabel.setMinWidth(0);
+        attemptValueLabel.setMaxWidth(Double.MAX_VALUE);
+        attemptValueLabel.getStyleClass().add("status-value");
+        VBox attemptSection = new VBox(attemptLabel, attemptValueLabel);
+        attemptSection.setMinWidth(0);
+        attemptSection.setMaxWidth(Double.MAX_VALUE);
+        attemptSection.getStyleClass().add("status-section");
+        HBox.setHgrow(attemptSection, Priority.SOMETIMES);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
         HBox topRow = new HBox(
-                8,
-                currentStepLabel,
-                currentStepValueLabel,
-                new Label("|"),
-                progressLabel,
-                progressValueLabel,
-                new Label("|"),
-                attemptLabel,
-                attemptValueLabel,
+                18,
+                routeBlockSection,
+                currentStepSection,
+                progressSection,
+                attemptSection,
                 spacer
         );
 
         Label feedbackLabel = new Label("Feedback:");
-        feedbackLabel.setStyle("-fx-font-weight: bold;");
+        feedbackLabel.getStyleClass().add("status-caption");
         feedbackValueLabel = new Label("Feedback verschijnt hier na het controleren van een oefening.");
         feedbackValueLabel.setWrapText(true);
+        feedbackValueLabel.setMinWidth(0);
+        feedbackValueLabel.setMaxWidth(Double.MAX_VALUE);
+        feedbackValueLabel.getStyleClass().add("status-value");
 
-        VBox statusBox = new VBox(8, topRow, feedbackLabel, feedbackValueLabel);
-        statusBox.setPadding(new Insets(14, 20, 18, 20));
+        VBox feedbackSection = new VBox(feedbackLabel, feedbackValueLabel);
+        feedbackSection.setMinWidth(0);
+        feedbackSection.setMaxWidth(Double.MAX_VALUE);
+        feedbackSection.getStyleClass().add("status-section");
+
+        VBox statusBox = new VBox(topRow, feedbackSection);
+        statusBox.getStyleClass().add("status-bar");
         return statusBox;
     }
 
@@ -272,18 +357,25 @@ public class MainDashboardController {
 
         for (LearningStep step : steps) {
             Label stepLabel = new Label(buildStepText(step, currentStepType, routeBlockTitle));
-            stepLabel.setWrapText(true);
-
-            if (isCurrentStep(step, currentStepType)) {
-                stepLabel.setStyle("-fx-font-weight: bold;");
-            } else if (isCompletedStep(step, currentStepType, routeBlockTitle)) {
-                stepLabel.setStyle("-fx-text-fill: #3c6e3c;");
-            }
+            configureSidebarLabel(stepLabel);
+            stepLabel.getStyleClass().add("step-title");
 
             Label descriptionLabel = new Label(step.getDescription());
-            descriptionLabel.setWrapText(true);
+            configureSidebarLabel(descriptionLabel);
+            descriptionLabel.getStyleClass().add("step-description");
 
-            VBox stepBox = new VBox(3, stepLabel, descriptionLabel);
+            VBox stepBox = new VBox(stepLabel, descriptionLabel);
+            stepBox.setFillWidth(true);
+            stepBox.setMinWidth(0);
+            stepBox.setMaxWidth(Double.MAX_VALUE);
+            stepBox.getStyleClass().add("step-item");
+
+            if (isCurrentStep(step, currentStepType)) {
+                stepBox.getStyleClass().add("step-item-active");
+            } else if (isCompletedStep(step, currentStepType, routeBlockTitle)) {
+                stepBox.getStyleClass().add("step-item-completed");
+            }
+
             stepListBox.getChildren().add(stepBox);
         }
     }
@@ -357,6 +449,12 @@ public class MainDashboardController {
         return studentAnswer.getLatestAttempt().getFeedback().getMessage();
     }
 
+    private void configureSidebarLabel(Label label) {
+        label.setWrapText(true);
+        label.setMinWidth(0);
+        label.setMaxWidth(Double.MAX_VALUE);
+    }
+
     private void updateStatus(
             String routeBlock,
             String currentStep,
@@ -365,6 +463,7 @@ public class MainDashboardController {
             String feedbackText
     ) {
         routeBlockValueLabel.setText(routeBlock);
+        routeBlockStatusValueLabel.setText(routeBlock);
         currentStepValueLabel.setText(currentStep);
         progressValueLabel.setText(progress);
         attemptValueLabel.setText(attemptText);
