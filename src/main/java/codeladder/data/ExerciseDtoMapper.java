@@ -6,6 +6,7 @@ import codeladder.data.dto.ExerciseDto;
 import codeladder.model.AnswerOption;
 import codeladder.model.CaseStudy;
 import codeladder.model.Exercise;
+import codeladder.model.ExerciseContent;
 import codeladder.model.ProgrammingTask;
 import codeladder.model.StepType;
 
@@ -41,12 +42,7 @@ public class ExerciseDtoMapper {
                 dto.getId(),
                 enumValueParser.parse(StepType.class, "stepType", dto.getStepType(), filePath, dto.getId()),
                 metadataMapper.map(dto.getMetadata(), filePath, dto.getId()),
-                dto.getTitle(),
-                dto.getInstruction(),
-                dto.getQuestion(),
-                dto.getFocusText(),
-                dto.getHintText(),
-                caseStudy,
+                mapContent(dto, caseStudy),
                 mapOptions(dto.getOptions()),
                 copySet(dto.getCorrectOptionIds()),
                 copySet(dto.getAcceptedKeywords()),
@@ -73,6 +69,17 @@ public class ExerciseDtoMapper {
             mapped.add(new AnswerOption(option.getId(), option.getLabel()));
         }
         return mapped;
+    }
+
+    private ExerciseContent mapContent(ExerciseDto dto, CaseStudy caseStudy) {
+        return new ExerciseContent(
+                dto.getTitle(),
+                dto.getInstruction(),
+                dto.getQuestion(),
+                dto.getFocusText(),
+                dto.getHintText(),
+                caseStudy
+        );
     }
 
     private Set<String> copySet(List<String> values) {

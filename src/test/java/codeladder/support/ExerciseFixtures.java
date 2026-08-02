@@ -4,6 +4,7 @@ import codeladder.model.ActivityType;
 import codeladder.model.AnswerOption;
 import codeladder.model.CaseStudy;
 import codeladder.model.Exercise;
+import codeladder.model.ExerciseContent;
 import codeladder.model.ExerciseMetadata;
 import codeladder.model.ExerciseType;
 import codeladder.model.InteractionType;
@@ -47,12 +48,14 @@ public final class ExerciseFixtures {
                 id,
                 WRITE_SMALL_CLASSES,
                 metadata,
-                "Testoefening",
-                "Controleer de belangrijkste onderdelen.",
-                "Beantwoord de vraag.",
-                focusText,
-                "",
-                CASE_STUDY,
+                new ExerciseContent(
+                        "Testoefening",
+                        "Controleer de belangrijkste onderdelen.",
+                        "Beantwoord de vraag.",
+                        focusText,
+                        "",
+                        CASE_STUDY
+                ),
                 options,
                 correctOptionIds,
                 acceptedKeywords,

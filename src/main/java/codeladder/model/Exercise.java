@@ -11,12 +11,7 @@ public class Exercise {
     private final String id;
     private final StepType stepType;
     private final ExerciseMetadata metadata;
-    private final String title;
-    private final String instruction;
-    private final String question;
-    private final String focusText;
-    private final String hintText;
-    private final CaseStudy caseStudy;
+    private final ExerciseContent content;
     private final List<AnswerOption> options;
     private final Set<String> correctOptionIds;
     private final Set<String> acceptedKeywords;
@@ -32,12 +27,7 @@ public class Exercise {
             String id,
             StepType stepType,
             ExerciseMetadata metadata,
-            String title,
-            String instruction,
-            String question,
-            String focusText,
-            String hintText,
-            CaseStudy caseStudy,
+            ExerciseContent content,
             List<AnswerOption> options,
             Set<String> correctOptionIds,
             Set<String> acceptedKeywords,
@@ -52,12 +42,7 @@ public class Exercise {
         this.id = Objects.requireNonNull(id, "id");
         this.stepType = Objects.requireNonNull(stepType, "stepType");
         this.metadata = Objects.requireNonNull(metadata, "metadata");
-        this.title = Objects.requireNonNull(title, "title");
-        this.instruction = Objects.requireNonNull(instruction, "instruction");
-        this.question = Objects.requireNonNull(question, "question");
-        this.focusText = focusText == null ? "" : focusText;
-        this.hintText = hintText == null ? "" : hintText;
-        this.caseStudy = Objects.requireNonNull(caseStudy, "caseStudy");
+        this.content = Objects.requireNonNull(content, "content");
         this.options = options == null ? List.of() : new ArrayList<>(options);
         this.correctOptionIds = copySet(correctOptionIds);
         this.acceptedKeywords = copySet(acceptedKeywords);
@@ -80,6 +65,10 @@ public class Exercise {
 
     public ExerciseMetadata getMetadata() {
         return metadata;
+    }
+
+    public ExerciseContent getContent() {
+        return content;
     }
 
     public ExerciseType getExerciseType() {
@@ -111,27 +100,27 @@ public class Exercise {
     }
 
     public String getTitle() {
-        return title;
+        return content.getTitle();
     }
 
     public String getInstruction() {
-        return instruction;
+        return content.getInstruction();
     }
 
     public String getQuestion() {
-        return question;
+        return content.getQuestion();
     }
 
     public String getFocusText() {
-        return focusText;
+        return content.getFocusText();
     }
 
     public String getHintText() {
-        return hintText;
+        return content.getHintText();
     }
 
     public CaseStudy getCaseStudy() {
-        return caseStudy;
+        return content.getCaseStudy();
     }
 
     public List<AnswerOption> getOptions() {
