@@ -7,6 +7,7 @@ import codeladder.model.StudentAnswer;
 import codeladder.model.ValidationResult;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -39,7 +40,11 @@ public class ProgressService {
     }
 
     public Collection<StudentAnswer> getAllAnswers() {
-        return answersByExerciseId.values();
+        return List.copyOf(
+                answersByExerciseId.values().stream()
+                        .map(this::copyStudentAnswer)
+                        .toList()
+        );
     }
 
     public void saveReflection(String reflection) {
@@ -53,5 +58,22 @@ public class ProgressService {
     public void reset() {
         answersByExerciseId.clear();
         reflection = "";
+    }
+
+    private StudentAnswer copyStudentAnswer(StudentAnswer original) {
+        StudentAnswer copy = new StudentAnswer(
+                original.getExerciseId(),
+                original.getExerciseTitle(),
+                original.getStepType()
+        );
+        for (AttemptResult attempt : original.getAttempts()) {
+            copy.addAttempt(new AttemptResult(
+                    attempt.getAttemptNumber(),
+                    attempt.getResponse(),
+                    attempt.getFeedback(),
+                    attempt.isCorrect()
+            ));
+        }
+        return copy;
     }
 }

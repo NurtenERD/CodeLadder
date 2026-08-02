@@ -79,7 +79,9 @@ public class LearningRouteService {
     }
 
     public boolean moveToNextExercise() {
-        currentExerciseIndex++;
+        if (currentExerciseIndex < exercises.size()) {
+            currentExerciseIndex++;
+        }
         return currentExerciseIndex < exercises.size();
     }
 

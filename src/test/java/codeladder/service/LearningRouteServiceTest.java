@@ -65,6 +65,22 @@ class LearningRouteServiceTest {
     }
 
     @Test
+    void repeatedMoveToNextExerciseAtTheEndDoesNotAdvancePastOnePositionBeyondLast() {
+        LearningRouteService routeService = createRouteService();
+
+        while (routeService.moveToNextExercise()) {
+            // loop tot de laatste oefening is gepasseerd
+        }
+
+        int endPosition = routeService.getCurrentExerciseNumber();
+        assertFalse(routeService.moveToNextExercise());
+        assertEquals(endPosition, routeService.getCurrentExerciseNumber());
+        assertNull(routeService.getCurrentExercise());
+        assertTrue(routeService.moveToPreviousExercise());
+        assertNotNull(routeService.getCurrentExercise());
+    }
+
+    @Test
     void restartReturnsRouteToFirstExercise() {
         LearningRouteService routeService = createRouteService();
 

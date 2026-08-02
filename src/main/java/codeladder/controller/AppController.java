@@ -71,26 +71,24 @@ public class AppController {
     }
 
     private void startAtStep(StepType stepType) {
-        progressService.reset();
-
         boolean found = learningRouteService.jumpToFirstExerciseOfStep(stepType);
         if (!found) {
             showAboutDialog();
             return;
         }
 
+        progressService.reset();
         showCurrentExercise();
     }
 
     private void startAtExercise(String exerciseId) {
-        progressService.reset();
-
         boolean found = learningRouteService.jumpToExercise(exerciseId);
         if (!found) {
             showAboutDialog();
             return;
         }
 
+        progressService.reset();
         showCurrentExercise();
     }
 
