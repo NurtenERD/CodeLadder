@@ -24,7 +24,8 @@ public class ProgressService {
                 studentAnswer.getAttemptCount() + 1,
                 response,
                 validationResult.getFeedback(),
-                validationResult.isCorrect()
+                validationResult.isCorrect(),
+                validationResult.getDetails()
         );
         studentAnswer.addAttempt(attemptResult);
     }

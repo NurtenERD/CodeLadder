@@ -1,324 +1,509 @@
 {
-  "routeBlockTitle": "GymApp-hoofdroute",
-  "caseStudy": {
-    "title": "GymApp",
-    "description": "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
-  },
-  "exercises": [
-    {
-      "id": "gym-step6-what-is-object",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Wat gebeurt er als je een object maakt?",
-      "instruction": "Beschrijf kort wat er gebeurt als je een object maakt van een class.",
-      "question": "Wat gebeurt er volgens jou als je een object maakt van `Gebruiker`?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "object",
-        "class",
-        "new",
-        "constructor",
-        "waarden"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je beschrijft dat een object een concrete versie van een class wordt.",
-      "retryFeedback": "Kijk nog eens naar `new`, het object en de beginwaarden die meekomen.",
-      "finalFeedback": "Neem mee: met `new` maak je een concreet object van een class."
-    },
-    {
-      "id": "gym-step6-fill-new-class",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke regel maakt een object?",
-      "instruction": "Kies de regel die echt een object van `Gebruiker` maakt.",
-      "question": "Welke regel maakt een object?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "correct",
-          "label": "Gebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");"
-        },
-        {
-          "id": "method",
-          "label": "gebruiker.toonProfiel();"
-        },
-        {
-          "id": "field",
-          "label": "private String naam;"
-        },
-        {
-          "id": "class",
-          "label": "public class Gebruiker { }"
-        }
-      ],
-      "correctOptionIds": ["correct"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Deze regel maakt echt een object van `Gebruiker`.",
-      "retryFeedback": "Kijk nog eens welke regel type, variabelenaam en `new` samen gebruikt.",
-      "finalFeedback": "Neem mee: een objectregel bevat type, variabelenaam en `new Classnaam(...)`."
-    },
-    {
-      "id": "gym-step6-fill-method-call",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke regel roept een methode aan?",
-      "instruction": "Kies de regel die gedrag aanroept op een object.",
-      "question": "Welke regel roept een methode aan?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "correct",
-          "label": "gebruiker.toonProfiel();"
-        },
-        {
-          "id": "object",
-          "label": "Gebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");"
-        },
-        {
-          "id": "field",
-          "label": "private String trainingsniveau;"
-        },
-        {
-          "id": "class",
-          "label": "public class Gebruiker { }"
-        }
-      ],
-      "correctOptionIds": ["correct"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Met puntnotatie roep je hier gedrag aan op een object.",
-      "retryFeedback": "Kijk nog eens welke regel een objectnaam, punt en methode-naam gebruikt.",
-      "finalFeedback": "Neem mee: `object.methode()` is een methode-aanroep."
-    },
-    {
-      "id": "gym-step6-write-method-call",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "ERROR_ANALYSIS",
-      "title": "Wat is fout aan deze methode-aanroep?",
-      "instruction": "Kies de beste uitleg.",
-      "question": "Wat is fout aan deze regel?\n\ngebruiker toonProfiel();",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "De punt tussen object en methode ontbreekt."
-        },
-        {
-          "id": "wrong",
-          "label": "Je mag hier geen haakjes gebruiken."
-        },
-        {
-          "id": "none",
-          "label": "Hier is niets fout aan."
-        },
-        {
-          "id": "db",
-          "label": "Er mist alleen een database."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Puntnotatie hoort bij het aanroepen van een methode op een object.",
-      "retryFeedback": "Let op hoe objectnaam en methode-naam aan elkaar gekoppeld zijn.",
-      "finalFeedback": "Neem mee: gebruik puntnotatie: `object.methode()`."
-    },
-    {
-      "id": "gym-step6-which-is-class",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Wat is hier de class?",
-      "instruction": "Kies het juiste deel van de code.",
-      "question": "In deze code, wat is de class?\n\nGebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");",
-      "focusText": "",
-      "options": [
-        { "id": "best", "label": "Gebruiker" },
-        { "id": "wrong", "label": "gebruiker" },
-        { "id": "new", "label": "new" },
-        { "id": "text", "label": "\"Ali\"" }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. `Gebruiker` is hier de classnaam.",
-      "retryFeedback": "Kijk nog eens welk woord het type van het object aangeeft.",
-      "finalFeedback": "Neem mee: de classnaam geeft het type aan en begint hier met een hoofdletter."
-    },
-    {
-      "id": "gym-step6-variable-name",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Wat is hier de variabelenaam?",
-      "instruction": "Kies het juiste deel van de code.",
-      "question": "In deze code, wat is de variabelenaam?\n\nGebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");",
-      "focusText": "",
-      "options": [
-        { "id": "best", "label": "gebruiker" },
-        { "id": "wrong", "label": "Gebruiker" },
-        { "id": "new", "label": "new" },
-        { "id": "text", "label": "\"beginner\"" }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. `gebruiker` is hier de naam van de variabele.",
-      "retryFeedback": "Kijk nog eens welk woord het concrete object in deze regel benoemt.",
-      "finalFeedback": "Neem mee: de variabelenaam wijst naar het concrete object."
-    },
-    {
-      "id": "gym-step6-write-exercise-object",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke regel maakt een object van Oefening?",
-      "instruction": "Kies de regel die het best past bij een object van `Oefening`.",
-      "question": "Welke regel maakt een object van `Oefening` met naam `Push-up` en spiergroep `borst`?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "correct",
-          "label": "Oefening oefening = new Oefening(\"Push-up\", \"borst\");"
-        },
-        {
-          "id": "wrong-type",
-          "label": "String oefening = new Oefening(\"Push-up\", \"borst\");"
-        },
-        {
-          "id": "missing-new",
-          "label": "Oefening oefening = Oefening(\"Push-up\", \"borst\");"
-        },
-        {
-          "id": "method",
-          "label": "oefening.toonOefening();"
-        }
-      ],
-      "correctOptionIds": ["correct"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Dit is een complete objectregel voor `Oefening`.",
-      "retryFeedback": "Kijk nog eens of type, variabelenaam en `new` allemaal aanwezig zijn.",
-      "finalFeedback": "Neem mee: een objectregel bevat type, variabelenaam en een constructor-aanroep."
-    },
-    {
-      "id": "gym-step6-write-user-object",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke regel maakt een object van Gebruiker?",
-      "instruction": "Kies de regel die het best past bij een object van `Gebruiker`.",
-      "question": "Welke regel maakt een object van `Gebruiker` met naam `Sara` en trainingsniveau `gevorderd`?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "correct",
-          "label": "Gebruiker gebruiker = new Gebruiker(\"Sara\", \"gevorderd\");"
-        },
-        {
-          "id": "wrong",
-          "label": "Gebruiker = new gebruiker(\"Sara\", \"gevorderd\");"
-        },
-        {
-          "id": "field",
-          "label": "private String gebruiker;"
-        },
-        {
-          "id": "call",
-          "label": "gebruiker.toonProfiel();"
-        }
-      ],
-      "correctOptionIds": ["correct"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Zo maak je een object van de class `Gebruiker`.",
-      "retryFeedback": "Kijk nog eens welke regel type, variabelenaam en constructor-aanroep samen gebruikt.",
-      "finalFeedback": "Neem mee: met `new Gebruiker(...)` maak je een concreet object."
-    },
-    {
-      "id": "gym-step6-new-error",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "ERROR_ANALYSIS",
-      "title": "Wat klopt hier niet?",
-      "instruction": "Kies de beste uitleg.",
-      "question": "Wat klopt hier niet?\n\nGebruiker = new gebruiker(\"Ali\", \"beginner\");",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Classnaam en variabelenaam zijn verkeerd gebruikt."
-        },
-        {
-          "id": "wrong",
-          "label": "Je mag `new` hier niet gebruiken."
-        },
-        {
-          "id": "none",
-          "label": "Deze regel klopt al."
-        },
-        {
-          "id": "db",
-          "label": "Er mist alleen een database."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Type, variabelenaam en classnaam staan hier niet goed.",
-      "retryFeedback": "Kijk nog eens waar het type hoort en welke naam na `new` moet staan.",
-      "finalFeedback": "Neem mee: eerst komt het type, dan de variabelenaam, en na `new` opnieuw de classnaam."
-    },
-    {
-      "id": "gym-step6-recognize-call",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTI_SELECT",
-      "title": "Welke regels horen bij object maken en gebruiken?",
-      "instruction": "Kies de regels die passen bij object maken en een methode aanroepen.",
-      "question": "Welke regels horen bij object maken en methode gebruiken?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "make-user",
-          "label": "Gebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");"
-        },
-        {
-          "id": "call-profile",
-          "label": "gebruiker.toonProfiel();"
-        },
-        {
-          "id": "field",
-          "label": "private String naam;"
-        },
-        {
-          "id": "class",
-          "label": "public class Gebruiker { }"
-        }
-      ],
-      "correctOptionIds": ["make-user", "call-profile"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Dit zijn regels waarmee je een object maakt en gedrag gebruikt.",
-      "retryFeedback": "Kijk nog eens welke regels echt iets doen met een concreet object.",
-      "finalFeedback": "Neem mee: object maken en methode aanroepen herken je aan `new` en puntnotatie."
-    }
-  ]
+    "routeBlockTitle":  "GymApp-hoofdroute",
+    "caseStudy":  {
+                      "title":  "GymApp",
+                      "description":  "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
+                  },
+    "exercises":  [
+                      {
+                          "id":  "gym-step6-what-is-object",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-what-is-object",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat gebeurt er als je een object maakt?",
+                          "instruction":  "Beschrijf kort wat er gebeurt als je een object maakt van een class.",
+                          "question":  "Wat gebeurt er volgens jou als je een object maakt van `Gebruiker`?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "object",
+                                                   "class",
+                                                   "new",
+                                                   "constructor",
+                                                   "waarden"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je beschrijft dat een object een concrete versie van een class wordt.",
+                          "retryFeedback":  "Kijk nog eens naar `new`, het object en de beginwaarden die meekomen.",
+                          "finalFeedback":  "Neem mee: met `new` maak je een concreet object van een class."
+                      },
+                      {
+                          "id":  "gym-step6-fill-new-class",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-fill-new-class",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke regel maakt een object?",
+                          "instruction":  "Kies de regel die echt een object van `Gebruiker` maakt.",
+                          "question":  "Welke regel maakt een object?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "correct",
+                                              "label":  "Gebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");"
+                                          },
+                                          {
+                                              "id":  "method",
+                                              "label":  "gebruiker.toonProfiel();"
+                                          },
+                                          {
+                                              "id":  "field",
+                                              "label":  "private String naam;"
+                                          },
+                                          {
+                                              "id":  "class",
+                                              "label":  "public class Gebruiker { }"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "correct"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Deze regel maakt echt een object van `Gebruiker`.",
+                          "retryFeedback":  "Kijk nog eens welke regel type, variabelenaam en `new` samen gebruikt.",
+                          "finalFeedback":  "Neem mee: een objectregel bevat type, variabelenaam en `new Classnaam(...)`."
+                      },
+                      {
+                          "id":  "gym-step6-fill-method-call",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-fill-method-call",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke regel roept een methode aan?",
+                          "instruction":  "Kies de regel die gedrag aanroept op een object.",
+                          "question":  "Welke regel roept een methode aan?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "correct",
+                                              "label":  "gebruiker.toonProfiel();"
+                                          },
+                                          {
+                                              "id":  "object",
+                                              "label":  "Gebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");"
+                                          },
+                                          {
+                                              "id":  "field",
+                                              "label":  "private String trainingsniveau;"
+                                          },
+                                          {
+                                              "id":  "class",
+                                              "label":  "public class Gebruiker { }"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "correct"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Met puntnotatie roep je hier gedrag aan op een object.",
+                          "retryFeedback":  "Kijk nog eens welke regel een objectnaam, punt en methode-naam gebruikt.",
+                          "finalFeedback":  "Neem mee: `object.methode()` is een methode-aanroep."
+                      },
+                      {
+                          "id":  "gym-step6-write-method-call",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-write-method-call",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "ERROR_ANALYSIS",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat is fout aan deze methode-aanroep?",
+                          "instruction":  "Kies de beste uitleg.",
+                          "question":  "Wat is fout aan deze regel?\n\ngebruiker toonProfiel();",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "De punt tussen object en methode ontbreekt."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Je mag hier geen haakjes gebruiken."
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "Hier is niets fout aan."
+                                          },
+                                          {
+                                              "id":  "db",
+                                              "label":  "Er mist alleen een database."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Puntnotatie hoort bij het aanroepen van een methode op een object.",
+                          "retryFeedback":  "Let op hoe objectnaam en methode-naam aan elkaar gekoppeld zijn.",
+                          "finalFeedback":  "Neem mee: gebruik puntnotatie: `object.methode()`."
+                      },
+                      {
+                          "id":  "gym-step6-which-is-class",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-which-is-class",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat is hier de class?",
+                          "instruction":  "Kies het juiste deel van de code.",
+                          "question":  "In deze code, wat is de class?\n\nGebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Gebruiker"
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "gebruiker"
+                                          },
+                                          {
+                                              "id":  "new",
+                                              "label":  "new"
+                                          },
+                                          {
+                                              "id":  "text",
+                                              "label":  "\"Ali\""
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. `Gebruiker` is hier de classnaam.",
+                          "retryFeedback":  "Kijk nog eens welk woord het type van het object aangeeft.",
+                          "finalFeedback":  "Neem mee: de classnaam geeft het type aan en begint hier met een hoofdletter."
+                      },
+                      {
+                          "id":  "gym-step6-variable-name",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-variable-name",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat is hier de variabelenaam?",
+                          "instruction":  "Kies het juiste deel van de code.",
+                          "question":  "In deze code, wat is de variabelenaam?\n\nGebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "gebruiker"
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Gebruiker"
+                                          },
+                                          {
+                                              "id":  "new",
+                                              "label":  "new"
+                                          },
+                                          {
+                                              "id":  "text",
+                                              "label":  "\"beginner\""
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. `gebruiker` is hier de naam van de variabele.",
+                          "retryFeedback":  "Kijk nog eens welk woord het concrete object in deze regel benoemt.",
+                          "finalFeedback":  "Neem mee: de variabelenaam wijst naar het concrete object."
+                      },
+                      {
+                          "id":  "gym-step6-write-exercise-object",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-write-exercise-object",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke regel maakt een object van Oefening?",
+                          "instruction":  "Kies de regel die het best past bij een object van `Oefening`.",
+                          "question":  "Welke regel maakt een object van `Oefening` met naam `Push-up` en spiergroep `borst`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "correct",
+                                              "label":  "Oefening oefening = new Oefening(\"Push-up\", \"borst\");"
+                                          },
+                                          {
+                                              "id":  "wrong-type",
+                                              "label":  "String oefening = new Oefening(\"Push-up\", \"borst\");"
+                                          },
+                                          {
+                                              "id":  "missing-new",
+                                              "label":  "Oefening oefening = Oefening(\"Push-up\", \"borst\");"
+                                          },
+                                          {
+                                              "id":  "method",
+                                              "label":  "oefening.toonOefening();"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "correct"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Dit is een complete objectregel voor `Oefening`.",
+                          "retryFeedback":  "Kijk nog eens of type, variabelenaam en `new` allemaal aanwezig zijn.",
+                          "finalFeedback":  "Neem mee: een objectregel bevat type, variabelenaam en een constructor-aanroep."
+                      },
+                      {
+                          "id":  "gym-step6-write-user-object",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-write-user-object",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke regel maakt een object van Gebruiker?",
+                          "instruction":  "Kies de regel die het best past bij een object van `Gebruiker`.",
+                          "question":  "Welke regel maakt een object van `Gebruiker` met naam `Sara` en trainingsniveau `gevorderd`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "correct",
+                                              "label":  "Gebruiker gebruiker = new Gebruiker(\"Sara\", \"gevorderd\");"
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Gebruiker = new gebruiker(\"Sara\", \"gevorderd\");"
+                                          },
+                                          {
+                                              "id":  "field",
+                                              "label":  "private String gebruiker;"
+                                          },
+                                          {
+                                              "id":  "call",
+                                              "label":  "gebruiker.toonProfiel();"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "correct"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Zo maak je een object van de class `Gebruiker`.",
+                          "retryFeedback":  "Kijk nog eens welke regel type, variabelenaam en constructor-aanroep samen gebruikt.",
+                          "finalFeedback":  "Neem mee: met `new Gebruiker(...)` maak je een concreet object."
+                      },
+                      {
+                          "id":  "gym-step6-new-error",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-new-error",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "ERROR_ANALYSIS",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat klopt hier niet?",
+                          "instruction":  "Kies de beste uitleg.",
+                          "question":  "Wat klopt hier niet?\n\nGebruiker = new gebruiker(\"Ali\", \"beginner\");",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Classnaam en variabelenaam zijn verkeerd gebruikt."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Je mag `new` hier niet gebruiken."
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "Deze regel klopt al."
+                                          },
+                                          {
+                                              "id":  "db",
+                                              "label":  "Er mist alleen een database."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Type, variabelenaam en classnaam staan hier niet goed.",
+                          "retryFeedback":  "Kijk nog eens waar het type hoort en welke naam na `new` moet staan.",
+                          "finalFeedback":  "Neem mee: eerst komt het type, dan de variabelenaam, en na `new` opnieuw de classnaam."
+                      },
+                      {
+                          "id":  "gym-step6-recognize-call",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step6-recognize-call",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTI_SELECT",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke regels horen bij object maken en gebruiken?",
+                          "instruction":  "Kies de regels die passen bij object maken en een methode aanroepen.",
+                          "question":  "Welke regels horen bij object maken en methode gebruiken?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "make-user",
+                                              "label":  "Gebruiker gebruiker = new Gebruiker(\"Ali\", \"beginner\");"
+                                          },
+                                          {
+                                              "id":  "call-profile",
+                                              "label":  "gebruiker.toonProfiel();"
+                                          },
+                                          {
+                                              "id":  "field",
+                                              "label":  "private String naam;"
+                                          },
+                                          {
+                                              "id":  "class",
+                                              "label":  "public class Gebruiker { }"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "make-user",
+                                                   "call-profile"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Dit zijn regels waarmee je een object maakt en gedrag gebruikt.",
+                          "retryFeedback":  "Kijk nog eens welke regels echt iets doen met een concreet object.",
+                          "finalFeedback":  "Neem mee: object maken en methode aanroepen herken je aan `new` en puntnotatie."
+                      }
+                  ]
 }

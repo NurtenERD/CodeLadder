@@ -5,6 +5,7 @@ import java.util.List;
 public class ExerciseFileDto {
     private String routeBlockTitle;
     private CaseStudyDto caseStudy;
+    private ProgrammingTaskDto programmingTask;
     private List<ExerciseDto> exercises;
 
     public String getRouteBlockTitle() {
@@ -21,6 +22,14 @@ public class ExerciseFileDto {
 
     public void setCaseStudy(CaseStudyDto caseStudy) {
         this.caseStudy = caseStudy;
+    }
+
+    public ProgrammingTaskDto getProgrammingTask() {
+        return programmingTask;
+    }
+
+    public void setProgrammingTask(ProgrammingTaskDto programmingTask) {
+        this.programmingTask = programmingTask;
     }
 
     public List<ExerciseDto> getExercises() {

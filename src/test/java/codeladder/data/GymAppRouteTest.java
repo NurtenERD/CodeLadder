@@ -13,10 +13,11 @@ class GymAppRouteTest {
     @Test
     void gymAppMainRouteStaysInOneContextAndProgressesByStep() {
         ExerciseDataProvider provider = new ExerciseDataProvider();
-        List<Exercise> exercises = provider.getExercises().subList(0, 56);
+        List<Exercise> exercises = provider.getExercises().stream()
+                .filter(exercise -> "GymApp".equals(exercise.getCaseStudy().getTitle()))
+                .toList();
 
-        exercises.forEach(exercise -> assertEquals("GymApp", exercise.getCaseStudy().getTitle()));
-
+        assertEquals(56, exercises.size());
         assertStepBlock(exercises.subList(0, 5), StepType.UNDERSTAND_ASSIGNMENT);
         assertStepBlock(exercises.subList(5, 13), StepType.OBJECTS_ATTRIBUTES_METHODS);
         assertStepBlock(exercises.subList(13, 20), StepType.CHOOSE_CLASSES);
@@ -28,6 +29,8 @@ class GymAppRouteTest {
 
     private void assertStepBlock(List<Exercise> exercises, StepType expectedStepType) {
         for (Exercise exercise : exercises) {
+            assertEquals("GymApp", exercise.getCaseStudy().getTitle());
+            assertEquals("GymApp-hoofdroute", exercise.getCaseStudy().getRouteBlockTitle());
             assertEquals(expectedStepType, exercise.getStepType());
         }
     }

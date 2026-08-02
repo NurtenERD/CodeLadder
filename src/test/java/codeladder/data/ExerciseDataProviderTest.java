@@ -13,9 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ExerciseDataProviderTest {
 
     @Test
-    void providesSevenStepsAndOrderedRouteBlocks() {
+    void providesSevenStepsAndExtendedOrderedRouteBlocks() {
         ExerciseDataProvider provider = new ExerciseDataProvider();
-
         List<LearningStep> steps = provider.getLearningSteps();
         List<Exercise> exercises = provider.getExercises();
 
@@ -28,24 +27,18 @@ class ExerciseDataProviderTest {
         assertEquals(StepType.CREATE_AND_CALL_OBJECTS, steps.get(5).getStepType());
         assertEquals(StepType.CLASS_RESPONSIBILITIES, steps.get(6).getStepType());
 
-        assertTrue(exercises.size() >= 79);
-
-        assertAllCaseTitles(exercises.subList(0, 56), "GymApp");
-        assertAllCaseTitles(exercises.subList(56, 68), "ZorgApp");
-        assertAllCaseTitles(exercises.subList(68, exercises.size()), "OV-app-light");
-        assertAllBlockTitles(exercises.subList(0, 56), "GymApp-hoofdroute");
-        assertAllBlockTitles(exercises.subList(56, 68), "ZorgApp-transfer");
-        assertAllBlockTitles(exercises.subList(68, exercises.size()), "OV-app-light-transfer");
+        assertTrue(exercises.size() >= 87);
+        assertBlock(exercises.subList(0, 5), "GymApp", "GymApp-hoofdroute");
+        assertBlock(exercises.subList(5, 12), "Voldoendes tellen", "Programmeerroute – tellen met een voorwaarde");
+        assertBlock(exercises.subList(12, 13), "Te late boeken tellen", "Transfer – tellen met een voorwaarde");
+        assertBlock(exercises.subList(13, 64), "GymApp", "GymApp-hoofdroute");
+        assertBlock(exercises.subList(64, 76), "ZorgApp", "ZorgApp-transfer");
+        assertBlock(exercises.subList(76, exercises.size()), "OV-app-light", "OV-app-light-transfer");
     }
 
-    private void assertAllCaseTitles(List<Exercise> exercises, String expectedCaseTitle) {
+    private void assertBlock(List<Exercise> exercises, String expectedCaseTitle, String expectedBlockTitle) {
         for (Exercise exercise : exercises) {
             assertEquals(expectedCaseTitle, exercise.getCaseStudy().getTitle());
-        }
-    }
-
-    private void assertAllBlockTitles(List<Exercise> exercises, String expectedBlockTitle) {
-        for (Exercise exercise : exercises) {
             assertEquals(expectedBlockTitle, exercise.getCaseStudy().getRouteBlockTitle());
         }
     }

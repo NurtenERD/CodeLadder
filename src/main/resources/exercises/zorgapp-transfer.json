@@ -1,306 +1,551 @@
 {
-  "routeBlockTitle": "ZorgApp-transfer",
-  "caseStudy": {
-    "title": "ZorgApp",
-    "description": "Bouw een app voor een zorgteam. Een zorgmedewerker kan patiënten bekijken, medicatie noteren en afspraken volgen."
-  },
-  "exercises": [
-    {
-      "id": "zorg-transfer-user",
-      "stepType": "UNDERSTAND_ASSIGNMENT",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Wie gebruikt ZorgApp?",
-      "instruction": "Pas dezelfde eerste denkstap nu toe op een nieuwe context.",
-      "question": "Wie gebruikt ZorgApp waarschijnlijk?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "zorgmedewerker",
-        "verpleegkundige",
-        "arts",
-        "begeleider",
-        "patiënt"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 1,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Ook hier begin je weer bij de gebruiker.",
-      "retryFeedback": "Denk aan de persoon die patiënten bekijkt of medicatie noteert.",
-      "finalFeedback": "Neem mee: ook in een nieuwe context begin je bij de gebruiker."
-    },
-    {
-      "id": "zorg-transfer-objects",
-      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Welke objecten, gegevens en acties herken je?",
-      "instruction": "Noem in je eigen woorden een object, een gegeven en een actie uit ZorgApp.",
-      "question": "Welke objecten, gegevens en acties herken je in ZorgApp?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "zorgmedewerker",
-        "patiënt",
-        "medicatie",
-        "afspraak",
-        "naam",
-        "leeftijd",
-        "noteren",
-        "plannen"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je past dezelfde manier van kijken nu toe op een nieuwe context.",
-      "retryFeedback": "Kijk nog eens naar een ding, een gegeven en een actie in deze zorgapp.",
-      "finalFeedback": "Neem mee: ook in een andere context blijf je zoeken naar objecten, gegevens en acties."
-    },
-    {
-      "id": "zorg-transfer-attributes",
-      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
-      "exerciseType": "MULTI_SELECT",
-      "title": "Welke attributen horen bij Patiënt?",
-      "instruction": "Kies de gegevens die logisch bij `Patiënt` horen.",
-      "question": "Welke attributen horen bij `Patiënt`?",
-      "focusText": "",
-      "options": [
-        { "id": "name", "label": "naam" },
-        { "id": "age", "label": "leeftijd" },
-        { "id": "medication", "label": "medicatie" },
-        { "id": "call", "label": "toonMedicatie()" }
-      ],
-      "correctOptionIds": ["name", "age", "medication"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Dit zijn gegevens van de patiënt.",
-      "retryFeedback": "Kijk nog eens naar het verschil tussen gegevens en acties.",
-      "finalFeedback": "Neem mee: attributen zijn gegevens van een object."
-    },
-    {
-      "id": "zorg-transfer-methods",
-      "stepType": "OBJECTS_ATTRIBUTES_METHODS",
-      "exerciseType": "MULTI_SELECT",
-      "title": "Welke methodes herken je?",
-      "instruction": "Kies de regels die gedrag beschrijven.",
-      "question": "Welke methodes herken je?",
-      "focusText": "",
-      "options": [
-        { "id": "show", "label": "toonMedicatie()" },
-        { "id": "note", "label": "noteerMedicatie()" },
-        { "id": "plan", "label": "planAfspraak()" },
-        { "id": "name", "label": "naam" }
-      ],
-      "correctOptionIds": ["show", "note", "plan"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Woorden met haakjes beschrijven hier gedrag.",
-      "retryFeedback": "Let op: een methode is vaak een actie, zoals tonen, noteren of plannen.",
-      "finalFeedback": "Neem mee: methodes beschrijven wat een object doet."
-    },
-    {
-      "id": "zorg-transfer-classes",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Welke classes zou je kiezen?",
-      "instruction": "Noem kort welke classes logisch bij ZorgApp passen.",
-      "question": "Welke classes zou jij kiezen voor ZorgApp?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "zorgmedewerker",
-        "patiënt",
-        "medicatie",
-        "afspraak"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je kiest weer inhoudelijke woorden als class.",
-      "retryFeedback": "Kijk nog eens naar zelfstandige dingen in de zorgcontext.",
-      "finalFeedback": "Neem mee: classes komen voort uit objecten met eigen gegevens of taken."
-    },
-    {
-      "id": "zorg-transfer-store-patient",
-      "stepType": "CLASS_RESPONSIBILITIES",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Welke class bewaart patiëntgegevens?",
-      "instruction": "Leg kort uit welke class de patiëntgegevens logisch bewaart.",
-      "question": "Welke class bewaart patiëntgegevens het meest logisch, en waarom?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "patiënt",
-        "gegevens",
-        "class",
-        "naam",
-        "leeftijd"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je koppelt de gegevens aan de class waar ze inhoudelijk thuishoren.",
-      "retryFeedback": "Kijk nog eens welke class echt over de patiënt zelf gaat.",
-      "finalFeedback": "Neem mee: gegevens horen bij de class waar ze inhoudelijk over gaan."
-    },
-    {
-      "id": "zorg-transfer-class",
-      "stepType": "WRITE_SMALL_CLASSES",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Wat heeft een kleine class Patiënt nodig?",
-      "instruction": "Beschrijf kort wat een kleine class `Patiënt` nodig heeft.",
-      "question": "Wat heeft een kleine class `Patiënt` minimaal nodig?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "class",
-        "naam",
-        "leeftijd",
-        "private",
-        "attribuut"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Ook hier begin je klein en duidelijk.",
-      "retryFeedback": "Kijk nog eens naar classnaam en passende private attributen.",
-      "finalFeedback": "Neem mee: een kleine class heeft een duidelijke naam en alleen passende attributen."
-    },
-    {
-      "id": "zorg-transfer-private-attributes",
-      "stepType": "WRITE_SMALL_CLASSES",
-      "exerciseType": "MULTI_SELECT",
-      "title": "Welke private attributen passen?",
-      "instruction": "Kies de private attributen die logisch bij `Patiënt` horen.",
-      "question": "Welke private attributen passen bij `Patiënt`?",
-      "focusText": "",
-      "options": [
-        { "id": "name", "label": "private String naam;" },
-        { "id": "age", "label": "private int leeftijd;" },
-        { "id": "screen", "label": "private String scherm;" },
-        { "id": "db", "label": "private String database;" }
-      ],
-      "correctOptionIds": ["name", "age"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Deze attributen horen echt bij één patiënt.",
-      "retryFeedback": "Kijk nog eens welke regels echte patiëntinformatie beschrijven.",
-      "finalFeedback": "Neem mee: private attributen horen bij de inhoud van de class."
-    },
-    {
-      "id": "zorg-transfer-constructor",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Waarom heeft Patiënt een constructor nodig?",
-      "instruction": "Leg kort uit waarom een constructor hier nuttig is.",
-      "question": "Waarom is een constructor handig voor class `Patiënt`?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "constructor",
-        "beginwaarden",
-        "naam",
-        "leeftijd",
-        "object"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je legt uit dat een nieuw object meteen passende waarden krijgt.",
-      "retryFeedback": "Kijk nog eens welke gegevens een nieuw patiënt-object direct nodig heeft.",
-      "finalFeedback": "Neem mee: een constructor geeft een object meteen bruikbare beginwaarden."
-    },
-    {
-      "id": "zorg-transfer-object",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Wat gebeurt er als je een patiënt-object maakt?",
-      "instruction": "Beschrijf kort wat er gebeurt als je een object van `Patiënt` maakt.",
-      "question": "Wat gebeurt er als je een object van `Patiënt` maakt?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "object",
-        "new",
-        "constructor",
-        "patiënt",
-        "waarden"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je legt uit dat een concrete patiënt wordt gemaakt met beginwaarden.",
-      "retryFeedback": "Kijk nog eens naar `new`, het object en de waarden die meekomen.",
-      "finalFeedback": "Neem mee: met `new` maak je een concreet object van een class."
-    },
-    {
-      "id": "zorg-transfer-call",
-      "stepType": "CREATE_AND_CALL_OBJECTS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke regel roept een methode aan?",
-      "instruction": "Kies de regel die gedrag aanroept op `patient`.",
-      "question": "Welke regel roept een methode aan op `patient`?",
-      "focusText": "",
-      "options": [
-        { "id": "correct", "label": "patient.toonGegevens();" },
-        { "id": "object", "label": "Patiënt patient = new Patiënt(\"Mehmet\", 45);" },
-        { "id": "field", "label": "private int leeftijd;" },
-        { "id": "class", "label": "public class Patiënt { }" }
-      ],
-      "correctOptionIds": ["correct"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Met puntnotatie roep je gedrag aan op een object.",
-      "retryFeedback": "Kijk nog eens welke regel een objectnaam, punt en methode-naam gebruikt.",
-      "finalFeedback": "Neem mee: `object.methode()` roept gedrag aan."
-    },
-    {
-      "id": "zorg-transfer-too-much",
-      "stepType": "CLASS_RESPONSIBILITIES",
-      "exerciseType": "ERROR_ANALYSIS",
-      "title": "Wat is hier minder goed?",
-      "instruction": "Kies de beste uitleg.",
-      "question": "Class Patiënt doet alles: gegevens bewaren, database beheren, schermen tonen en afspraken van alle patiënten regelen.",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Deze class krijgt te veel verantwoordelijkheden tegelijk."
-        },
-        {
-          "id": "wrong",
-          "label": "Dit is juist goed, want alles staat samen."
-        },
-        {
-          "id": "none",
-          "label": "Hier is niets mis mee."
-        },
-        {
-          "id": "tiny",
-          "label": "De class is te klein."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Deze class wordt te breed en daardoor minder overzichtelijk.",
-      "retryFeedback": "Kijk nog eens hoeveel verschillende taken hier in één class zijn gestopt.",
-      "finalFeedback": "Neem mee: hou de verantwoordelijkheid van een class zo duidelijk mogelijk."
-    }
-  ]
+    "routeBlockTitle":  "ZorgApp-transfer",
+    "caseStudy":  {
+                      "title":  "ZorgApp",
+                      "description":  "Bouw een app voor een zorgteam. Een zorgmedewerker kan patiënten bekijken, medicatie noteren en afspraken volgen."
+                  },
+    "exercises":  [
+                      {
+                          "id":  "zorg-transfer-user",
+                          "stepType":  "UNDERSTAND_ASSIGNMENT",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-user",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wie gebruikt ZorgApp?",
+                          "instruction":  "Pas dezelfde eerste denkstap nu toe op een nieuwe context.",
+                          "question":  "Wie gebruikt ZorgApp waarschijnlijk?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "zorgmedewerker",
+                                                   "verpleegkundige",
+                                                   "arts",
+                                                   "begeleider",
+                                                   "patiënt"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  1,
+                          "successFeedback":  "Goed gezien. Ook hier begin je weer bij de gebruiker.",
+                          "retryFeedback":  "Denk aan de persoon die patiënten bekijkt of medicatie noteert.",
+                          "finalFeedback":  "Neem mee: ook in een nieuwe context begin je bij de gebruiker."
+                      },
+                      {
+                          "id":  "zorg-transfer-objects",
+                          "stepType":  "OBJECTS_ATTRIBUTES_METHODS",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-objects",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke objecten, gegevens en acties herken je?",
+                          "instruction":  "Noem in je eigen woorden een object, een gegeven en een actie uit ZorgApp.",
+                          "question":  "Welke objecten, gegevens en acties herken je in ZorgApp?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "zorgmedewerker",
+                                                   "patiënt",
+                                                   "medicatie",
+                                                   "afspraak",
+                                                   "naam",
+                                                   "leeftijd",
+                                                   "noteren",
+                                                   "plannen"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je past dezelfde manier van kijken nu toe op een nieuwe context.",
+                          "retryFeedback":  "Kijk nog eens naar een ding, een gegeven en een actie in deze zorgapp.",
+                          "finalFeedback":  "Neem mee: ook in een andere context blijf je zoeken naar objecten, gegevens en acties."
+                      },
+                      {
+                          "id":  "zorg-transfer-attributes",
+                          "stepType":  "OBJECTS_ATTRIBUTES_METHODS",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-attributes",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTI_SELECT",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke attributen horen bij Patiënt?",
+                          "instruction":  "Kies de gegevens die logisch bij `Patiënt` horen.",
+                          "question":  "Welke attributen horen bij `Patiënt`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "name",
+                                              "label":  "naam"
+                                          },
+                                          {
+                                              "id":  "age",
+                                              "label":  "leeftijd"
+                                          },
+                                          {
+                                              "id":  "medication",
+                                              "label":  "medicatie"
+                                          },
+                                          {
+                                              "id":  "call",
+                                              "label":  "toonMedicatie()"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "name",
+                                                   "age",
+                                                   "medication"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Dit zijn gegevens van de patiënt.",
+                          "retryFeedback":  "Kijk nog eens naar het verschil tussen gegevens en acties.",
+                          "finalFeedback":  "Neem mee: attributen zijn gegevens van een object."
+                      },
+                      {
+                          "id":  "zorg-transfer-methods",
+                          "stepType":  "OBJECTS_ATTRIBUTES_METHODS",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-methods",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTI_SELECT",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke methodes herken je?",
+                          "instruction":  "Kies de regels die gedrag beschrijven.",
+                          "question":  "Welke methodes herken je?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "show",
+                                              "label":  "toonMedicatie()"
+                                          },
+                                          {
+                                              "id":  "note",
+                                              "label":  "noteerMedicatie()"
+                                          },
+                                          {
+                                              "id":  "plan",
+                                              "label":  "planAfspraak()"
+                                          },
+                                          {
+                                              "id":  "name",
+                                              "label":  "naam"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "show",
+                                                   "note",
+                                                   "plan"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Woorden met haakjes beschrijven hier gedrag.",
+                          "retryFeedback":  "Let op: een methode is vaak een actie, zoals tonen, noteren of plannen.",
+                          "finalFeedback":  "Neem mee: methodes beschrijven wat een object doet."
+                      },
+                      {
+                          "id":  "zorg-transfer-classes",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-classes",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke classes zou je kiezen?",
+                          "instruction":  "Noem kort welke classes logisch bij ZorgApp passen.",
+                          "question":  "Welke classes zou jij kiezen voor ZorgApp?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "zorgmedewerker",
+                                                   "patiënt",
+                                                   "medicatie",
+                                                   "afspraak"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je kiest weer inhoudelijke woorden als class.",
+                          "retryFeedback":  "Kijk nog eens naar zelfstandige dingen in de zorgcontext.",
+                          "finalFeedback":  "Neem mee: classes komen voort uit objecten met eigen gegevens of taken."
+                      },
+                      {
+                          "id":  "zorg-transfer-store-patient",
+                          "stepType":  "CLASS_RESPONSIBILITIES",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-store-patient",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke class bewaart patiëntgegevens?",
+                          "instruction":  "Leg kort uit welke class de patiëntgegevens logisch bewaart.",
+                          "question":  "Welke class bewaart patiëntgegevens het meest logisch, en waarom?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "patiënt",
+                                                   "gegevens",
+                                                   "class",
+                                                   "naam",
+                                                   "leeftijd"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je koppelt de gegevens aan de class waar ze inhoudelijk thuishoren.",
+                          "retryFeedback":  "Kijk nog eens welke class echt over de patiënt zelf gaat.",
+                          "finalFeedback":  "Neem mee: gegevens horen bij de class waar ze inhoudelijk over gaan."
+                      },
+                      {
+                          "id":  "zorg-transfer-class",
+                          "stepType":  "WRITE_SMALL_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-class",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat heeft een kleine class Patiënt nodig?",
+                          "instruction":  "Beschrijf kort wat een kleine class `Patiënt` nodig heeft.",
+                          "question":  "Wat heeft een kleine class `Patiënt` minimaal nodig?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "class",
+                                                   "naam",
+                                                   "leeftijd",
+                                                   "private",
+                                                   "attribuut"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Ook hier begin je klein en duidelijk.",
+                          "retryFeedback":  "Kijk nog eens naar classnaam en passende private attributen.",
+                          "finalFeedback":  "Neem mee: een kleine class heeft een duidelijke naam en alleen passende attributen."
+                      },
+                      {
+                          "id":  "zorg-transfer-private-attributes",
+                          "stepType":  "WRITE_SMALL_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-private-attributes",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTI_SELECT",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke private attributen passen?",
+                          "instruction":  "Kies de private attributen die logisch bij `Patiënt` horen.",
+                          "question":  "Welke private attributen passen bij `Patiënt`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "name",
+                                              "label":  "private String naam;"
+                                          },
+                                          {
+                                              "id":  "age",
+                                              "label":  "private int leeftijd;"
+                                          },
+                                          {
+                                              "id":  "screen",
+                                              "label":  "private String scherm;"
+                                          },
+                                          {
+                                              "id":  "db",
+                                              "label":  "private String database;"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "name",
+                                                   "age"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Deze attributen horen echt bij één patiënt.",
+                          "retryFeedback":  "Kijk nog eens welke regels echte patiëntinformatie beschrijven.",
+                          "finalFeedback":  "Neem mee: private attributen horen bij de inhoud van de class."
+                      },
+                      {
+                          "id":  "zorg-transfer-constructor",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-constructor",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Waarom heeft Patiënt een constructor nodig?",
+                          "instruction":  "Leg kort uit waarom een constructor hier nuttig is.",
+                          "question":  "Waarom is een constructor handig voor class `Patiënt`?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "constructor",
+                                                   "beginwaarden",
+                                                   "naam",
+                                                   "leeftijd",
+                                                   "object"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je legt uit dat een nieuw object meteen passende waarden krijgt.",
+                          "retryFeedback":  "Kijk nog eens welke gegevens een nieuw patiënt-object direct nodig heeft.",
+                          "finalFeedback":  "Neem mee: een constructor geeft een object meteen bruikbare beginwaarden."
+                      },
+                      {
+                          "id":  "zorg-transfer-object",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-object",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat gebeurt er als je een patiënt-object maakt?",
+                          "instruction":  "Beschrijf kort wat er gebeurt als je een object van `Patiënt` maakt.",
+                          "question":  "Wat gebeurt er als je een object van `Patiënt` maakt?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "object",
+                                                   "new",
+                                                   "constructor",
+                                                   "patiënt",
+                                                   "waarden"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je legt uit dat een concrete patiënt wordt gemaakt met beginwaarden.",
+                          "retryFeedback":  "Kijk nog eens naar `new`, het object en de waarden die meekomen.",
+                          "finalFeedback":  "Neem mee: met `new` maak je een concreet object van een class."
+                      },
+                      {
+                          "id":  "zorg-transfer-call",
+                          "stepType":  "CREATE_AND_CALL_OBJECTS",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-call",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke regel roept een methode aan?",
+                          "instruction":  "Kies de regel die gedrag aanroept op `patient`.",
+                          "question":  "Welke regel roept een methode aan op `patient`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "correct",
+                                              "label":  "patient.toonGegevens();"
+                                          },
+                                          {
+                                              "id":  "object",
+                                              "label":  "Patiënt patient = new Patiënt(\"Mehmet\", 45);"
+                                          },
+                                          {
+                                              "id":  "field",
+                                              "label":  "private int leeftijd;"
+                                          },
+                                          {
+                                              "id":  "class",
+                                              "label":  "public class Patiënt { }"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "correct"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Met puntnotatie roep je gedrag aan op een object.",
+                          "retryFeedback":  "Kijk nog eens welke regel een objectnaam, punt en methode-naam gebruikt.",
+                          "finalFeedback":  "Neem mee: `object.methode()` roept gedrag aan."
+                      },
+                      {
+                          "id":  "zorg-transfer-too-much",
+                          "stepType":  "CLASS_RESPONSIBILITIES",
+                          "metadata":  {
+                                           "seriesId":  "zorg-transfer-too-much",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "ERROR_ANALYSIS",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat is hier minder goed?",
+                          "instruction":  "Kies de beste uitleg.",
+                          "question":  "Class Patiënt doet alles: gegevens bewaren, database beheren, schermen tonen en afspraken van alle patiënten regelen.",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Deze class krijgt te veel verantwoordelijkheden tegelijk."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Dit is juist goed, want alles staat samen."
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "Hier is niets mis mee."
+                                          },
+                                          {
+                                              "id":  "tiny",
+                                              "label":  "De class is te klein."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Deze class wordt te breed en daardoor minder overzichtelijk.",
+                          "retryFeedback":  "Kijk nog eens hoeveel verschillende taken hier in één class zijn gestopt.",
+                          "finalFeedback":  "Neem mee: hou de verantwoordelijkheid van een class zo duidelijk mogelijk."
+                      }
+                  ]
 }

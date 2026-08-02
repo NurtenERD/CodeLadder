@@ -1,16 +1,15 @@
 package codeladder.controller;
 
-import codeladder.data.ExerciseDataProvider;
 import codeladder.model.Exercise;
 import codeladder.model.ExerciseResponse;
 import codeladder.model.StudentAnswer;
+import codeladder.model.StepType;
 import codeladder.model.SummaryItem;
 import codeladder.model.ValidationResult;
-import codeladder.model.StepType;
-import codeladder.service.AnswerValidationService;
-import codeladder.service.FeedbackService;
+import codeladder.controller.dashboard.DeveloperNavigation;
 import codeladder.service.LearningRouteService;
 import codeladder.service.ProgressService;
+import codeladder.service.SkillProgressService;
 import codeladder.service.SummaryService;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,7 +19,7 @@ import javafx.stage.Stage;
 import java.util.List;
 import java.util.Objects;
 
-public class AppController {
+public class AppController implements DeveloperNavigation {
     private static final double SCENE_WIDTH = 1180;
     private static final double SCENE_HEIGHT = 760;
     private static final double MIN_STAGE_WIDTH = 980;
@@ -30,67 +29,64 @@ public class AppController {
     private final LearningRouteService learningRouteService;
     private final ProgressService progressService;
     private final SummaryService summaryService;
+    private final SkillProgressService skillProgressService;
     private final MainDashboardController mainDashboardController;
     private final StartScreenController startScreenController;
     private final ExerciseScreenController exerciseScreenController;
     private final SummaryScreenController summaryScreenController;
     private Scene scene;
 
-    public AppController(Stage stage) {
+    public AppController(
+            Stage stage,
+            LearningRouteService learningRouteService,
+            ProgressService progressService,
+            SummaryService summaryService,
+            SkillProgressService skillProgressService,
+            MainDashboardController mainDashboardController,
+            StartScreenController startScreenController,
+            ExerciseScreenController exerciseScreenController,
+            SummaryScreenController summaryScreenController
+    ) {
         this.stage = stage;
-        FeedbackService feedbackService = new FeedbackService();
-        AnswerValidationService validationService = new AnswerValidationService(feedbackService);
-        ExerciseDataProvider dataProvider = new ExerciseDataProvider();
-        this.learningRouteService = new LearningRouteService(dataProvider, validationService);
-        this.progressService = new ProgressService();
-        this.summaryService = new SummaryService();
-        this.mainDashboardController = new MainDashboardController(
-                learningRouteService.getLearningSteps(),
-                learningRouteService.getExercises(),
-                this::startAtStep,
-                this::startAtExercise
-        );
-        this.startScreenController = new StartScreenController();
-        this.exerciseScreenController = new ExerciseScreenController();
-        this.summaryScreenController = new SummaryScreenController();
+        this.learningRouteService = learningRouteService;
+        this.progressService = progressService;
+        this.summaryService = summaryService;
+        this.skillProgressService = skillProgressService;
+        this.mainDashboardController = mainDashboardController;
+        this.startScreenController = startScreenController;
+        this.exerciseScreenController = exerciseScreenController;
+        this.summaryScreenController = summaryScreenController;
     }
 
     public void showStartScreen() {
         ensureScene();
-        Parent content = startScreenController.createView(
-                this::startLearningRoute,
-                this::showAboutDialog
-        );
+        Parent content = startScreenController.createView(this::startLearningRoute, this::showAboutDialog);
         mainDashboardController.showIntroContent(content, learningRouteService.getTotalExercises());
+    }
+
+    @Override
+    public void startAtStep(StepType stepType) {
+        progressService.reset();
+        if (!learningRouteService.jumpToFirstExerciseOfStep(stepType)) {
+            showAboutDialog();
+            return;
+        }
+        showCurrentExercise();
+    }
+
+    @Override
+    public void startAtExercise(String exerciseId) {
+        progressService.reset();
+        if (!learningRouteService.jumpToExercise(exerciseId)) {
+            showAboutDialog();
+            return;
+        }
+        showCurrentExercise();
     }
 
     private void startLearningRoute() {
         learningRouteService.restart();
         progressService.reset();
-        showCurrentExercise();
-    }
-
-    private void startAtStep(StepType stepType) {
-        progressService.reset();
-
-        boolean found = learningRouteService.jumpToFirstExerciseOfStep(stepType);
-        if (!found) {
-            showAboutDialog();
-            return;
-        }
-
-        showCurrentExercise();
-    }
-
-    private void startAtExercise(String exerciseId) {
-        progressService.reset();
-
-        boolean found = learningRouteService.jumpToExercise(exerciseId);
-        if (!found) {
-            showAboutDialog();
-            return;
-        }
-
         showCurrentExercise();
     }
 
@@ -100,7 +96,6 @@ public class AppController {
             showSummary();
             return;
         }
-
         StudentAnswer studentAnswer = progressService.getStudentAnswer(currentExercise.getId());
         Parent view = exerciseScreenController.createView(
                 currentExercise,
@@ -125,7 +120,6 @@ public class AppController {
         if (exercise == null) {
             return;
         }
-
         int attemptNumber = progressService.getAttemptCount(exercise.getId()) + 1;
         ValidationResult validationResult = learningRouteService.validateCurrentExercise(response, attemptNumber);
         progressService.recordAttempt(exercise, response, validationResult);
@@ -137,6 +131,7 @@ public class AppController {
             showCurrentExercise();
         }
     }
+
     private void moveToNextExercise() {
         if (learningRouteService.moveToNextExercise()) {
             showCurrentExercise();
@@ -146,10 +141,10 @@ public class AppController {
     }
 
     private void showSummary() {
-        List<SummaryItem> summaryItems =
-                summaryService.buildSummary(learningRouteService.getExercises(), progressService.getAllAnswers());
+        List<SummaryItem> summaryItems = summaryService.buildSummary(learningRouteService.getExercises(), progressService.getAllAnswers());
         Parent view = summaryScreenController.createView(
                 summaryItems,
+                skillProgressService.buildSkillProgress(learningRouteService.getExercises(), progressService.getAllAnswers()),
                 progressService.getReflection(),
                 progressService::saveReflection,
                 this::showStartScreen
@@ -174,12 +169,10 @@ public class AppController {
             stage.show();
             return;
         }
-
         Parent root = mainDashboardController.createView();
         if (!root.getStyleClass().contains("app-root")) {
             root.getStyleClass().add("app-root");
         }
-
         scene = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
         String stylesheet = Objects.requireNonNull(
                 getClass().getResource("/css/codeladder.css"),
@@ -188,7 +181,6 @@ public class AppController {
         if (!scene.getStylesheets().contains(stylesheet)) {
             scene.getStylesheets().add(stylesheet);
         }
-
         stage.setTitle("CodeLadder");
         stage.setMinWidth(MIN_STAGE_WIDTH);
         stage.setMinHeight(MIN_STAGE_HEIGHT);

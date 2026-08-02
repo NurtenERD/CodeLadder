@@ -21,6 +21,10 @@
     -fx-spacing: 18;
 }
 
+.exercise-screen {
+    -fx-background-color: transparent;
+}
+
 .content-scroll {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
@@ -261,6 +265,15 @@
     -fx-background-color: #F9FBFC;
 }
 
+.exercise-action-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 14 20 14 20;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+    -fx-border-color: #D8E3EA transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
 .status-bar {
     -fx-background-color: #FFFFFF;
     -fx-border-color: #DCE6EF transparent transparent transparent;
@@ -379,6 +392,35 @@
 }
 
 .choice-container {
+    -fx-padding: 12;
+    -fx-spacing: 8;
+}
+
+.analysis-form {
+    -fx-spacing: 14;
+}
+
+.analysis-field {
+    -fx-spacing: 8;
+}
+
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #1F2933;
+}
+
+.field-prompt {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.field-options {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-border-color: #CCD7E5;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
     -fx-padding: 12;
     -fx-spacing: 8;
 }

@@ -1,6 +1,7 @@
 package codeladder.controller;
 
 import codeladder.model.SummaryItem;
+import codeladder.model.SkillProgressItem;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -19,6 +20,7 @@ public class SummaryScreenController {
 
     public Parent createView(
             List<SummaryItem> summaryItems,
+            List<SkillProgressItem> skillProgressItems,
             String currentReflection,
             Consumer<String> onSaveReflection,
             Runnable onRestart
@@ -73,6 +75,16 @@ public class SummaryScreenController {
             summaryBox.getChildren().add(itemBox);
         }
 
+        VBox skillProgressBox = new VBox(8);
+        skillProgressBox.setFillWidth(true);
+        skillProgressBox.setMinWidth(0);
+        skillProgressBox.setMaxWidth(Double.MAX_VALUE);
+        skillProgressBox.getChildren().add(label("Vaardigheden Trede 1", "section-title"));
+        for (SkillProgressItem item : skillProgressItems) {
+            skillProgressBox.getChildren().add(label(item.getLabel() + ": " + item.getStatus().getDisplayName(), "body-text"));
+        }
+        skillProgressBox.getStyleClass().add("summary-card");
+
         Label reflectionLabel = new Label("Wat heb je geleerd over classes, constructors, objecten en verantwoordelijkheden?");
         reflectionLabel.setWrapText(true);
         reflectionLabel.setMinWidth(0);
@@ -104,7 +116,7 @@ public class SummaryScreenController {
 
         HBox buttonBar = new HBox(10, saveReflectionButton, spacer, restartButton);
 
-        VBox content = new VBox(18, titleLabel, introLabel, summaryBox, reflectionCard, buttonBar);
+        VBox content = new VBox(18, titleLabel, introLabel, summaryBox, skillProgressBox, reflectionCard, buttonBar);
         content.setFillWidth(true);
         content.setMinWidth(0);
         content.setMaxWidth(Double.MAX_VALUE);
@@ -117,5 +129,14 @@ public class SummaryScreenController {
         scrollPane.setPannable(false);
         scrollPane.getStyleClass().add("content-scroll");
         return scrollPane;
+    }
+
+    private Label label(String text, String styleClass) {
+        Label label = new Label(text);
+        label.setWrapText(true);
+        label.setMinWidth(0);
+        label.setMaxWidth(Double.MAX_VALUE);
+        label.getStyleClass().add(styleClass);
+        return label;
     }
 }

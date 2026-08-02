@@ -4,6 +4,7 @@ import codeladder.data.ExerciseDataProvider;
 import codeladder.model.ExerciseResponse;
 import codeladder.model.StepType;
 import codeladder.model.ValidationResult;
+import codeladder.support.ValidationServiceFactory;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -130,9 +131,14 @@ class LearningRouteServiceTest {
         assertFalse(routeService.jumpToExercise(null));
     }
 
+    @Test
+    void jumpToExerciseReturnsFalseForEmptyId() {
+        LearningRouteService routeService = createRouteService();
+
+        assertFalse(routeService.jumpToExercise(""));
+    }
+
     private LearningRouteService createRouteService() {
-        FeedbackService feedbackService = new FeedbackService();
-        AnswerValidationService validationService = new AnswerValidationService(feedbackService);
-        return new LearningRouteService(new ExerciseDataProvider(), validationService);
+        return new LearningRouteService(new ExerciseDataProvider(), ValidationServiceFactory.create());
     }
 }

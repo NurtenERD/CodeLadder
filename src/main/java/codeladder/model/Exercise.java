@@ -3,63 +3,71 @@ package codeladder.model;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Exercise {
     private final String id;
     private final StepType stepType;
-    private final ExerciseType exerciseType;
+    private final ExerciseMetadata metadata;
     private final String title;
     private final String instruction;
     private final String question;
     private final String focusText;
+    private final String hintText;
     private final CaseStudy caseStudy;
     private final List<AnswerOption> options;
     private final Set<String> correctOptionIds;
     private final Set<String> acceptedKeywords;
     private final Set<String> requiredFragments;
+    private final StructuredAnswerDefinition structuredAnswerDefinition;
     private final int minimumRequiredMatches;
-    private final boolean codeExercise;
     private final String successFeedback;
     private final String retryFeedback;
     private final String finalFeedback;
+    private final ProgrammingTask programmingTask;
 
     public Exercise(
             String id,
             StepType stepType,
-            ExerciseType exerciseType,
+            ExerciseMetadata metadata,
             String title,
             String instruction,
             String question,
             String focusText,
+            String hintText,
             CaseStudy caseStudy,
             List<AnswerOption> options,
             Set<String> correctOptionIds,
             Set<String> acceptedKeywords,
             Set<String> requiredFragments,
+            StructuredAnswerDefinition structuredAnswerDefinition,
             int minimumRequiredMatches,
-            boolean codeExercise,
             String successFeedback,
             String retryFeedback,
-            String finalFeedback
+            String finalFeedback,
+            ProgrammingTask programmingTask
     ) {
-        this.id = id;
-        this.stepType = stepType;
-        this.exerciseType = exerciseType;
-        this.title = title;
-        this.instruction = instruction;
-        this.question = question;
+        this.id = Objects.requireNonNull(id, "id");
+        this.stepType = Objects.requireNonNull(stepType, "stepType");
+        this.metadata = Objects.requireNonNull(metadata, "metadata");
+        this.title = Objects.requireNonNull(title, "title");
+        this.instruction = Objects.requireNonNull(instruction, "instruction");
+        this.question = Objects.requireNonNull(question, "question");
         this.focusText = focusText == null ? "" : focusText;
-        this.caseStudy = caseStudy;
-        this.options = new ArrayList<>(options);
-        this.correctOptionIds = new LinkedHashSet<>(correctOptionIds);
-        this.acceptedKeywords = new LinkedHashSet<>(acceptedKeywords);
-        this.requiredFragments = new LinkedHashSet<>(requiredFragments);
+        this.hintText = hintText == null ? "" : hintText;
+        this.caseStudy = Objects.requireNonNull(caseStudy, "caseStudy");
+        this.options = options == null ? List.of() : new ArrayList<>(options);
+        this.correctOptionIds = copySet(correctOptionIds);
+        this.acceptedKeywords = copySet(acceptedKeywords);
+        this.requiredFragments = copySet(requiredFragments);
+        this.structuredAnswerDefinition = structuredAnswerDefinition;
         this.minimumRequiredMatches = minimumRequiredMatches;
-        this.codeExercise = codeExercise;
-        this.successFeedback = successFeedback;
-        this.retryFeedback = retryFeedback;
-        this.finalFeedback = finalFeedback;
+        this.successFeedback = Objects.requireNonNull(successFeedback, "successFeedback");
+        this.retryFeedback = Objects.requireNonNull(retryFeedback, "retryFeedback");
+        this.finalFeedback = Objects.requireNonNull(finalFeedback, "finalFeedback");
+        this.programmingTask = programmingTask;
     }
 
     public String getId() {
@@ -70,8 +78,36 @@ public class Exercise {
         return stepType;
     }
 
+    public ExerciseMetadata getMetadata() {
+        return metadata;
+    }
+
     public ExerciseType getExerciseType() {
-        return exerciseType;
+        return metadata.getExerciseType();
+    }
+
+    public ActivityType getActivityType() {
+        return metadata.getActivityType();
+    }
+
+    public InteractionType getInteractionType() {
+        return metadata.getInteractionType();
+    }
+
+    public ValidationType getValidationType() {
+        return metadata.getValidationType();
+    }
+
+    public ProgrammingPattern getProgrammingPattern() {
+        return metadata.getProgrammingPattern();
+    }
+
+    public SupportLevel getSupportLevel() {
+        return metadata.getSupportLevel();
+    }
+
+    public Set<SkillTag> getSkillTags() {
+        return metadata.getSkillTags();
     }
 
     public String getTitle() {
@@ -88,6 +124,10 @@ public class Exercise {
 
     public String getFocusText() {
         return focusText;
+    }
+
+    public String getHintText() {
+        return hintText;
     }
 
     public CaseStudy getCaseStudy() {
@@ -110,12 +150,12 @@ public class Exercise {
         return new LinkedHashSet<>(requiredFragments);
     }
 
-    public int getMinimumRequiredMatches() {
-        return minimumRequiredMatches;
+    public Optional<StructuredAnswerDefinition> getStructuredAnswerDefinition() {
+        return Optional.ofNullable(structuredAnswerDefinition);
     }
 
-    public boolean isCodeExercise() {
-        return codeExercise;
+    public int getMinimumRequiredMatches() {
+        return minimumRequiredMatches;
     }
 
     public String getSuccessFeedback() {
@@ -128,5 +168,13 @@ public class Exercise {
 
     public String getFinalFeedback() {
         return finalFeedback;
+    }
+
+    public Optional<ProgrammingTask> getProgrammingTask() {
+        return Optional.ofNullable(programmingTask);
+    }
+
+    private Set<String> copySet(Set<String> values) {
+        return values == null ? Set.of() : new LinkedHashSet<>(values);
     }
 }

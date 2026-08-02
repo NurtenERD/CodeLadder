@@ -1,230 +1,359 @@
 {
-  "routeBlockTitle": "GymApp-hoofdroute",
-  "caseStudy": {
-    "title": "GymApp",
-    "description": "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
-  },
-  "exercises": [
-    {
-      "id": "gym-step3-why-user",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Welke classes lijken logisch?",
-      "instruction": "Noem in je eigen woorden een paar classes die logisch bij GymApp passen.",
-      "question": "Welke classes lijken volgens jou logisch voor GymApp?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "gebruiker",
-        "oefening",
-        "weekschema"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je kiest woorden die echt als class kunnen werken.",
-      "retryFeedback": "Kijk nog eens naar zelfstandige dingen in de app, zoals gebruiker, oefening of schema.",
-      "finalFeedback": "Neem mee: classes zijn vaak duidelijke onderdelen van de app met eigen gegevens of taken."
-    },
-    {
-      "id": "gym-step3-why-exercise",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Waarom is Oefening een class?",
-      "instruction": "Kies de uitleg die het best past.",
-      "question": "Waarom kan `Oefening` een class zijn?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Omdat een oefening eigen gegevens kan hebben, zoals naam en spiergroep."
-        },
-        {
-          "id": "wrong",
-          "label": "Omdat een oefening altijd een database is."
-        },
-        {
-          "id": "button",
-          "label": "Omdat het alleen één knop is."
-        },
-        {
-          "id": "color",
-          "label": "Omdat het vooral een kleur is."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Oefening is een logisch zelfstandig onderdeel met eigen gegevens.",
-      "retryFeedback": "Let op: een class is vaak een zelfstandig naamwoord, zoals Gebruiker of Oefening.",
-      "finalFeedback": "Neem mee: een class kies je vaak als iets eigen gegevens nodig heeft."
-    },
-    {
-      "id": "gym-step3-why-schedule",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke classnaam is logisch?",
-      "instruction": "Kies de classnaam die het best past bij een planning van oefeningen.",
-      "question": "Welke classnaam is het meest logisch voor een planning van oefeningen?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Weekschema"
-        },
-        {
-          "id": "wrong",
-          "label": "Snel"
-        },
-        {
-          "id": "color",
-          "label": "Blauw"
-        },
-        {
-          "id": "vague",
-          "label": "Ding"
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Weekschema zegt duidelijk wat deze class voorstelt.",
-      "retryFeedback": "Kijk nog eens welke naam echt iets zegt over de inhoud van de class.",
-      "finalFeedback": "Neem mee: een goede classnaam is duidelijk en inhoudelijk."
-    },
-    {
-      "id": "gym-step3-choose-classes",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "MULTI_SELECT",
-      "title": "Welke woorden zijn goede classes?",
-      "instruction": "Kies de woorden die logisch als class kunnen werken.",
-      "question": "Welke woorden zijn goede classes voor GymApp?",
-      "focusText": "",
-      "options": [
-        { "id": "user", "label": "Gebruiker" },
-        { "id": "exercise", "label": "Oefening" },
-        { "id": "schedule", "label": "Weekschema" },
-        { "id": "color", "label": "Blauw" },
-        { "id": "speed", "label": "Snel" }
-      ],
-      "correctOptionIds": ["user", "exercise", "schedule"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Dit zijn woorden die logisch als class kunnen werken.",
-      "retryFeedback": "Kijk nog eens welke woorden echte onderdelen van de app voorstellen.",
-      "finalFeedback": "Neem mee: classes horen bij de inhoud van de app, niet bij losse wensen."
-    },
-    {
-      "id": "gym-step3-manager",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "ERROR_ANALYSIS",
-      "title": "Welke class is te vaag?",
-      "instruction": "Kies wat hier minder goed aan is.",
-      "question": "Wat is minder goed aan deze class?\n\nClass GymAppManager doet alles: gebruiker bewaren, oefeningen tonen, schema maken en alle schermen regelen.",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Deze class krijgt te veel verschillende verantwoordelijkheden."
-        },
-        {
-          "id": "wrong",
-          "label": "Dit is juist beter, want alles staat op één plek."
-        },
-        {
-          "id": "none",
-          "label": "Hier is niets minder goed aan."
-        },
-        {
-          "id": "tiny",
-          "label": "De class is juist te klein."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Deze class is te breed en daardoor minder duidelijk.",
-      "retryFeedback": "Kijk nog eens of deze class misschien te veel verschillende taken tegelijk krijgt.",
-      "finalFeedback": "Neem mee: stop niet alles in één class."
-    },
-    {
-      "id": "gym-step3-exercise-responsibility",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke verantwoordelijkheid past bij Oefening?",
-      "instruction": "Kies de verantwoordelijkheid die het best bij `Oefening` past.",
-      "question": "Welke verantwoordelijkheid past het best bij `Oefening`?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Gegevens over één oefening bewaren en tonen."
-        },
-        {
-          "id": "wrong",
-          "label": "Alle gebruikers van de sportschool beheren."
-        },
-        {
-          "id": "db",
-          "label": "De database voor de hele app regelen."
-        },
-        {
-          "id": "screen",
-          "label": "Alle schermen tekenen."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Oefening gaat over één duidelijke inhoudelijke taak.",
-      "retryFeedback": "Kijk nog eens welke taak echt bij één oefening hoort.",
-      "finalFeedback": "Neem mee: een class krijgt het liefst één duidelijke hoofdtaak."
-    },
-    {
-      "id": "gym-step3-schedule-responsibility",
-      "stepType": "CHOOSE_CLASSES",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Waarom is Gebruiker beter dan Naam?",
-      "instruction": "Kies de uitleg die het best past.",
-      "question": "Waarom is `Gebruiker` een betere class dan `Naam`?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Gebruiker kan eigen gegevens en een eigen taak hebben, naam is meestal alleen informatie."
-        },
-        {
-          "id": "wrong",
-          "label": "Naam is altijd belangrijker dan gebruiker."
-        },
-        {
-          "id": "same",
-          "label": "Gebruiker en Naam zijn precies hetzelfde soort class."
-        },
-        {
-          "id": "color",
-          "label": "Omdat Naam beter past bij kleuren en styling."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Gebruiker is een zelfstandig onderdeel, naam meestal niet.",
-      "retryFeedback": "Kijk nog eens naar het verschil tussen een object en een eigenschap van dat object.",
-      "finalFeedback": "Neem mee: een class is vaak een zelfstandig ding, geen los detail."
-    }
-  ]
+    "routeBlockTitle":  "GymApp-hoofdroute",
+    "caseStudy":  {
+                      "title":  "GymApp",
+                      "description":  "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
+                  },
+    "exercises":  [
+                      {
+                          "id":  "gym-step3-why-user",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "gym-step3-why-user",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke classes lijken logisch?",
+                          "instruction":  "Noem in je eigen woorden een paar classes die logisch bij GymApp passen.",
+                          "question":  "Welke classes lijken volgens jou logisch voor GymApp?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "gebruiker",
+                                                   "oefening",
+                                                   "weekschema"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je kiest woorden die echt als class kunnen werken.",
+                          "retryFeedback":  "Kijk nog eens naar zelfstandige dingen in de app, zoals gebruiker, oefening of schema.",
+                          "finalFeedback":  "Neem mee: classes zijn vaak duidelijke onderdelen van de app met eigen gegevens of taken."
+                      },
+                      {
+                          "id":  "gym-step3-why-exercise",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "gym-step3-why-exercise",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Waarom is Oefening een class?",
+                          "instruction":  "Kies de uitleg die het best past.",
+                          "question":  "Waarom kan `Oefening` een class zijn?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Omdat een oefening eigen gegevens kan hebben, zoals naam en spiergroep."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Omdat een oefening altijd een database is."
+                                          },
+                                          {
+                                              "id":  "button",
+                                              "label":  "Omdat het alleen één knop is."
+                                          },
+                                          {
+                                              "id":  "color",
+                                              "label":  "Omdat het vooral een kleur is."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Oefening is een logisch zelfstandig onderdeel met eigen gegevens.",
+                          "retryFeedback":  "Let op: een class is vaak een zelfstandig naamwoord, zoals Gebruiker of Oefening.",
+                          "finalFeedback":  "Neem mee: een class kies je vaak als iets eigen gegevens nodig heeft."
+                      },
+                      {
+                          "id":  "gym-step3-why-schedule",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "gym-step3-why-schedule",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke classnaam is logisch?",
+                          "instruction":  "Kies de classnaam die het best past bij een planning van oefeningen.",
+                          "question":  "Welke classnaam is het meest logisch voor een planning van oefeningen?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Weekschema"
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Snel"
+                                          },
+                                          {
+                                              "id":  "color",
+                                              "label":  "Blauw"
+                                          },
+                                          {
+                                              "id":  "vague",
+                                              "label":  "Ding"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Weekschema zegt duidelijk wat deze class voorstelt.",
+                          "retryFeedback":  "Kijk nog eens welke naam echt iets zegt over de inhoud van de class.",
+                          "finalFeedback":  "Neem mee: een goede classnaam is duidelijk en inhoudelijk."
+                      },
+                      {
+                          "id":  "gym-step3-choose-classes",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "gym-step3-choose-classes",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTI_SELECT",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke woorden zijn goede classes?",
+                          "instruction":  "Kies de woorden die logisch als class kunnen werken.",
+                          "question":  "Welke woorden zijn goede classes voor GymApp?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "user",
+                                              "label":  "Gebruiker"
+                                          },
+                                          {
+                                              "id":  "exercise",
+                                              "label":  "Oefening"
+                                          },
+                                          {
+                                              "id":  "schedule",
+                                              "label":  "Weekschema"
+                                          },
+                                          {
+                                              "id":  "color",
+                                              "label":  "Blauw"
+                                          },
+                                          {
+                                              "id":  "speed",
+                                              "label":  "Snel"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "user",
+                                                   "exercise",
+                                                   "schedule"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Dit zijn woorden die logisch als class kunnen werken.",
+                          "retryFeedback":  "Kijk nog eens welke woorden echte onderdelen van de app voorstellen.",
+                          "finalFeedback":  "Neem mee: classes horen bij de inhoud van de app, niet bij losse wensen."
+                      },
+                      {
+                          "id":  "gym-step3-manager",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "gym-step3-manager",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "ERROR_ANALYSIS",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke class is te vaag?",
+                          "instruction":  "Kies wat hier minder goed aan is.",
+                          "question":  "Wat is minder goed aan deze class?\n\nClass GymAppManager doet alles: gebruiker bewaren, oefeningen tonen, schema maken en alle schermen regelen.",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Deze class krijgt te veel verschillende verantwoordelijkheden."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Dit is juist beter, want alles staat op één plek."
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "Hier is niets minder goed aan."
+                                          },
+                                          {
+                                              "id":  "tiny",
+                                              "label":  "De class is juist te klein."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Deze class is te breed en daardoor minder duidelijk.",
+                          "retryFeedback":  "Kijk nog eens of deze class misschien te veel verschillende taken tegelijk krijgt.",
+                          "finalFeedback":  "Neem mee: stop niet alles in één class."
+                      },
+                      {
+                          "id":  "gym-step3-exercise-responsibility",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "gym-step3-exercise-responsibility",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke verantwoordelijkheid past bij Oefening?",
+                          "instruction":  "Kies de verantwoordelijkheid die het best bij `Oefening` past.",
+                          "question":  "Welke verantwoordelijkheid past het best bij `Oefening`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Gegevens over één oefening bewaren en tonen."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Alle gebruikers van de sportschool beheren."
+                                          },
+                                          {
+                                              "id":  "db",
+                                              "label":  "De database voor de hele app regelen."
+                                          },
+                                          {
+                                              "id":  "screen",
+                                              "label":  "Alle schermen tekenen."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Oefening gaat over één duidelijke inhoudelijke taak.",
+                          "retryFeedback":  "Kijk nog eens welke taak echt bij één oefening hoort.",
+                          "finalFeedback":  "Neem mee: een class krijgt het liefst één duidelijke hoofdtaak."
+                      },
+                      {
+                          "id":  "gym-step3-schedule-responsibility",
+                          "stepType":  "CHOOSE_CLASSES",
+                          "metadata":  {
+                                           "seriesId":  "gym-step3-schedule-responsibility",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Waarom is Gebruiker beter dan Naam?",
+                          "instruction":  "Kies de uitleg die het best past.",
+                          "question":  "Waarom is `Gebruiker` een betere class dan `Naam`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Gebruiker kan eigen gegevens en een eigen taak hebben, naam is meestal alleen informatie."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Naam is altijd belangrijker dan gebruiker."
+                                          },
+                                          {
+                                              "id":  "same",
+                                              "label":  "Gebruiker en Naam zijn precies hetzelfde soort class."
+                                          },
+                                          {
+                                              "id":  "color",
+                                              "label":  "Omdat Naam beter past bij kleuren en styling."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Gebruiker is een zelfstandig onderdeel, naam meestal niet.",
+                          "retryFeedback":  "Kijk nog eens naar het verschil tussen een object en een eigenschap van dat object.",
+                          "finalFeedback":  "Neem mee: een class is vaak een zelfstandig ding, geen los detail."
+                      }
+                  ]
 }

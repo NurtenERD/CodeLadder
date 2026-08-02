@@ -1,22 +1,22 @@
 package codeladder.data.dto;
 
 import java.util.List;
-import java.util.Set;
 
 public class ExerciseDto {
     private String id;
     private String stepType;
-    private String exerciseType;
+    private ExerciseMetadataDto metadata;
     private String title;
     private String instruction;
     private String question;
     private String focusText;
+    private String hintText;
     private List<AnswerOptionDto> options;
-    private Set<String> correctOptionIds;
-    private Set<String> acceptedKeywords;
-    private Set<String> requiredFragments;
+    private List<String> correctOptionIds;
+    private List<String> acceptedKeywords;
+    private List<String> requiredFragments;
+    private StructuredAnswerDefinitionDto structuredAnswerDefinition;
     private int minimumRequiredMatches;
-    private boolean codeExercise;
     private String successFeedback;
     private String retryFeedback;
     private String finalFeedback;
@@ -37,12 +37,12 @@ public class ExerciseDto {
         this.stepType = stepType;
     }
 
-    public String getExerciseType() {
-        return exerciseType;
+    public ExerciseMetadataDto getMetadata() {
+        return metadata;
     }
 
-    public void setExerciseType(String exerciseType) {
-        this.exerciseType = exerciseType;
+    public void setMetadata(ExerciseMetadataDto metadata) {
+        this.metadata = metadata;
     }
 
     public String getTitle() {
@@ -77,6 +77,14 @@ public class ExerciseDto {
         this.focusText = focusText;
     }
 
+    public String getHintText() {
+        return hintText;
+    }
+
+    public void setHintText(String hintText) {
+        this.hintText = hintText;
+    }
+
     public List<AnswerOptionDto> getOptions() {
         return options;
     }
@@ -85,28 +93,36 @@ public class ExerciseDto {
         this.options = options;
     }
 
-    public Set<String> getCorrectOptionIds() {
+    public List<String> getCorrectOptionIds() {
         return correctOptionIds;
     }
 
-    public void setCorrectOptionIds(Set<String> correctOptionIds) {
+    public void setCorrectOptionIds(List<String> correctOptionIds) {
         this.correctOptionIds = correctOptionIds;
     }
 
-    public Set<String> getAcceptedKeywords() {
+    public List<String> getAcceptedKeywords() {
         return acceptedKeywords;
     }
 
-    public void setAcceptedKeywords(Set<String> acceptedKeywords) {
+    public void setAcceptedKeywords(List<String> acceptedKeywords) {
         this.acceptedKeywords = acceptedKeywords;
     }
 
-    public Set<String> getRequiredFragments() {
+    public List<String> getRequiredFragments() {
         return requiredFragments;
     }
 
-    public void setRequiredFragments(Set<String> requiredFragments) {
+    public void setRequiredFragments(List<String> requiredFragments) {
         this.requiredFragments = requiredFragments;
+    }
+
+    public StructuredAnswerDefinitionDto getStructuredAnswerDefinition() {
+        return structuredAnswerDefinition;
+    }
+
+    public void setStructuredAnswerDefinition(StructuredAnswerDefinitionDto structuredAnswerDefinition) {
+        this.structuredAnswerDefinition = structuredAnswerDefinition;
     }
 
     public int getMinimumRequiredMatches() {
@@ -115,14 +131,6 @@ public class ExerciseDto {
 
     public void setMinimumRequiredMatches(int minimumRequiredMatches) {
         this.minimumRequiredMatches = minimumRequiredMatches;
-    }
-
-    public boolean isCodeExercise() {
-        return codeExercise;
-    }
-
-    public void setCodeExercise(boolean codeExercise) {
-        this.codeExercise = codeExercise;
     }
 
     public String getSuccessFeedback() {
@@ -148,4 +156,5 @@ public class ExerciseDto {
     public void setFinalFeedback(String finalFeedback) {
         this.finalFeedback = finalFeedback;
     }
+
 }

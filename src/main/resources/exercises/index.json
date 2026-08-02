@@ -1,3 +1,15 @@
 {
-  "files" : [ "exercises/gymapp-step1.json", "exercises/gymapp-step2.json", "exercises/gymapp-step3.json", "exercises/gymapp-step4.json", "exercises/gymapp-step5.json", "exercises/gymapp-step6.json", "exercises/gymapp-step7.json", "exercises/zorgapp-transfer.json", "exercises/ovapp-transfer.json" ]
+  "files" : [
+    "exercises/gymapp-step1.json",
+    "exercises/programming-step1-count-education.json",
+    "exercises/programming-step1-count-library-transfer.json",
+    "exercises/gymapp-step2.json",
+    "exercises/gymapp-step3.json",
+    "exercises/gymapp-step4.json",
+    "exercises/gymapp-step5.json",
+    "exercises/gymapp-step6.json",
+    "exercises/gymapp-step7.json",
+    "exercises/zorgapp-transfer.json",
+    "exercises/ovapp-transfer.json"
+  ]
 }

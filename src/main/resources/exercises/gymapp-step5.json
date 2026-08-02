@@ -1,277 +1,406 @@
 {
-  "routeBlockTitle": "GymApp-hoofdroute",
-  "caseStudy": {
-    "title": "GymApp",
-    "description": "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
-  },
-  "exercises": [
-    {
-      "id": "gym-step5-recognize-constructor",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "OPEN_QUESTION",
-      "title": "Waarom heeft een class een constructor nodig?",
-      "instruction": "Leg kort uit waarom een constructor handig is.",
-      "question": "Waarom heeft een class zoals `Gebruiker` een constructor nodig?",
-      "focusText": "",
-      "options": [],
-      "correctOptionIds": [],
-      "acceptedKeywords": [
-        "beginwaarden",
-        "object",
-        "attributen",
-        "invullen"
-      ],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 2,
-      "codeExercise": false,
-      "successFeedback": "Goed gezien. Je koppelt een constructor aan beginwaarden van een object.",
-      "retryFeedback": "Kijk nog eens naar wat een object meteen nodig heeft als het gemaakt wordt.",
-      "finalFeedback": "Neem mee: een constructor helpt om een object meteen met bruikbare beginwaarden te starten."
-    },
-    {
-      "id": "gym-step5-fill-constructor-name",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welke constructor klopt?",
-      "instruction": "Kies de constructor die het best past bij `Gebruiker`.",
-      "question": "Welke code is een constructor van `Gebruiker`?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "public Gebruiker(String naam, String trainingsniveau) { }"
-        },
-        {
-          "id": "wrong-method",
-          "label": "public void Gebruiker(String naam) { }"
-        },
-        {
-          "id": "wrong-return",
-          "label": "public String Gebruiker() { return naam; }"
-        },
-        {
-          "id": "wrong-name",
-          "label": "public Constructor(String naam) { }"
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Een constructor heeft dezelfde naam als de class en geen returntype.",
-      "retryFeedback": "Kijk nog eens naar de classnaam en let op dat een constructor geen returntype heeft.",
-      "finalFeedback": "Neem mee: constructor en class hebben dezelfde naam."
-    },
-    {
-      "id": "gym-step5-fill-this-name",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "ERROR_ANALYSIS",
-      "title": "Wat mist hier in de constructor?",
-      "instruction": "Kies de beste uitleg.",
-      "question": "Wat mist hier waarschijnlijk?\n\npublic Gebruiker(String naam, String trainingsniveau) {\n  this.trainingsniveau = trainingsniveau;\n}",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "De regel `this.naam = naam;` mist nog."
-        },
-        {
-          "id": "wrong",
-          "label": "De constructor mag geen parameters hebben."
-        },
-        {
-          "id": "none",
-          "label": "Hier mist niets meer."
-        },
-        {
-          "id": "db",
-          "label": "Er mist alleen een databaseverbinding."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Elke belangrijke parameter moet aan een attribuut gekoppeld worden.",
-      "retryFeedback": "Controleer of elke parameter echt aan een attribuut is gekoppeld.",
-      "finalFeedback": "Neem mee: kijk per parameter of er een passende `this... = ...`-regel staat."
-    },
-    {
-      "id": "gym-step5-fill-this-level",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "MULTI_SELECT",
-      "title": "Welke regels horen in deze constructor?",
-      "instruction": "Kies de regels die logisch in een constructor van `Gebruiker` passen.",
-      "question": "Welke regels horen bij het vullen van de attributen?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "name",
-          "label": "this.naam = naam;"
-        },
-        {
-          "id": "level",
-          "label": "this.trainingsniveau = trainingsniveau;"
-        },
-        {
-          "id": "wrong-name",
-          "label": "this.gebruiker = gebruiker;"
-        },
-        {
-          "id": "screen",
-          "label": "this.scherm = scherm;"
-        }
-      ],
-      "correctOptionIds": ["name", "level"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Deze regels koppelen parameters netjes aan de attributen.",
-      "retryFeedback": "Kijk nog eens welke parameters echt in de constructor voorkomen.",
-      "finalFeedback": "Neem mee: in een constructor krijgt elk attribuut zijn passende beginwaarde."
-    },
-    {
-      "id": "gym-step5-write-user-constructor",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welk constructorfragment past bij Gebruiker?",
-      "instruction": "Kies het beste constructorfragment voor `Gebruiker`.",
-      "question": "Welk codefragment past het best bij een constructor van `Gebruiker`?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "correct",
-          "label": "public Gebruiker(String naam, String trainingsniveau) { this.naam = naam; this.trainingsniveau = trainingsniveau; }"
-        },
-        {
-          "id": "wrong",
-          "label": "public void Gebruiker(String naam) { }"
-        },
-        {
-          "id": "partial",
-          "label": "public Gebruiker(String naam, String trainingsniveau) { this.naam = naam; }"
-        },
-        {
-          "id": "other",
-          "label": "public Constructor() { }"
-        }
-      ],
-      "correctOptionIds": ["correct"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Dit fragment heeft de juiste naam, parameters en koppelingen.",
-      "retryFeedback": "Kijk nog eens naar constructornaam, parameters en `this`-regels.",
-      "finalFeedback": "Neem mee: een goede constructor koppelt alle belangrijke parameters aan attributen."
-    },
-    {
-      "id": "gym-step5-write-exercise-constructor",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Welk constructorfragment past bij Oefening?",
-      "instruction": "Kies het beste constructorfragment voor `Oefening`.",
-      "question": "Welk codefragment past het best bij een constructor van `Oefening`?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "correct",
-          "label": "public Oefening(String naam, String spiergroep) { this.naam = naam; this.spiergroep = spiergroep; }"
-        },
-        {
-          "id": "wrong",
-          "label": "public void Oefening() { }"
-        },
-        {
-          "id": "partial",
-          "label": "public Oefening(String naam) { this.naam = naam; }"
-        },
-        {
-          "id": "other",
-          "label": "public Gebruiker(String naam, String spiergroep) { }"
-        }
-      ],
-      "correctOptionIds": ["correct"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Ook hier krijgen beide attributen meteen hun beginwaarde.",
-      "retryFeedback": "Kijk nog eens of constructornaam en attribuutkoppelingen passen bij Oefening.",
-      "finalFeedback": "Neem mee: een constructor hoort bij de class en vult passende attributen."
-    },
-    {
-      "id": "gym-step5-missing-this",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "ERROR_ANALYSIS",
-      "title": "Wat klopt hier niet?",
-      "instruction": "Kies de beste uitleg.",
-      "question": "Wat klopt hier niet?\n\npublic Gebruiker(String naam) {\n  naam = naam;\n}",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Er ontbreekt `this.naam = naam` om het attribuut te vullen."
-        },
-        {
-          "id": "wrong",
-          "label": "Een constructor mag geen parameter hebben."
-        },
-        {
-          "id": "none",
-          "label": "Hier klopt alles al."
-        },
-        {
-          "id": "db",
-          "label": "Er mist alleen een database."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Zonder `this.naam` blijft het attribuut niet goed gevuld.",
-      "retryFeedback": "Kijk nog eens of de parameter echt aan het attribuut gekoppeld wordt.",
-      "finalFeedback": "Neem mee: `this.naam = naam` koppelt de parameter aan het attribuut."
-    },
-    {
-      "id": "gym-step5-why-constructor",
-      "stepType": "CONSTRUCTORS",
-      "exerciseType": "MULTIPLE_CHOICE",
-      "title": "Waarom gebruik je `this.naam = naam`?",
-      "instruction": "Kies de uitleg die het best past.",
-      "question": "Waarom gebruik je `this.naam = naam` in een constructor?",
-      "focusText": "",
-      "options": [
-        {
-          "id": "best",
-          "label": "Om de parameter `naam` aan het attribuut `naam` van het object te koppelen."
-        },
-        {
-          "id": "wrong",
-          "label": "Om Java sneller te maken dan anders."
-        },
-        {
-          "id": "screen",
-          "label": "Om alle schermen van de app te openen."
-        },
-        {
-          "id": "comment",
-          "label": "Om een commentaarregel te vervangen."
-        }
-      ],
-      "correctOptionIds": ["best"],
-      "acceptedKeywords": [],
-      "requiredFragments": [],
-      "minimumRequiredMatches": 0,
-      "codeExercise": false,
-      "successFeedback": "Goed gekozen. Zo krijgt het object de juiste waarde in zijn attribuut.",
-      "retryFeedback": "Kijk nog eens naar het verschil tussen parameter en attribuut.",
-      "finalFeedback": "Neem mee: `this.naam = naam` verbindt de ingevoerde waarde met het object."
-    }
-  ]
+    "routeBlockTitle":  "GymApp-hoofdroute",
+    "caseStudy":  {
+                      "title":  "GymApp",
+                      "description":  "Bouw een app voor een sportschool. Een gebruiker kan oefeningen bekijken, een trainingsniveau kiezen en een weekschema maken."
+                  },
+    "exercises":  [
+                      {
+                          "id":  "gym-step5-recognize-constructor",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-recognize-constructor",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "OPEN_QUESTION",
+                                           "validationType":  "TEXT_KEYWORDS",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Waarom heeft een class een constructor nodig?",
+                          "instruction":  "Leg kort uit waarom een constructor handig is.",
+                          "question":  "Waarom heeft een class zoals `Gebruiker` een constructor nodig?",
+                          "focusText":  "",
+                          "options":  [
+
+                                      ],
+                          "correctOptionIds":  [
+
+                                               ],
+                          "acceptedKeywords":  [
+                                                   "beginwaarden",
+                                                   "object",
+                                                   "attributen",
+                                                   "invullen"
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  2,
+                          "successFeedback":  "Goed gezien. Je koppelt een constructor aan beginwaarden van een object.",
+                          "retryFeedback":  "Kijk nog eens naar wat een object meteen nodig heeft als het gemaakt wordt.",
+                          "finalFeedback":  "Neem mee: een constructor helpt om een object meteen met bruikbare beginwaarden te starten."
+                      },
+                      {
+                          "id":  "gym-step5-fill-constructor-name",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-fill-constructor-name",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke constructor klopt?",
+                          "instruction":  "Kies de constructor die het best past bij `Gebruiker`.",
+                          "question":  "Welke code is een constructor van `Gebruiker`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "public Gebruiker(String naam, String trainingsniveau) { }"
+                                          },
+                                          {
+                                              "id":  "wrong-method",
+                                              "label":  "public void Gebruiker(String naam) { }"
+                                          },
+                                          {
+                                              "id":  "wrong-return",
+                                              "label":  "public String Gebruiker() { return naam; }"
+                                          },
+                                          {
+                                              "id":  "wrong-name",
+                                              "label":  "public Constructor(String naam) { }"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Een constructor heeft dezelfde naam als de class en geen returntype.",
+                          "retryFeedback":  "Kijk nog eens naar de classnaam en let op dat een constructor geen returntype heeft.",
+                          "finalFeedback":  "Neem mee: constructor en class hebben dezelfde naam."
+                      },
+                      {
+                          "id":  "gym-step5-fill-this-name",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-fill-this-name",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "ERROR_ANALYSIS",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat mist hier in de constructor?",
+                          "instruction":  "Kies de beste uitleg.",
+                          "question":  "Wat mist hier waarschijnlijk?\n\npublic Gebruiker(String naam, String trainingsniveau) {\n  this.trainingsniveau = trainingsniveau;\n}",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "De regel `this.naam = naam;` mist nog."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "De constructor mag geen parameters hebben."
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "Hier mist niets meer."
+                                          },
+                                          {
+                                              "id":  "db",
+                                              "label":  "Er mist alleen een databaseverbinding."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Elke belangrijke parameter moet aan een attribuut gekoppeld worden.",
+                          "retryFeedback":  "Controleer of elke parameter echt aan een attribuut is gekoppeld.",
+                          "finalFeedback":  "Neem mee: kijk per parameter of er een passende `this... = ...`-regel staat."
+                      },
+                      {
+                          "id":  "gym-step5-fill-this-level",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-fill-this-level",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTI_SELECT",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welke regels horen in deze constructor?",
+                          "instruction":  "Kies de regels die logisch in een constructor van `Gebruiker` passen.",
+                          "question":  "Welke regels horen bij het vullen van de attributen?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "name",
+                                              "label":  "this.naam = naam;"
+                                          },
+                                          {
+                                              "id":  "level",
+                                              "label":  "this.trainingsniveau = trainingsniveau;"
+                                          },
+                                          {
+                                              "id":  "wrong-name",
+                                              "label":  "this.gebruiker = gebruiker;"
+                                          },
+                                          {
+                                              "id":  "screen",
+                                              "label":  "this.scherm = scherm;"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "name",
+                                                   "level"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Deze regels koppelen parameters netjes aan de attributen.",
+                          "retryFeedback":  "Kijk nog eens welke parameters echt in de constructor voorkomen.",
+                          "finalFeedback":  "Neem mee: in een constructor krijgt elk attribuut zijn passende beginwaarde."
+                      },
+                      {
+                          "id":  "gym-step5-write-user-constructor",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-write-user-constructor",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welk constructorfragment past bij Gebruiker?",
+                          "instruction":  "Kies het beste constructorfragment voor `Gebruiker`.",
+                          "question":  "Welk codefragment past het best bij een constructor van `Gebruiker`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "correct",
+                                              "label":  "public Gebruiker(String naam, String trainingsniveau) { this.naam = naam; this.trainingsniveau = trainingsniveau; }"
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "public void Gebruiker(String naam) { }"
+                                          },
+                                          {
+                                              "id":  "partial",
+                                              "label":  "public Gebruiker(String naam, String trainingsniveau) { this.naam = naam; }"
+                                          },
+                                          {
+                                              "id":  "other",
+                                              "label":  "public Constructor() { }"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "correct"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Dit fragment heeft de juiste naam, parameters en koppelingen.",
+                          "retryFeedback":  "Kijk nog eens naar constructornaam, parameters en `this`-regels.",
+                          "finalFeedback":  "Neem mee: een goede constructor koppelt alle belangrijke parameters aan attributen."
+                      },
+                      {
+                          "id":  "gym-step5-write-exercise-constructor",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-write-exercise-constructor",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Welk constructorfragment past bij Oefening?",
+                          "instruction":  "Kies het beste constructorfragment voor `Oefening`.",
+                          "question":  "Welk codefragment past het best bij een constructor van `Oefening`?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "correct",
+                                              "label":  "public Oefening(String naam, String spiergroep) { this.naam = naam; this.spiergroep = spiergroep; }"
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "public void Oefening() { }"
+                                          },
+                                          {
+                                              "id":  "partial",
+                                              "label":  "public Oefening(String naam) { this.naam = naam; }"
+                                          },
+                                          {
+                                              "id":  "other",
+                                              "label":  "public Gebruiker(String naam, String spiergroep) { }"
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "correct"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Ook hier krijgen beide attributen meteen hun beginwaarde.",
+                          "retryFeedback":  "Kijk nog eens of constructornaam en attribuutkoppelingen passen bij Oefening.",
+                          "finalFeedback":  "Neem mee: een constructor hoort bij de class en vult passende attributen."
+                      },
+                      {
+                          "id":  "gym-step5-missing-this",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-missing-this",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "ERROR_ANALYSIS",
+                                           "validationType":  "MULTI_SELECT",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Wat klopt hier niet?",
+                          "instruction":  "Kies de beste uitleg.",
+                          "question":  "Wat klopt hier niet?\n\npublic Gebruiker(String naam) {\n  naam = naam;\n}",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Er ontbreekt `this.naam = naam` om het attribuut te vullen."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Een constructor mag geen parameter hebben."
+                                          },
+                                          {
+                                              "id":  "none",
+                                              "label":  "Hier klopt alles al."
+                                          },
+                                          {
+                                              "id":  "db",
+                                              "label":  "Er mist alleen een database."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Zonder `this.naam` blijft het attribuut niet goed gevuld.",
+                          "retryFeedback":  "Kijk nog eens of de parameter echt aan het attribuut gekoppeld wordt.",
+                          "finalFeedback":  "Neem mee: `this.naam = naam` koppelt de parameter aan het attribuut."
+                      },
+                      {
+                          "id":  "gym-step5-why-constructor",
+                          "stepType":  "CONSTRUCTORS",
+                          "metadata":  {
+                                           "seriesId":  "gym-step5-why-constructor",
+                                           "exerciseType":  "OOP_LADDER",
+                                           "activityType":  "OOP_PRACTICE",
+                                           "interactionType":  "MULTIPLE_CHOICE",
+                                           "validationType":  "SINGLE_CHOICE",
+                                           "programmingPattern":  "NONE",
+                                           "supportLevel":  "NOT_SPECIFIED",
+                                           "skillTags":  [
+
+                                                         ]
+                                       },
+                          "title":  "Waarom gebruik je `this.naam = naam`?",
+                          "instruction":  "Kies de uitleg die het best past.",
+                          "question":  "Waarom gebruik je `this.naam = naam` in een constructor?",
+                          "focusText":  "",
+                          "options":  [
+                                          {
+                                              "id":  "best",
+                                              "label":  "Om de parameter `naam` aan het attribuut `naam` van het object te koppelen."
+                                          },
+                                          {
+                                              "id":  "wrong",
+                                              "label":  "Om Java sneller te maken dan anders."
+                                          },
+                                          {
+                                              "id":  "screen",
+                                              "label":  "Om alle schermen van de app te openen."
+                                          },
+                                          {
+                                              "id":  "comment",
+                                              "label":  "Om een commentaarregel te vervangen."
+                                          }
+                                      ],
+                          "correctOptionIds":  [
+                                                   "best"
+                                               ],
+                          "acceptedKeywords":  [
+
+                                               ],
+                          "requiredFragments":  [
+
+                                                ],
+                          "minimumRequiredMatches":  0,
+                          "successFeedback":  "Goed gekozen. Zo krijgt het object de juiste waarde in zijn attribuut.",
+                          "retryFeedback":  "Kijk nog eens naar het verschil tussen parameter en attribuut.",
+                          "finalFeedback":  "Neem mee: `this.naam = naam` verbindt de ingevoerde waarde met het object."
+                      }
+                  ]
 }

@@ -1,0 +1,191 @@
+{
+  "routeBlockTitle": "Transfer – tellen met een voorwaarde",
+  "caseStudy": {
+    "title": "Te late boeken tellen",
+    "description": "Een bibliotheek heeft een lijst met het aantal dagen dat boeken te laat zijn. Een boek is te laat wanneer het aantal dagen groter is dan 0. De bibliotheek wil weten hoeveel boeken te laat zijn."
+  },
+  "programmingTask": {
+    "inputDescription": "Een lijst met aantallen te late dagen.",
+    "outputDescription": "Het aantal boeken waarvan het aantal te late dagen groter is dan 0.",
+    "rules": [
+      "Een boek telt mee wanneer het aantal te late dagen groter is dan 0."
+    ],
+    "edgeCases": [
+      "Een lege lijst geeft 0.",
+      "Een waarde van precies 0 telt niet mee.",
+      "Wanneer alle boeken op tijd zijn, is het resultaat 0."
+    ],
+    "pseudocodeSteps": [],
+    "javaTemplate": "",
+    "testCases": [
+      {
+        "description": "Voorbeeldlijst",
+        "input": "[0, 3, 0, 7, 1]",
+        "expectedOutput": "3"
+      },
+      {
+        "description": "Alle boeken op tijd",
+        "input": "[0, 0, 0]",
+        "expectedOutput": "0"
+      },
+      {
+        "description": "Lege lijst",
+        "input": "[]",
+        "expectedOutput": "0"
+      },
+      {
+        "description": "Één boek te laat",
+        "input": "[1]",
+        "expectedOutput": "1"
+      }
+    ],
+    "explanationKeywords": [
+      "lijst",
+      "tellen",
+      "groter dan 0",
+      "voorwaarde"
+    ]
+  },
+  "exercises": [
+    {
+      "id": "library-count-overdue-08-transfer",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "ANALYSIS_FORM",
+        "validationType": "STRUCTURED_FIELDS",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "INDEPENDENT",
+        "skillTags": [
+          "GOAL",
+          "INPUT",
+          "OUTPUT",
+          "RULE",
+          "BOUNDARY",
+          "EDGE_CASE",
+          "PATTERN_RECOGNITION",
+          "TRANSFER"
+        ]
+      },
+      "title": "Herken hetzelfde patroon in een nieuwe context",
+      "instruction": "Analyseer de bibliotheekcase zonder de antwoorden uit de vorige case letterlijk over te nemen.",
+      "question": "Welke onderdelen herken je in deze nieuwe opdracht?",
+      "focusText": "",
+      "hintText": "De context is anders, maar de structuur blijft: een lijst, een regel en één aantal als resultaat.",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "structuredAnswerDefinition": {
+        "fields": [
+          {
+            "id": "goal",
+            "label": "Doel",
+            "prompt": "Wat moet het programma bepalen?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "aantal", "hoeveel", "tellen" ],
+              [ "boeken" ],
+              [ "te laat", "te late" ]
+            ],
+            "skillTag": "GOAL",
+            "retryFeedback": "Beschrijf welk aantal de bibliotheek uiteindelijk wil weten.",
+            "finalFeedback": "Modelantwoord: het programma bepaalt hoeveel boeken te laat zijn."
+          },
+          {
+            "id": "input",
+            "label": "Invoer",
+            "prompt": "Wat is de invoer?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "lijst" ],
+              [ "dagen", "te late dagen" ]
+            ],
+            "skillTag": "INPUT",
+            "retryFeedback": "Noem wat het programma vooraf al krijgt.",
+            "finalFeedback": "Modelantwoord: de invoer is een lijst met aantallen te late dagen."
+          },
+          {
+            "id": "output",
+            "label": "Uitvoer",
+            "prompt": "Wat is de uitvoer?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "aantal" ],
+              [ "boeken" ],
+              [ "te laat", "te late" ]
+            ],
+            "skillTag": "OUTPUT",
+            "retryFeedback": "Noem het resultaat dat na het tellen bekend wordt.",
+            "finalFeedback": "Modelantwoord: de uitvoer is het aantal te late boeken."
+          },
+          {
+            "id": "rule",
+            "label": "Regel",
+            "prompt": "Wanneer telt een boek mee?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "groter", "meer" ],
+              [ "0", "nul" ]
+            ],
+            "skillTag": "RULE",
+            "retryFeedback": "Schrijf de voorwaarde op waarmee je beslist of een boek meetelt.",
+            "finalFeedback": "Modelantwoord: een boek telt mee wanneer het aantal te late dagen groter is dan 0."
+          },
+          {
+            "id": "boundary",
+            "label": "Grenswaarde",
+            "prompt": "Wat is de grenswaarde en telt die mee?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "0", "nul" ],
+              [ "niet", "telt niet", "nee" ]
+            ],
+            "skillTag": "BOUNDARY",
+            "retryFeedback": "Denk na over de vraag of 0 al te laat is of juist niet.",
+            "finalFeedback": "Modelantwoord: de grenswaarde is 0 en die telt niet mee."
+          },
+          {
+            "id": "edgeCase",
+            "label": "Randgeval",
+            "prompt": "Noem één passend randgeval en de uitkomst.",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "leeg", "allemaal 0", "geen te late boeken" ],
+              [ "0", "nul" ]
+            ],
+            "skillTag": "EDGE_CASE",
+            "retryFeedback": "Kies een situatie waarin er niets te tellen valt of alles op tijd is.",
+            "finalFeedback": "Modelantwoord: bij een lege lijst of alleen nullen is de uitkomst 0."
+          },
+          {
+            "id": "pattern",
+            "label": "Programmeerpatroon",
+            "prompt": "Welk programmeerpatroon is dit?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "tellen", "aantal" ],
+              [ "voorwaarde", "voldoet", "groter dan 0" ]
+            ],
+            "skillTag": "PATTERN_RECOGNITION",
+            "retryFeedback": "Kijk naar het soort resultaat en naar de voorwaarde die bepaalt wat meetelt.",
+            "finalFeedback": "Modelantwoord: dit is tellen met een voorwaarde."
+          }
+        ]
+      },
+      "minimumRequiredMatches": 0,
+      "successFeedback": "Goed. Je herkent tellen met een voorwaarde ook in een andere context. Dat laat transfer zien.",
+      "retryFeedback": "Bekijk de bibliotheekcase nog eens als lijst + regel + aantal.",
+      "finalFeedback": "Ook in deze nieuwe context blijft het patroon: tellen met een voorwaarde."
+    }
+  ]
+}

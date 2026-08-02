@@ -5,6 +5,7 @@ import codeladder.model.Exercise;
 import codeladder.model.ExerciseResponse;
 import codeladder.model.SummaryItem;
 import codeladder.model.ValidationResult;
+import codeladder.support.ValidationServiceFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -17,7 +18,7 @@ class SummaryServiceTest {
     @Test
     void summaryContainsRecordedAnswers() {
         ExerciseDataProvider provider = new ExerciseDataProvider();
-        AnswerValidationService validationService = new AnswerValidationService(new FeedbackService());
+        AnswerValidationService validationService = ValidationServiceFactory.create();
         ProgressService progressService = new ProgressService();
         SummaryService summaryService = new SummaryService();
 

@@ -1,0 +1,560 @@
+{
+  "routeBlockTitle": "Programmeerroute – tellen met een voorwaarde",
+  "caseStudy": {
+    "title": "Voldoendes tellen",
+    "description": "Een docent heeft een lijst met cijfers. De docent wil weten hoeveel cijfers voldoende zijn. Een cijfer is voldoende vanaf 5,5."
+  },
+  "programmingTask": {
+    "inputDescription": "Een lijst met cijfers.",
+    "outputDescription": "Het aantal cijfers dat 5,5 of hoger is.",
+    "rules": [
+      "Een cijfer telt mee wanneer het 5,5 of hoger is."
+    ],
+    "edgeCases": [
+      "Een lege lijst geeft 0.",
+      "Een cijfer van precies 5,5 telt mee.",
+      "Wanneer geen enkel cijfer voldoende is, is het resultaat 0.",
+      "Wanneer alle cijfers voldoende zijn, is het resultaat gelijk aan het aantal cijfers."
+    ],
+    "pseudocodeSteps": [],
+    "javaTemplate": "",
+    "testCases": [
+      {
+        "description": "Lege lijst",
+        "input": "[]",
+        "expectedOutput": "0"
+      },
+      {
+        "description": "Gemengde cijfers",
+        "input": "[4.8, 5.5, 6.2, 7.1]",
+        "expectedOutput": "3"
+      },
+      {
+        "description": "Grenswaarde",
+        "input": "[5.5]",
+        "expectedOutput": "1"
+      },
+      {
+        "description": "Geen voldoendes",
+        "input": "[4.0, 5.4]",
+        "expectedOutput": "0"
+      }
+    ],
+    "explanationKeywords": [
+      "lijst",
+      "tellen",
+      "voorwaarde",
+      "5,5"
+    ]
+  },
+  "exercises": [
+    {
+      "id": "education-count-passing-01-goal",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "MULTIPLE_CHOICE",
+        "validationType": "SINGLE_CHOICE",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "CHOOSE",
+        "skillTags": [
+          "GOAL"
+        ]
+      },
+      "title": "Wat moet het programma bepalen?",
+      "instruction": "Lees eerst wat de docent wil weten. Denk nog niet aan Java-code.",
+      "question": "Wat moet het programma uiteindelijk bepalen?",
+      "focusText": "",
+      "hintText": "Zoek in de case naar de zin waarin staat wat de docent wil weten.",
+      "options": [
+        { "id": "average", "label": "Het gemiddelde van alle cijfers" },
+        { "id": "highest", "label": "Het hoogste cijfer" },
+        { "id": "passing-count", "label": "Het aantal cijfers vanaf 5,5" },
+        { "id": "student-names", "label": "De namen van de studenten" }
+      ],
+      "correctOptionIds": [ "passing-count" ],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 0,
+      "successFeedback": "Goed. Het programma moet één aantal geven: hoeveel cijfers voldoende zijn.",
+      "retryFeedback": "Kijk opnieuw naar het gewenste eindresultaat. De opdracht vraagt niet om een gemiddelde of het hoogste cijfer.",
+      "finalFeedback": "Het juiste doel is: bepalen hoeveel cijfers 5,5 of hoger zijn. Dit is tellen met een voorwaarde."
+    },
+    {
+      "id": "education-count-passing-02-input-output",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "ANALYSIS_FORM",
+        "validationType": "STRUCTURED_FIELDS",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "CHOOSE",
+        "skillTags": [
+          "INPUT",
+          "OUTPUT"
+        ]
+      },
+      "title": "Wat gaat erin en wat komt eruit?",
+      "instruction": "Kies apart wat de invoer is en wat de uitvoer is.",
+      "question": "Vul de twee onderdelen van de opdrachtanalyse in.",
+      "focusText": "",
+      "hintText": "Invoer gaat het programma in. Uitvoer komt uit het programma.",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "structuredAnswerDefinition": {
+        "fields": [
+          {
+            "id": "input",
+            "label": "Invoer",
+            "prompt": "Wat krijgt het programma binnen?",
+            "inputType": "SINGLE_CHOICE",
+            "options": [
+              { "id": "grades", "label": "Een lijst met cijfers" },
+              { "id": "passing-count", "label": "Het aantal voldoendes" },
+              { "id": "average", "label": "Het gemiddelde" },
+              { "id": "teacher", "label": "De naam van de docent" }
+            ],
+            "correctOptionIds": [ "grades" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "INPUT",
+            "retryFeedback": "De invoer bestaat al voordat het programma begint met rekenen.",
+            "finalFeedback": "De invoer is een lijst met cijfers."
+          },
+          {
+            "id": "output",
+            "label": "Uitvoer",
+            "prompt": "Welk resultaat moet het programma geven?",
+            "inputType": "SINGLE_CHOICE",
+            "options": [
+              { "id": "grades", "label": "Een lijst met cijfers" },
+              { "id": "new-grade", "label": "Een nieuw cijfer" },
+              { "id": "passing-count", "label": "Het aantal voldoendes" },
+              { "id": "teacher", "label": "De naam van de docent" }
+            ],
+            "correctOptionIds": [ "passing-count" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "OUTPUT",
+            "retryFeedback": "De uitvoer is het resultaat dat pas na de verwerking bekend is.",
+            "finalFeedback": "De uitvoer is het aantal cijfers dat voldoende is."
+          }
+        ]
+      },
+      "minimumRequiredMatches": 0,
+      "successFeedback": "Goed. De lijst met cijfers is de invoer en het aantal voldoendes is de uitvoer.",
+      "retryFeedback": "Controleer invoer en uitvoer nog eens apart.",
+      "finalFeedback": "De kern is: lijst met cijfers erin, aantal voldoendes eruit."
+    },
+    {
+      "id": "education-count-passing-03-analysis-card",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "ANALYSIS_FORM",
+        "validationType": "STRUCTURED_FIELDS",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "ORDER",
+        "skillTags": [
+          "GOAL",
+          "INPUT",
+          "OUTPUT",
+          "RULE"
+        ]
+      },
+      "title": "Zet de informatie op de juiste plaats",
+      "instruction": "Koppel iedere zin aan het juiste onderdeel van de opdrachtanalyse.",
+      "question": "Vul de analysekaart in.",
+      "focusText": "",
+      "hintText": "Vraag jezelf bij iedere zin af: beschrijft dit het doel, de gegevens, het resultaat of de regel?",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "structuredAnswerDefinition": {
+        "fields": [
+          {
+            "id": "goal",
+            "label": "Doel",
+            "prompt": "Welke zin hoort bij het doel?",
+            "inputType": "SINGLE_CHOICE",
+            "options": [
+              { "id": "goal-statement", "label": "Voldoendes tellen" },
+              { "id": "input-statement", "label": "Een lijst met cijfers" },
+              { "id": "output-statement", "label": "Het aantal voldoendes" },
+              { "id": "rule-statement", "label": "Een cijfer telt mee vanaf 5,5" }
+            ],
+            "correctOptionIds": [ "goal-statement" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "GOAL",
+            "retryFeedback": "Kijk of de zin beschrijft wat je uiteindelijk wilt weten.",
+            "finalFeedback": "Het doel is: voldoendes tellen."
+          },
+          {
+            "id": "input",
+            "label": "Invoer",
+            "prompt": "Welke zin hoort bij de invoer?",
+            "inputType": "SINGLE_CHOICE",
+            "options": [
+              { "id": "goal-statement", "label": "Voldoendes tellen" },
+              { "id": "input-statement", "label": "Een lijst met cijfers" },
+              { "id": "output-statement", "label": "Het aantal voldoendes" },
+              { "id": "rule-statement", "label": "Een cijfer telt mee vanaf 5,5" }
+            ],
+            "correctOptionIds": [ "input-statement" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "INPUT",
+            "retryFeedback": "De invoer is wat al gegeven is voordat het tellen begint.",
+            "finalFeedback": "De invoer is: een lijst met cijfers."
+          },
+          {
+            "id": "output",
+            "label": "Uitvoer",
+            "prompt": "Welke zin hoort bij de uitvoer?",
+            "inputType": "SINGLE_CHOICE",
+            "options": [
+              { "id": "goal-statement", "label": "Voldoendes tellen" },
+              { "id": "input-statement", "label": "Een lijst met cijfers" },
+              { "id": "output-statement", "label": "Het aantal voldoendes" },
+              { "id": "rule-statement", "label": "Een cijfer telt mee vanaf 5,5" }
+            ],
+            "correctOptionIds": [ "output-statement" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "OUTPUT",
+            "retryFeedback": "De uitvoer is het resultaat dat je na de verwerking krijgt.",
+            "finalFeedback": "De uitvoer is: het aantal voldoendes."
+          },
+          {
+            "id": "rule",
+            "label": "Regel",
+            "prompt": "Welke zin hoort bij de regel?",
+            "inputType": "SINGLE_CHOICE",
+            "options": [
+              { "id": "goal-statement", "label": "Voldoendes tellen" },
+              { "id": "input-statement", "label": "Een lijst met cijfers" },
+              { "id": "output-statement", "label": "Het aantal voldoendes" },
+              { "id": "rule-statement", "label": "Een cijfer telt mee vanaf 5,5" }
+            ],
+            "correctOptionIds": [ "rule-statement" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "RULE",
+            "retryFeedback": "Zoek de zin die bepaalt wanneer een cijfer meetelt.",
+            "finalFeedback": "De regel is: een cijfer telt mee vanaf 5,5."
+          }
+        ]
+      },
+      "minimumRequiredMatches": 0,
+      "successFeedback": "Goed geordend. Je hebt de belangrijkste onderdelen van de opdracht op de juiste plaats gezet.",
+      "retryFeedback": "Controleer de analyseonderdelen nog eens.",
+      "finalFeedback": "Doel, invoer, uitvoer en regel horen elk op hun eigen plaats."
+    },
+    {
+      "id": "education-count-passing-04-rule",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "FILL_IN_THE_BLANK",
+        "validationType": "TEXT_KEYWORDS",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "COMPLETE",
+        "skillTags": [
+          "RULE"
+        ]
+      },
+      "title": "Maak de regel compleet",
+      "instruction": "Vul alleen het ontbrekende deel in.",
+      "question": "Een cijfer telt mee wanneer het cijfer ______ is.",
+      "focusText": "",
+      "hintText": "Let op het woord “vanaf” in de case.",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [
+        "5,5 of hoger",
+        "minstens 5,5",
+        "vanaf 5,5",
+        "5.5 of hoger",
+        "minstens 5.5",
+        "vanaf 5.5"
+      ],
+      "requiredFragments": [],
+      "minimumRequiredMatches": 1,
+      "successFeedback": "Goed. Een cijfer telt mee wanneer het 5,5 of hoger is.",
+      "retryFeedback": "Controleer of 5,5 zelf ook onderdeel van de regel is.",
+      "finalFeedback": "De volledige regel is: een cijfer telt mee wanneer het 5,5 of hoger is."
+    },
+    {
+      "id": "education-count-passing-05-boundary",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "ANALYSIS_FORM",
+        "validationType": "STRUCTURED_FIELDS",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "PARTIAL_WRITE",
+        "skillTags": [
+          "BOUNDARY"
+        ]
+      },
+      "title": "Wat gebeurt er bij de grens?",
+      "instruction": "Kies welke cijfers meetellen en leg kort uit waarom.",
+      "question": "Bekijk de cijfers 5,4 – 5,5 – 5,6.",
+      "focusText": "",
+      "hintText": "Denk na over het verschil tussen “vanaf 5,5” en “hoger dan 5,5”.",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "structuredAnswerDefinition": {
+        "fields": [
+          {
+            "id": "selectedGrades",
+            "label": "Cijfers die meetellen",
+            "prompt": "Welke cijfers zijn voldoende?",
+            "inputType": "MULTI_SELECT",
+            "options": [
+              { "id": "grade-54", "label": "5,4" },
+              { "id": "grade-55", "label": "5,5" },
+              { "id": "grade-56", "label": "5,6" }
+            ],
+            "correctOptionIds": [ "grade-55", "grade-56" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "BOUNDARY",
+            "retryFeedback": "Controleer vooral of de grenswaarde 5,5 zelf meetelt.",
+            "finalFeedback": "5,5 en 5,6 tellen mee. 5,4 is lager dan de grens."
+          },
+          {
+            "id": "reason",
+            "label": "Uitleg",
+            "prompt": "Waarom telt 5,5 wel of niet mee?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "vanaf", "grens", "beginpunt" ],
+              [ "meetelt", "voldoende", "5,5" ]
+            ],
+            "skillTag": "BOUNDARY",
+            "retryFeedback": "Gebruik het woord “vanaf” of leg uit wat er bij het beginpunt gebeurt.",
+            "finalFeedback": "5,5 telt mee, omdat “vanaf 5,5” betekent: 5,5 of hoger."
+          }
+        ]
+      },
+      "minimumRequiredMatches": 0,
+      "successFeedback": "Goed. Je hebt herkend dat 5,5 de grenswaarde is en dat de grens zelf meetelt.",
+      "retryFeedback": "Kijk nog eens nauwkeurig naar de grenswaarde.",
+      "finalFeedback": "De grenswaarde is 5,5 en die telt zelf mee."
+    },
+    {
+      "id": "education-count-passing-06-edge-cases",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "ANALYSIS_FORM",
+        "validationType": "STRUCTURED_FIELDS",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "PARTIAL_WRITE",
+        "skillTags": [
+          "EDGE_CASE"
+        ]
+      },
+      "title": "Welke bijzondere situaties moet je controleren?",
+      "instruction": "Kies de belangrijke randgevallen en leg één situatie kort uit.",
+      "question": "Welke situaties zijn belangrijk om later te testen?",
+      "focusText": "",
+      "hintText": "Randgevallen zijn bijzondere of uiterste situaties waarin de oplossing nog steeds moet werken.",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "structuredAnswerDefinition": {
+        "fields": [
+          {
+            "id": "edgeCases",
+            "label": "Randgevallen",
+            "prompt": "Selecteer alle belangrijke situaties.",
+            "inputType": "MULTI_SELECT",
+            "options": [
+              { "id": "empty", "label": "Een lege lijst" },
+              { "id": "none-passing", "label": "Een lijst met alleen onvoldoendes" },
+              { "id": "exact-boundary", "label": "Een cijfer van precies 5,5" },
+              { "id": "all-passing", "label": "Een lijst met alleen voldoendes" },
+              { "id": "screen-color", "label": "De kleur van het scherm" },
+              { "id": "teacher-name", "label": "De naam van de docent" }
+            ],
+            "correctOptionIds": [ "empty", "none-passing", "exact-boundary", "all-passing" ],
+            "acceptedKeywordGroups": [],
+            "skillTag": "EDGE_CASE",
+            "retryFeedback": "Kies situaties die de berekening of de grens van de regel kunnen beïnvloeden.",
+            "finalFeedback": "Belangrijke randgevallen zijn een lege lijst, geen voldoendes, precies 5,5 en alleen voldoendes."
+          },
+          {
+            "id": "emptyExplanation",
+            "label": "Lege lijst",
+            "prompt": "Wat moet het resultaat zijn wanneer de lijst leeg is?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "0", "nul" ]
+            ],
+            "skillTag": "EDGE_CASE",
+            "retryFeedback": "Er zijn geen cijfers om te tellen.",
+            "finalFeedback": "Een lege lijst geeft als resultaat 0."
+          }
+        ]
+      },
+      "minimumRequiredMatches": 0,
+      "successFeedback": "Goed. Je herkent situaties die later apart getest moeten worden.",
+      "retryFeedback": "Kijk nog eens welke bijzondere situaties echt invloed hebben op de telling.",
+      "finalFeedback": "Randgevallen helpen je later controleren of de oplossing ook in bijzondere situaties klopt."
+    },
+    {
+      "id": "education-count-passing-07-independent",
+      "stepType": "UNDERSTAND_ASSIGNMENT",
+      "metadata": {
+        "seriesId": "count-with-condition-step1-01",
+        "exerciseType": "PSEUDOCODE_TO_JAVA",
+        "activityType": "ANALYSE",
+        "interactionType": "ANALYSIS_FORM",
+        "validationType": "STRUCTURED_FIELDS",
+        "programmingPattern": "COUNT_WITH_CONDITION",
+        "supportLevel": "INDEPENDENT",
+        "skillTags": [
+          "GOAL",
+          "INPUT",
+          "OUTPUT",
+          "RULE",
+          "BOUNDARY",
+          "EDGE_CASE",
+          "PATTERN_RECOGNITION"
+        ]
+      },
+      "title": "Analyseer een nieuwe opdracht zelfstandig",
+      "instruction": "Vul de volledige opdrachtanalyse in. Gebruik je eigen woorden.",
+      "question": "Wat weet je al voordat je code gaat schrijven?",
+      "focusText": "Case voor deze oefening: Een docent heeft een lijst met toetsscores. De docent wil weten hoeveel studenten minstens 70 punten hebben gehaald. Een lege resultatenlijst moet als uitkomst 0 geven.",
+      "hintText": "Werk rustig van boven naar beneden: doel, invoer, uitvoer, regel, grenswaarde, randgeval en patroon.",
+      "options": [],
+      "correctOptionIds": [],
+      "acceptedKeywords": [],
+      "requiredFragments": [],
+      "structuredAnswerDefinition": {
+        "fields": [
+          {
+            "id": "goal",
+            "label": "Doel",
+            "prompt": "Wat moet het programma bepalen?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "aantal", "hoeveel", "tellen" ],
+              [ "studenten", "scores" ],
+              [ "70", "geslaagd", "gehaald" ]
+            ],
+            "skillTag": "GOAL",
+            "retryFeedback": "Beschrijf het eindresultaat: welk aantal wil de docent weten?",
+            "finalFeedback": "Modelantwoord: het programma bepaalt hoeveel studenten minstens 70 punten hebben gehaald."
+          },
+          {
+            "id": "input",
+            "label": "Invoer",
+            "prompt": "Wat is de invoer?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "lijst" ],
+              [ "scores", "toetsscores", "resultaten" ]
+            ],
+            "skillTag": "INPUT",
+            "retryFeedback": "Noem wat het programma vooraf al krijgt om mee te werken.",
+            "finalFeedback": "Modelantwoord: de invoer is een lijst met toetsscores of resultaten."
+          },
+          {
+            "id": "output",
+            "label": "Uitvoer",
+            "prompt": "Wat is de uitvoer?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "aantal" ],
+              [ "scores", "studenten" ],
+              [ "70", "geslaagd", "gehaald" ]
+            ],
+            "skillTag": "OUTPUT",
+            "retryFeedback": "Noem het resultaat dat pas na de verwerking bekend is.",
+            "finalFeedback": "Modelantwoord: de uitvoer is het aantal studenten dat minstens 70 punten heeft gehaald."
+          },
+          {
+            "id": "rule",
+            "label": "Regel",
+            "prompt": "Welke regel bepaalt of een score meetelt?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "70" ],
+              [ "hoger", "minstens", "vanaf", "of hoger" ]
+            ],
+            "skillTag": "RULE",
+            "retryFeedback": "Schrijf de voorwaarde op waaraan een score moet voldoen.",
+            "finalFeedback": "Modelantwoord: een score telt mee wanneer die minstens 70 is."
+          },
+          {
+            "id": "boundary",
+            "label": "Grenswaarde",
+            "prompt": "Wat is de grenswaarde?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "70" ]
+            ],
+            "skillTag": "BOUNDARY",
+            "retryFeedback": "Welke exacte waarde vormt de grens tussen wel en niet meetellen?",
+            "finalFeedback": "Modelantwoord: de grenswaarde is 70."
+          },
+          {
+            "id": "edgeCase",
+            "label": "Randgeval",
+            "prompt": "Noem één belangrijk randgeval en het verwachte resultaat.",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "leeg", "lege lijst", "geen scores" ],
+              [ "0", "nul" ]
+            ],
+            "skillTag": "EDGE_CASE",
+            "retryFeedback": "Denk aan een bijzondere situatie waarin er niets of bijna niets te tellen is.",
+            "finalFeedback": "Modelantwoord: bij een lege lijst is de uitkomst 0."
+          },
+          {
+            "id": "pattern",
+            "label": "Programmeerpatroon",
+            "prompt": "Welk programmeerpatroon herken je?",
+            "inputType": "TEXT",
+            "correctOptionIds": [],
+            "acceptedKeywordGroups": [
+              [ "tellen", "aantal" ],
+              [ "voorwaarde", "voldoet", "voldoen" ]
+            ],
+            "skillTag": "PATTERN_RECOGNITION",
+            "retryFeedback": "Kijk naar het soort resultaat en naar de voorwaarde die bepaalt wat meetelt.",
+            "finalFeedback": "Modelantwoord: dit is tellen met een voorwaarde."
+          }
+        ]
+      },
+      "minimumRequiredMatches": 0,
+      "successFeedback": "Goed. Je hebt een volledige programmeeropdracht zelfstandig geanalyseerd voordat je code bent gaan schrijven.",
+      "retryFeedback": "Loop de analyse nog eens rustig volledig langs.",
+      "finalFeedback": "Een volledige analyse benoemt doel, invoer, uitvoer, regel, grenswaarde, randgeval en patroon."
+    }
+  ]
+}
