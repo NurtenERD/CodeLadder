@@ -1,6 +1,7 @@
 package codeladder.support;
 
 import codeladder.model.ActivityType;
+import codeladder.model.AnswerDefinition;
 import codeladder.model.AnswerOption;
 import codeladder.model.CaseStudy;
 import codeladder.model.Exercise;
@@ -56,12 +57,14 @@ public final class ExerciseFixtures {
                         "",
                         CASE_STUDY
                 ),
-                options,
-                correctOptionIds,
-                acceptedKeywords,
-                requiredFragments,
-                null,
-                minimumRequiredMatches,
+                new AnswerDefinition(
+                        options,
+                        correctOptionIds,
+                        acceptedKeywords,
+                        requiredFragments,
+                        null,
+                        minimumRequiredMatches
+                ),
                 "Goed gedaan.",
                 "Kijk nog eens goed.",
                 "Neem de kernstappen mee.",

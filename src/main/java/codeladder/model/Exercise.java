@@ -1,8 +1,5 @@
 package codeladder.model;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -12,12 +9,7 @@ public class Exercise {
     private final StepType stepType;
     private final ExerciseMetadata metadata;
     private final ExerciseContent content;
-    private final List<AnswerOption> options;
-    private final Set<String> correctOptionIds;
-    private final Set<String> acceptedKeywords;
-    private final Set<String> requiredFragments;
-    private final StructuredAnswerDefinition structuredAnswerDefinition;
-    private final int minimumRequiredMatches;
+    private final AnswerDefinition answerDefinition;
     private final String successFeedback;
     private final String retryFeedback;
     private final String finalFeedback;
@@ -28,12 +20,7 @@ public class Exercise {
             StepType stepType,
             ExerciseMetadata metadata,
             ExerciseContent content,
-            List<AnswerOption> options,
-            Set<String> correctOptionIds,
-            Set<String> acceptedKeywords,
-            Set<String> requiredFragments,
-            StructuredAnswerDefinition structuredAnswerDefinition,
-            int minimumRequiredMatches,
+            AnswerDefinition answerDefinition,
             String successFeedback,
             String retryFeedback,
             String finalFeedback,
@@ -43,12 +30,7 @@ public class Exercise {
         this.stepType = Objects.requireNonNull(stepType, "stepType");
         this.metadata = Objects.requireNonNull(metadata, "metadata");
         this.content = Objects.requireNonNull(content, "content");
-        this.options = options == null ? List.of() : new ArrayList<>(options);
-        this.correctOptionIds = copySet(correctOptionIds);
-        this.acceptedKeywords = copySet(acceptedKeywords);
-        this.requiredFragments = copySet(requiredFragments);
-        this.structuredAnswerDefinition = structuredAnswerDefinition;
-        this.minimumRequiredMatches = minimumRequiredMatches;
+        this.answerDefinition = Objects.requireNonNull(answerDefinition, "answerDefinition");
         this.successFeedback = Objects.requireNonNull(successFeedback, "successFeedback");
         this.retryFeedback = Objects.requireNonNull(retryFeedback, "retryFeedback");
         this.finalFeedback = Objects.requireNonNull(finalFeedback, "finalFeedback");
@@ -69,6 +51,10 @@ public class Exercise {
 
     public ExerciseContent getContent() {
         return content;
+    }
+
+    public AnswerDefinition getAnswerDefinition() {
+        return answerDefinition;
     }
 
     public ExerciseType getExerciseType() {
@@ -123,28 +109,28 @@ public class Exercise {
         return content.getCaseStudy();
     }
 
-    public List<AnswerOption> getOptions() {
-        return new ArrayList<>(options);
+    public java.util.List<AnswerOption> getOptions() {
+        return answerDefinition.getOptions();
     }
 
     public Set<String> getCorrectOptionIds() {
-        return new LinkedHashSet<>(correctOptionIds);
+        return answerDefinition.getCorrectOptionIds();
     }
 
     public Set<String> getAcceptedKeywords() {
-        return new LinkedHashSet<>(acceptedKeywords);
+        return answerDefinition.getAcceptedKeywords();
     }
 
     public Set<String> getRequiredFragments() {
-        return new LinkedHashSet<>(requiredFragments);
+        return answerDefinition.getRequiredFragments();
     }
 
     public Optional<StructuredAnswerDefinition> getStructuredAnswerDefinition() {
-        return Optional.ofNullable(structuredAnswerDefinition);
+        return answerDefinition.getStructuredAnswerDefinition();
     }
 
     public int getMinimumRequiredMatches() {
-        return minimumRequiredMatches;
+        return answerDefinition.getMinimumRequiredMatches();
     }
 
     public String getSuccessFeedback() {
@@ -161,9 +147,5 @@ public class Exercise {
 
     public Optional<ProgrammingTask> getProgrammingTask() {
         return Optional.ofNullable(programmingTask);
-    }
-
-    private Set<String> copySet(Set<String> values) {
-        return values == null ? Set.of() : new LinkedHashSet<>(values);
     }
 }

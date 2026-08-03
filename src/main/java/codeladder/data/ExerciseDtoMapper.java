@@ -4,6 +4,7 @@ import codeladder.data.dto.AnswerOptionDto;
 import codeladder.data.dto.CaseStudyDto;
 import codeladder.data.dto.ExerciseDto;
 import codeladder.model.AnswerOption;
+import codeladder.model.AnswerDefinition;
 import codeladder.model.CaseStudy;
 import codeladder.model.Exercise;
 import codeladder.model.ExerciseContent;
@@ -43,12 +44,7 @@ public class ExerciseDtoMapper {
                 enumValueParser.parse(StepType.class, "stepType", dto.getStepType(), filePath, dto.getId()),
                 metadataMapper.map(dto.getMetadata(), filePath, dto.getId()),
                 mapContent(dto, caseStudy),
-                mapOptions(dto.getOptions()),
-                copySet(dto.getCorrectOptionIds()),
-                copySet(dto.getAcceptedKeywords()),
-                copySet(dto.getRequiredFragments()),
-                structuredAnswerDefinitionMapper.map(dto.getStructuredAnswerDefinition(), filePath, dto.getId()),
-                dto.getMinimumRequiredMatches(),
+                mapAnswerDefinition(dto, filePath),
                 dto.getSuccessFeedback(),
                 dto.getRetryFeedback(),
                 dto.getFinalFeedback(),
@@ -79,6 +75,17 @@ public class ExerciseDtoMapper {
                 dto.getFocusText(),
                 dto.getHintText(),
                 caseStudy
+        );
+    }
+
+    private AnswerDefinition mapAnswerDefinition(ExerciseDto dto, String filePath) {
+        return new AnswerDefinition(
+                mapOptions(dto.getOptions()),
+                copySet(dto.getCorrectOptionIds()),
+                copySet(dto.getAcceptedKeywords()),
+                copySet(dto.getRequiredFragments()),
+                structuredAnswerDefinitionMapper.map(dto.getStructuredAnswerDefinition(), filePath, dto.getId()),
+                dto.getMinimumRequiredMatches()
         );
     }
 
