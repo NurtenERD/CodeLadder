@@ -8,6 +8,7 @@ import codeladder.model.AnswerDefinition;
 import codeladder.model.CaseStudy;
 import codeladder.model.Exercise;
 import codeladder.model.ExerciseContent;
+import codeladder.model.FeedbackDefinition;
 import codeladder.model.ProgrammingTask;
 import codeladder.model.StepType;
 
@@ -45,9 +46,7 @@ public class ExerciseDtoMapper {
                 metadataMapper.map(dto.getMetadata(), filePath, dto.getId()),
                 mapContent(dto, caseStudy),
                 mapAnswerDefinition(dto, filePath),
-                dto.getSuccessFeedback(),
-                dto.getRetryFeedback(),
-                dto.getFinalFeedback(),
+                mapFeedbackDefinition(dto),
                 programmingTask
         );
     }
@@ -86,6 +85,14 @@ public class ExerciseDtoMapper {
                 copySet(dto.getRequiredFragments()),
                 structuredAnswerDefinitionMapper.map(dto.getStructuredAnswerDefinition(), filePath, dto.getId()),
                 dto.getMinimumRequiredMatches()
+        );
+    }
+
+    private FeedbackDefinition mapFeedbackDefinition(ExerciseDto dto) {
+        return new FeedbackDefinition(
+                dto.getSuccessFeedback(),
+                dto.getRetryFeedback(),
+                dto.getFinalFeedback()
         );
     }
 

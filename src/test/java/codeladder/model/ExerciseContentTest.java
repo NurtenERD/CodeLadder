@@ -36,9 +36,7 @@ class ExerciseContentTest {
                         null,
                         1
                 ),
-                "Goed",
-                "Opnieuw",
-                "Laatste hint",
+                new FeedbackDefinition("Goed", "Opnieuw", "Laatste hint"),
                 null
         );
 

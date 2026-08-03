@@ -8,6 +8,7 @@ import codeladder.model.Exercise;
 import codeladder.model.ExerciseContent;
 import codeladder.model.ExerciseMetadata;
 import codeladder.model.ExerciseType;
+import codeladder.model.FeedbackDefinition;
 import codeladder.model.InteractionType;
 import codeladder.model.ProgrammingPattern;
 import codeladder.model.SupportLevel;
@@ -65,9 +66,11 @@ public final class ExerciseFixtures {
                         null,
                         minimumRequiredMatches
                 ),
-                "Goed gedaan.",
-                "Kijk nog eens goed.",
-                "Neem de kernstappen mee.",
+                new FeedbackDefinition(
+                        "Goed gedaan.",
+                        "Kijk nog eens goed.",
+                        "Neem de kernstappen mee."
+                ),
                 null
         );
     }

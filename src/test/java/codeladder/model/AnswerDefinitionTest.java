@@ -68,9 +68,7 @@ class AnswerDefinitionTest {
                 metadata(),
                 new ExerciseContent("Titel", "Instructie", "Vraag", "", "", caseStudy()),
                 definition,
-                "Goed",
-                "Opnieuw",
-                "Laatste hint",
+                new FeedbackDefinition("Goed", "Opnieuw", "Laatste hint"),
                 null
         );
     }

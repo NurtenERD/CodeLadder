@@ -10,9 +10,7 @@ public class Exercise {
     private final ExerciseMetadata metadata;
     private final ExerciseContent content;
     private final AnswerDefinition answerDefinition;
-    private final String successFeedback;
-    private final String retryFeedback;
-    private final String finalFeedback;
+    private final FeedbackDefinition feedbackDefinition;
     private final ProgrammingTask programmingTask;
 
     public Exercise(
@@ -21,9 +19,7 @@ public class Exercise {
             ExerciseMetadata metadata,
             ExerciseContent content,
             AnswerDefinition answerDefinition,
-            String successFeedback,
-            String retryFeedback,
-            String finalFeedback,
+            FeedbackDefinition feedbackDefinition,
             ProgrammingTask programmingTask
     ) {
         this.id = Objects.requireNonNull(id, "id");
@@ -31,9 +27,7 @@ public class Exercise {
         this.metadata = Objects.requireNonNull(metadata, "metadata");
         this.content = Objects.requireNonNull(content, "content");
         this.answerDefinition = Objects.requireNonNull(answerDefinition, "answerDefinition");
-        this.successFeedback = Objects.requireNonNull(successFeedback, "successFeedback");
-        this.retryFeedback = Objects.requireNonNull(retryFeedback, "retryFeedback");
-        this.finalFeedback = Objects.requireNonNull(finalFeedback, "finalFeedback");
+        this.feedbackDefinition = Objects.requireNonNull(feedbackDefinition, "feedbackDefinition");
         this.programmingTask = programmingTask;
     }
 
@@ -55,6 +49,10 @@ public class Exercise {
 
     public AnswerDefinition getAnswerDefinition() {
         return answerDefinition;
+    }
+
+    public FeedbackDefinition getFeedbackDefinition() {
+        return feedbackDefinition;
     }
 
     public ExerciseType getExerciseType() {
@@ -134,15 +132,15 @@ public class Exercise {
     }
 
     public String getSuccessFeedback() {
-        return successFeedback;
+        return feedbackDefinition.getSuccessFeedback();
     }
 
     public String getRetryFeedback() {
-        return retryFeedback;
+        return feedbackDefinition.getRetryFeedback();
     }
 
     public String getFinalFeedback() {
-        return finalFeedback;
+        return feedbackDefinition.getFinalFeedback();
     }
 
     public Optional<ProgrammingTask> getProgrammingTask() {
